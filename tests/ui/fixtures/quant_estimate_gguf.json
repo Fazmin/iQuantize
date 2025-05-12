@@ -1,0 +1,522 @@
+{
+  "items": [
+    {
+      "estimate": {
+        "body_bytes": 113029440,
+        "bpw": 8.519555409014286,
+        "bytes": 143251008,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.999738794945468,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.0078,
+      "tier": "Near-lossless",
+      "variant": "Q8_0"
+    },
+    {
+      "estimate": {
+        "body_bytes": 106476780,
+        "bpw": 8.12984960012789,
+        "bytes": 136698348,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.999738794945468,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.0651,
+      "tier": "Excellent",
+      "variant": "Q6_K"
+    },
+    {
+      "estimate": {
+        "body_bytes": 80119650,
+        "bpw": 6.562314176868651,
+        "bytes": 110341218,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.8024219275220205,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.1707,
+      "tier": "Very good",
+      "variant": "Q5_K_M"
+    },
+    {
+      "estimate": {
+        "body_bytes": 78026040,
+        "bpw": 6.437801081645849,
+        "bytes": 108247608,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.8024219275220205,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.3147,
+      "tier": "Good",
+      "variant": "Q5_K_S"
+    },
+    {
+      "estimate": {
+        "body_bytes": 74380620,
+        "bpw": 6.220997318009304,
+        "bytes": 104602188,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.5262,
+      "tier": "Good",
+      "variant": "Q4_K_M"
+    },
+    {
+      "estimate": {
+        "body_bytes": 70378950,
+        "bpw": 5.98300632744266,
+        "bytes": 100600518,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.8067,
+      "tier": "Noticeable loss",
+      "variant": "Q4_K_S"
+    },
+    {
+      "estimate": {
+        "body_bytes": 68775990,
+        "bpw": 5.887673619288638,
+        "bytes": 98997558,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 1.6686,
+      "tier": "Noticeable loss",
+      "variant": "Q3_K_L"
+    },
+    {
+      "estimate": {
+        "body_bytes": 62941560,
+        "bpw": 5.5406830440808506,
+        "bytes": 93163128,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 1.9707,
+      "tier": "Heavy loss",
+      "variant": "Q3_K_M"
+    },
+    {
+      "estimate": {
+        "body_bytes": 56302140,
+        "bpw": 5.145817364854931,
+        "bytes": 86523708,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 4.8963,
+      "tier": "Heavy loss",
+      "variant": "Q3_K_S"
+    },
+    {
+      "estimate": {
+        "body_bytes": 60151350,
+        "bpw": 5.374741114389258,
+        "bytes": 90372918,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 10.5597,
+      "tier": "Heavy loss",
+      "variant": "Q2_K"
+    },
+    {
+      "estimate": {
+        "body_bytes": 60151350,
+        "bpw": 5.374741114389258,
+        "bytes": 90372918,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 9.5508,
+      "tier": "Heavy loss",
+      "variant": "Q2_K_S"
+    },
+    {
+      "estimate": {
+        "body_bytes": 58890240,
+        "bpw": 5.299739223150476,
+        "bytes": 89111808,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 1.217500341191252,
+      "tier": "Noticeable loss",
+      "variant": "IQ4_XS"
+    },
+    {
+      "estimate": {
+        "body_bytes": 59719680,
+        "bpw": 5.349068440006337,
+        "bytes": 89941248,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.7117610453998979,
+      "tier": "Good",
+      "variant": "IQ4_NL"
+    },
+    {
+      "estimate": {
+        "body_bytes": 59831760,
+        "bpw": 5.355734164621988,
+        "bytes": 90053328,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 2.4145444524425006,
+      "tier": "Heavy loss",
+      "variant": "IQ3_M"
+    },
+    {
+      "estimate": {
+        "body_bytes": 56235300,
+        "bpw": 5.141842195035962,
+        "bytes": 86456868,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 3.938813116391735,
+      "tier": "Heavy loss",
+      "variant": "IQ3_S"
+    },
+    {
+      "estimate": {
+        "body_bytes": 55738350,
+        "bpw": 5.112287128585682,
+        "bytes": 85959918,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 4.762360375575427,
+      "tier": "Heavy loss",
+      "variant": "IQ3_XS"
+    },
+    {
+      "estimate": {
+        "body_bytes": 54942090,
+        "bpw": 5.064931223139057,
+        "bytes": 85163658,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 6.594424624752007,
+      "tier": "Heavy loss",
+      "variant": "IQ3_XXS"
+    },
+    {
+      "estimate": {
+        "body_bytes": 56150880,
+        "bpw": 4.6106431781946595,
+        "bytes": 77525088,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "IQ2_M"
+    },
+    {
+      "estimate": {
+        "body_bytes": 53084160,
+        "bpw": 4.4282563920302485,
+        "bytes": 74458368,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "IQ2_S"
+    },
+    {
+      "estimate": {
+        "body_bytes": 52453770,
+        "bpw": 4.3907652594422775,
+        "bytes": 73827978,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "IQ2_XS"
+    },
+    {
+      "estimate": {
+        "body_bytes": 51624330,
+        "bpw": 4.341436042586415,
+        "bytes": 72998538,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "IQ2_XXS"
+    },
+    {
+      "estimate": {
+        "body_bytes": 50595840,
+        "bpw": 4.280268741462662,
+        "bytes": 71970048,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "IQ1_M"
+    },
+    {
+      "estimate": {
+        "body_bytes": 49965450,
+        "bpw": 4.242777608874691,
+        "bytes": 71339658,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "IQ1_S"
+    },
+    {
+      "estimate": {
+        "body_bytes": 79732800,
+        "bpw": 6.539307078656978,
+        "bytes": 109954368,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.999738794945468,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.3186,
+      "tier": "Good",
+      "variant": "Q5_1"
+    },
+    {
+      "estimate": {
+        "body_bytes": 73045680,
+        "bpw": 6.1416045412568385,
+        "bytes": 103267248,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0.3948,
+      "tier": "Good",
+      "variant": "Q5_0"
+    },
+    {
+      "estimate": {
+        "body_bytes": 66521940,
+        "bpw": 5.753618689150284,
+        "bytes": 96743508,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 1.3533,
+      "tier": "Noticeable loss",
+      "variant": "Q4_1"
+    },
+    {
+      "estimate": {
+        "body_bytes": 59834880,
+        "bpw": 5.355919720125208,
+        "bytes": 90056448,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 1.4055,
+      "tier": "Noticeable loss",
+      "variant": "Q4_0"
+    },
+    {
+      "estimate": {
+        "body_bytes": 29859840,
+        "bpw": 3.047038320066114,
+        "bytes": 51234048,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "Q2_0"
+    },
+    {
+      "estimate": {
+        "body_bytes": 14929920,
+        "bpw": 2.1591124166606006,
+        "bytes": 36304128,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "Q1_0"
+    },
+    {
+      "estimate": {
+        "body_bytes": 51624330,
+        "bpw": 4.341436042586415,
+        "bytes": 72998538,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "TQ2_0"
+    },
+    {
+      "estimate": {
+        "body_bytes": 50463060,
+        "bpw": 4.272371927450653,
+        "bytes": 71837268,
+        "embed_bytes": 21233664,
+        "high_precision_share": 0.2104713252516775,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": null,
+      "tier": "Heavy loss",
+      "variant": "TQ1_0"
+    },
+    {
+      "estimate": {
+        "body_bytes": 112803840,
+        "bpw": 8.506138318781499,
+        "bytes": 143025408,
+        "embed_bytes": 30081024,
+        "high_precision_share": 0.999738794945468,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 1.5218754264890648,
+      "tier": "Noticeable loss",
+      "variant": "MXFP4_MOE"
+    },
+    {
+      "estimate": {
+        "body_bytes": 212336640,
+        "bpw": 16.00417928087251,
+        "bytes": 269100288,
+        "embed_bytes": 56623104,
+        "high_precision_share": 0.999738794945468,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0,
+      "tier": "Near-lossless",
+      "variant": "F16"
+    },
+    {
+      "estimate": {
+        "body_bytes": 212336640,
+        "bpw": 16.00417928087251,
+        "bytes": 269100288,
+        "embed_bytes": 56623104,
+        "high_precision_share": 0.999738794945468,
+        "norm_bytes": 140544,
+        "output_bytes": 0,
+        "params": 134515008
+      },
+      "ppl_delta": 0,
+      "tier": "Near-lossless",
+      "variant": "BF16"
+    }
+  ],
+  "kv_8k": 188743680,
+  "params": 134515008,
+  "row_widths": {
+    "not_256_aligned": [
+      576
+    ]
+  },
+  "source_bytes": 269030016
+}

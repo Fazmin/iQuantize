@@ -1,0 +1,1352 @@
+[
+  {
+    "created_at": 1793212438803,
+    "error": null,
+    "finished_at": 1793212710002,
+    "format": "onnx",
+    "id": "835c089493df4de4887ab19e377c66bd",
+    "kind": "quantize",
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "params": {
+      "recipe": {
+        "eval": {
+          "chunks": 20,
+          "ctx": 512,
+          "kld": true,
+          "ppl": true,
+          "speed": false
+        },
+        "format": "onnx",
+        "onnx": {
+          "engine": "builder",
+          "optimum_mode": null,
+          "per_channel": false,
+          "reduce_range": false,
+          "variants": [
+            {
+              "accuracy_level": 4,
+              "algo": "k_quant",
+              "block_size": 32,
+              "ep": "cpu",
+              "head_int8": true,
+              "is_symmetric": true,
+              "precision": "int4"
+            }
+          ]
+        }
+      }
+    },
+    "progress": 1,
+    "result": {
+      "artifacts": [
+        {
+          "eval": {
+            "approximation": "top-k + tail bucket, k=64",
+            "chunks": 20,
+            "ctx": 512,
+            "delta_p_mean": 0.1013615671072624,
+            "eval_seconds": 7.393,
+            "kld_max": 5.10724290279147,
+            "kld_mean": 0.1701973803793925,
+            "kld_median": 0.11939105665679678,
+            "kld_p99": 0.9795916159419564,
+            "kld_stderr": 0.003089916928239541,
+            "positions": 5100,
+            "ppl": 25.914736250217608,
+            "ppl_stderr": 1.090718948355807,
+            "ref_ppl": 20.71161233670165,
+            "t": "result",
+            "tokens": 18186,
+            "top1_agreement": 0.74
+          },
+          "id": "06009c4214314b16862959d8050bc073",
+          "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/onnx/SmolLM2-135M-Instruct-ONNX-int4-cpu-b32-k_quant-head8",
+          "variant": "int4-cpu-b32-k_quant-head8"
+        }
+      ]
+    },
+    "stage": "finalize",
+    "stages": [
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212690966,
+        "idx": 0,
+        "key": "build:int4-cpu-b32-k_quant-head8",
+        "label": "Build int4-cpu-b32-k_quant-head8",
+        "started_at": 1793212438806,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212693019,
+        "idx": 1,
+        "key": "build:reference",
+        "label": "Build full-precision reference",
+        "started_at": 1793212690967,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Saving reference",
+        "finished_at": 1793212697828,
+        "idx": 2,
+        "key": "eval:reference",
+        "label": "Measure the original",
+        "started_at": 1793212693020,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Computing KL divergence",
+        "finished_at": 1793212709996,
+        "idx": 3,
+        "key": "eval:int4-cpu-b32-k_quant-head8",
+        "label": "Evaluate int4-cpu-b32-k_quant-head8",
+        "started_at": 1793212697829,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212710001,
+        "idx": 4,
+        "key": "finalize",
+        "label": "Register outputs",
+        "started_at": 1793212710000,
+        "status": "done"
+      }
+    ],
+    "started_at": 1793212438805,
+    "status": "done",
+    "title": "ONNX · SmolLM2-135M-Instruct · int4-cpu-b32-k_quant-head8"
+  },
+  {
+    "created_at": 1793212429577,
+    "error": null,
+    "finished_at": 1793212438792,
+    "format": "mlx",
+    "id": "d6e89451cf0e41f291b6da3bbf7780b0",
+    "kind": "quantize",
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "params": {
+      "recipe": {
+        "calibration": {
+          "column": null,
+          "config": null,
+          "dataset": null,
+          "path": null,
+          "source": "wikitext2-train",
+          "split": null
+        },
+        "eval": {
+          "chunks": 20,
+          "ctx": 512,
+          "kld": true,
+          "ppl": true,
+          "speed": false
+        },
+        "format": "mlx",
+        "mlx": {
+          "method": "convert",
+          "num_samples": null,
+          "rules": [],
+          "sequence_length": null,
+          "target_bpw": null,
+          "trust_remote_code": false,
+          "variants": [
+            {
+              "bits": 4,
+              "dtype": null,
+              "group_size": 64,
+              "mode": "affine",
+              "recipe": null
+            },
+            {
+              "bits": 4,
+              "dtype": null,
+              "group_size": 32,
+              "mode": "mxfp4",
+              "recipe": null
+            }
+          ]
+        }
+      }
+    },
+    "progress": 1,
+    "result": {
+      "artifacts": [
+        {
+          "eval": {
+            "approximation": "top-k + tail bucket, k=64",
+            "chunks": 20,
+            "ctx": 512,
+            "delta_p_mean": 0.13536943225893985,
+            "eval_seconds": 0.826,
+            "kld_max": 7.441814128290466,
+            "kld_mean": 0.28681352090324974,
+            "kld_median": 0.22433375761797797,
+            "kld_p99": 1.4284686307172758,
+            "kld_stderr": 0.004374299363594571,
+            "positions": 5100,
+            "ppl": 29.324882830264443,
+            "ppl_stderr": 1.2739479983287914,
+            "ref_ppl": 20.73809488489108,
+            "t": "result",
+            "tokens": 18186,
+            "top1_agreement": 0.6513725490196078
+          },
+          "id": "df227b9a8ea6456db6ff49744659000e",
+          "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/mlx/SmolLM2-135M-Instruct-MLX-4bit-gs64",
+          "variant": "4bit-gs64"
+        },
+        {
+          "eval": {
+            "approximation": "top-k + tail bucket, k=64",
+            "chunks": 20,
+            "ctx": 512,
+            "delta_p_mean": 0.19661964087140948,
+            "eval_seconds": 1.014,
+            "kld_max": 7.544412827730147,
+            "kld_mean": 0.642507572437884,
+            "kld_median": 0.4808721903460785,
+            "kld_p99": 3.193540018028154,
+            "kld_stderr": 0.008824965734252222,
+            "positions": 5100,
+            "ppl": 45.186308086080494,
+            "ppl_stderr": 1.9772073427728036,
+            "ref_ppl": 20.73809488489108,
+            "t": "result",
+            "tokens": 18186,
+            "top1_agreement": 0.5311764705882352
+          },
+          "id": "f2da474f75d0486787c379cfc41cd152",
+          "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/mlx/SmolLM2-135M-Instruct-MLX-mxfp4",
+          "variant": "mxfp4"
+        }
+      ],
+      "reference_id": "42ecadabc4894a9289d522baf64959d9"
+    },
+    "stage": "finalize",
+    "stages": [
+      {
+        "cached": false,
+        "detail": "Writing MLX model",
+        "finished_at": 1793212430682,
+        "idx": 0,
+        "key": "quantize:4bit-gs64",
+        "label": "Quantize 4bit-gs64",
+        "started_at": 1793212429578,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Writing MLX model",
+        "finished_at": 1793212431463,
+        "idx": 1,
+        "key": "quantize:mxfp4",
+        "label": "Quantize mxfp4",
+        "started_at": 1793212430682,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Saving reference",
+        "finished_at": 1793212435207,
+        "idx": 2,
+        "key": "eval:reference",
+        "label": "Measure the original",
+        "started_at": 1793212431464,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Computing KL divergence",
+        "finished_at": 1793212436837,
+        "idx": 3,
+        "key": "eval:4bit-gs64",
+        "label": "Evaluate 4bit-gs64",
+        "started_at": 1793212435208,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Computing KL divergence",
+        "finished_at": 1793212438557,
+        "idx": 4,
+        "key": "eval:mxfp4",
+        "label": "Evaluate mxfp4",
+        "started_at": 1793212436839,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212438790,
+        "idx": 5,
+        "key": "finalize",
+        "label": "Index outputs",
+        "started_at": 1793212438558,
+        "status": "done"
+      }
+    ],
+    "started_at": 1793212429578,
+    "status": "done",
+    "title": "MLX · SmolLM2-135M-Instruct · 4bit-gs64, mxfp4"
+  },
+  {
+    "created_at": 1793212374521,
+    "error": null,
+    "finished_at": 1793212429575,
+    "format": "gguf",
+    "id": "cc6db66aa70e4cab98a7326e0356fdd5",
+    "kind": "quantize",
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "params": {
+      "forced_imatrix": [],
+      "recipe": {
+        "calibration": {
+          "column": null,
+          "config": null,
+          "dataset": null,
+          "path": null,
+          "source": "wikitext2-train",
+          "split": null
+        },
+        "eval": {
+          "chunks": 20,
+          "ctx": 512,
+          "kld": true,
+          "ppl": true,
+          "speed": false
+        },
+        "format": "gguf",
+        "gguf": {
+          "base": "auto",
+          "imatrix": {
+            "chunks": 32,
+            "ctx": 512,
+            "enabled": true
+          },
+          "keep_split": false,
+          "leave_output_tensor": false,
+          "output_tensor_type": null,
+          "pure": false,
+          "split_max_size_gb": 48,
+          "tensor_types": [],
+          "token_embedding_type": null,
+          "types": [
+            "Q4_K_M",
+            "IQ3_M",
+            "Q8_0"
+          ],
+          "use_temp_file": false
+        }
+      }
+    },
+    "progress": 1,
+    "result": {
+      "artifacts": [
+        {
+          "eval": {
+            "delta_p_mean": -0.0088,
+            "kld_max": 2.458782,
+            "kld_mean": 0.036876,
+            "kld_median": 0.025913,
+            "kld_p99": 0.227872,
+            "ppl": 21.423611,
+            "ppl_base": 20.681758,
+            "ppl_err": 0.893691,
+            "ppl_ratio": 1.03587,
+            "rms_delta_p": 0.04569,
+            "top1": 0.88157
+          },
+          "id": "7e397317a6f94e06bb3f9e47c3523d5e",
+          "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q4_K_M.gguf",
+          "summary": {
+            "fallback_tensors": 180,
+            "model_mib": 256.63,
+            "quant_bpw": 6.17,
+            "quant_mib": 98.87,
+            "seconds": 0.36681425,
+            "types": {
+              "F32": 35136,
+              "Q4_K": 14155776,
+              "Q5_0": 78077952,
+              "Q6_K": 12386304,
+              "Q8_0": 1548288
+            }
+          },
+          "variant": "Q4_K_M"
+        },
+        {
+          "eval": {
+            "delta_p_mean": -0.02029,
+            "kld_max": 3.809521,
+            "kld_mean": 0.117683,
+            "kld_median": 0.084195,
+            "kld_p99": 0.679728,
+            "ppl": 23.159918,
+            "ppl_base": 20.681758,
+            "ppl_err": 0.97831,
+            "ppl_ratio": 1.119823,
+            "rms_delta_p": 0.08510999999999999,
+            "top1": 0.7951
+          },
+          "id": "60d88adad6344bf295621fe3a048fbf9",
+          "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-IQ3_M.gguf",
+          "summary": {
+            "fallback_tensors": 180,
+            "model_mib": 256.63,
+            "quant_bpw": 5.26,
+            "quant_mib": 84.33,
+            "seconds": 1.174890917,
+            "types": {
+              "F32": 35136,
+              "IQ3_S": 23887872,
+              "IQ4_NL": 66355200,
+              "Q4_K": 2654208,
+              "Q5_0": 13271040
+            }
+          },
+          "variant": "IQ3_M"
+        },
+        {
+          "eval": {
+            "delta_p_mean": -0.00101,
+            "kld_max": 0.020982,
+            "kld_mean": 0.001452,
+            "kld_median": 0.001167,
+            "kld_p99": 0.007475,
+            "ppl": 20.779052,
+            "ppl_base": 20.681758,
+            "ppl_err": 0.875655,
+            "ppl_ratio": 1.004704,
+            "rms_delta_p": 0.00928,
+            "top1": 0.97255
+          },
+          "id": "05a3a22d6efb4a6682a5335fc61f260a",
+          "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q8_0.gguf",
+          "summary": {
+            "fallback_tensors": 0,
+            "model_mib": 256.63,
+            "quant_bpw": 8.51,
+            "quant_mib": 136.4,
+            "seconds": 0.19025425,
+            "types": {
+              "F32": 35136,
+              "Q8_0": 106168320
+            }
+          },
+          "variant": "Q8_0"
+        }
+      ],
+      "imatrix": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/cache/gguf/imatrix-290b97930c659438.gguf",
+      "reference_id": "829a0350693b4e6cb044a938ed2905fb"
+    },
+    "stage": "finalize",
+    "stages": [
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212378571,
+        "idx": 0,
+        "key": "convert",
+        "label": "Convert to GGUF",
+        "started_at": 1793212374522,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Writing text file",
+        "finished_at": 1793212381629,
+        "idx": 1,
+        "key": "calibration",
+        "label": "Prepare calibration text",
+        "started_at": 1793212378571,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212384333,
+        "idx": 2,
+        "key": "imatrix",
+        "label": "Compute importance matrix",
+        "started_at": 1793212381629,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212384701,
+        "idx": 3,
+        "key": "quantize:Q4_K_M",
+        "label": "Quantize Q4_K_M",
+        "started_at": 1793212384333,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212385876,
+        "idx": 4,
+        "key": "quantize:IQ3_M",
+        "label": "Quantize IQ3_M",
+        "started_at": 1793212384701,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212386067,
+        "idx": 5,
+        "key": "quantize:Q8_0",
+        "label": "Quantize Q8_0",
+        "started_at": 1793212385876,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Writing text file",
+        "finished_at": 1793212389645,
+        "idx": 6,
+        "key": "eval:reference",
+        "label": "Measure the original",
+        "started_at": 1793212386068,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212390559,
+        "idx": 7,
+        "key": "eval:Q4_K_M",
+        "label": "Evaluate Q4_K_M",
+        "started_at": 1793212389645,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212391584,
+        "idx": 8,
+        "key": "eval:IQ3_M",
+        "label": "Evaluate IQ3_M",
+        "started_at": 1793212390560,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212392525,
+        "idx": 9,
+        "key": "eval:Q8_0",
+        "label": "Evaluate Q8_0",
+        "started_at": 1793212391584,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212429574,
+        "idx": 10,
+        "key": "finalize",
+        "label": "Index and checksum outputs",
+        "started_at": 1793212392525,
+        "status": "done"
+      }
+    ],
+    "started_at": 1793212374521,
+    "status": "done",
+    "title": "GGUF · SmolLM2-135M-Instruct · Q4_K_M, IQ3_M, Q8_0"
+  },
+  {
+    "created_at": 1793212336779,
+    "error": null,
+    "finished_at": 1793212362410,
+    "format": null,
+    "id": "cb2ee781e1b74bec815a4a4404be0739",
+    "kind": "install",
+    "model_id": null,
+    "params": {
+      "components": [
+        "env_onnx"
+      ],
+      "variant": null
+    },
+    "progress": 1,
+    "result": {
+      "installed": [
+        "env_onnx"
+      ]
+    },
+    "stage": "onnx:probe",
+    "stages": [
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212337817,
+        "idx": 0,
+        "key": "onnx:venv",
+        "label": "Create onnx environment",
+        "started_at": 1793212336779,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793212351953,
+        "idx": 1,
+        "key": "onnx:packages",
+        "label": "Install packages",
+        "started_at": 1793212337817,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Probing onnx environment",
+        "finished_at": 1793212362410,
+        "idx": 2,
+        "key": "onnx:probe",
+        "label": "Probe capabilities",
+        "started_at": 1793212351953,
+        "status": "done"
+      }
+    ],
+    "started_at": 1793212336779,
+    "status": "done",
+    "title": "Install ONNX Runtime GenAI"
+  },
+  {
+    "created_at": 1793189995215,
+    "error": null,
+    "finished_at": 1793190004834,
+    "format": null,
+    "id": "41eeff46f0e648acbb4eed6c265084e9",
+    "kind": "download",
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "params": {
+      "repo_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": null
+    },
+    "progress": 1,
+    "result": {
+      "bytes": 272503171,
+      "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac"
+    },
+    "stage": "inspect",
+    "stages": [
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793189995358,
+        "idx": 0,
+        "key": "resolve",
+        "label": "Resolve files",
+        "started_at": 1793189995215,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793190004832,
+        "idx": 1,
+        "key": "download",
+        "label": "Download weights",
+        "started_at": 1793189995358,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793190004834,
+        "idx": 2,
+        "key": "inspect",
+        "label": "Inspect model",
+        "started_at": 1793190004832,
+        "status": "done"
+      }
+    ],
+    "started_at": 1793189995215,
+    "status": "done",
+    "title": "Download HuggingFaceTB/SmolLM2-135M-Instruct"
+  },
+  {
+    "created_at": 1793188905212,
+    "error": null,
+    "finished_at": 1793189279446,
+    "format": null,
+    "id": "1ac11c6cf6534622898c25544ffa1092",
+    "kind": "install",
+    "model_id": null,
+    "params": {
+      "components": [
+        "llama_cpp",
+        "env_gguf",
+        "env_mlx",
+        "env_onnx"
+      ],
+      "variant": null
+    },
+    "progress": 1,
+    "result": {
+      "installed": [
+        "llama_cpp",
+        "env_gguf",
+        "env_mlx",
+        "env_onnx"
+      ]
+    },
+    "stage": "onnx:probe",
+    "stages": [
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188909402,
+        "idx": 0,
+        "key": "llama:download",
+        "label": "Download llama.cpp binaries",
+        "started_at": 1793188905212,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188919697,
+        "idx": 1,
+        "key": "llama:source",
+        "label": "Fetch converter source",
+        "started_at": 1793188909403,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188920832,
+        "idx": 2,
+        "key": "llama:verify",
+        "label": "Verify and probe tools",
+        "started_at": 1793188919697,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188920878,
+        "idx": 3,
+        "key": "gguf:venv",
+        "label": "Create gguf environment",
+        "started_at": 1793188920832,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188949327,
+        "idx": 4,
+        "key": "gguf:packages",
+        "label": "Install packages",
+        "started_at": 1793188920879,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Probing gguf environment",
+        "finished_at": 1793188949571,
+        "idx": 5,
+        "key": "gguf:probe",
+        "label": "Probe capabilities",
+        "started_at": 1793188949328,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188949581,
+        "idx": 6,
+        "key": "mlx:venv",
+        "label": "Create mlx environment",
+        "started_at": 1793188949572,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793189259451,
+        "idx": 7,
+        "key": "mlx:packages",
+        "label": "Install packages",
+        "started_at": 1793188949582,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Probing mlx environment",
+        "finished_at": 1793189263441,
+        "idx": 8,
+        "key": "mlx:probe",
+        "label": "Probe capabilities",
+        "started_at": 1793189259451,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793189263451,
+        "idx": 9,
+        "key": "onnx:venv",
+        "label": "Create onnx environment",
+        "started_at": 1793189263441,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793189277295,
+        "idx": 10,
+        "key": "onnx:packages",
+        "label": "Install packages",
+        "started_at": 1793189263451,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Probing onnx environment",
+        "finished_at": 1793189279446,
+        "idx": 11,
+        "key": "onnx:probe",
+        "label": "Probe capabilities",
+        "started_at": 1793189277295,
+        "status": "done"
+      }
+    ],
+    "started_at": 1793188905212,
+    "status": "done",
+    "title": "Install 4 components"
+  },
+  {
+    "created_at": 1793188815453,
+    "error": "The llama.cpp tools component is not installed\n\nHint: Open Environment and install it with one click.",
+    "finished_at": 1793188831694,
+    "format": null,
+    "id": "31f6d2c03327487095d9798ab9db5099",
+    "kind": "install",
+    "model_id": null,
+    "params": {
+      "components": [
+        "llama_cpp",
+        "env_gguf",
+        "env_mlx",
+        "env_onnx"
+      ],
+      "variant": null
+    },
+    "progress": 0.21484375000000003,
+    "result": null,
+    "stage": "gguf:packages",
+    "stages": [
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188819482,
+        "idx": 0,
+        "key": "llama:download",
+        "label": "Download llama.cpp binaries",
+        "started_at": 1793188815454,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188830520,
+        "idx": 1,
+        "key": "llama:source",
+        "label": "Fetch converter source",
+        "started_at": 1793188819482,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188831646,
+        "idx": 2,
+        "key": "llama:verify",
+        "label": "Verify and probe tools",
+        "started_at": 1793188830520,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188831693,
+        "idx": 3,
+        "key": "gguf:venv",
+        "label": "Create gguf environment",
+        "started_at": 1793188831646,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188831694,
+        "idx": 4,
+        "key": "gguf:packages",
+        "label": "Install packages",
+        "started_at": 1793188831693,
+        "status": "failed"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 5,
+        "key": "gguf:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 6,
+        "key": "mlx:venv",
+        "label": "Create mlx environment",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 7,
+        "key": "mlx:packages",
+        "label": "Install packages",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 8,
+        "key": "mlx:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 9,
+        "key": "onnx:venv",
+        "label": "Create onnx environment",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 10,
+        "key": "onnx:packages",
+        "label": "Install packages",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 11,
+        "key": "onnx:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "skipped"
+      }
+    ],
+    "started_at": 1793188815454,
+    "status": "failed",
+    "title": "Install 4 components"
+  },
+  {
+    "created_at": 1793188805082,
+    "error": "Interrupted: the app was closed while this job was running.",
+    "finished_at": 1793188812756,
+    "format": null,
+    "id": "65fad4f5f40e40fbb37b61f1e5ea0352",
+    "kind": "install",
+    "model_id": null,
+    "params": {
+      "components": [
+        "llama_cpp",
+        "env_core",
+        "env_gguf",
+        "env_mlx",
+        "env_onnx"
+      ],
+      "variant": null
+    },
+    "progress": 0.09287925696594428,
+    "result": null,
+    "stage": "llama:source",
+    "stages": [
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188808189,
+        "idx": 0,
+        "key": "llama:download",
+        "label": "Download llama.cpp binaries",
+        "started_at": 1793188805838,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 1,
+        "key": "llama:source",
+        "label": "Fetch converter source",
+        "started_at": 1793188808189,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 2,
+        "key": "llama:verify",
+        "label": "Verify and probe tools",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 3,
+        "key": "core:venv",
+        "label": "Create core environment",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 4,
+        "key": "core:packages",
+        "label": "Install packages",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 5,
+        "key": "core:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 6,
+        "key": "gguf:venv",
+        "label": "Create gguf environment",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 7,
+        "key": "gguf:packages",
+        "label": "Install packages",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 8,
+        "key": "gguf:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 9,
+        "key": "mlx:venv",
+        "label": "Create mlx environment",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 10,
+        "key": "mlx:packages",
+        "label": "Install packages",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 11,
+        "key": "mlx:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 12,
+        "key": "onnx:venv",
+        "label": "Create onnx environment",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 13,
+        "key": "onnx:packages",
+        "label": "Install packages",
+        "started_at": null,
+        "status": "cancelled"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 14,
+        "key": "onnx:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "cancelled"
+      }
+    ],
+    "started_at": 1793188805838,
+    "status": "failed",
+    "title": "Install 5 components"
+  },
+  {
+    "created_at": 1793188773671,
+    "error": "The llama.cpp tools component is not installed\n\nHint: Open Environment and install it with one click.",
+    "finished_at": 1793188805838,
+    "format": null,
+    "id": "1049f6c83cc54c4d8a0255756b18e71b",
+    "kind": "install",
+    "model_id": null,
+    "params": {
+      "components": [
+        "uv",
+        "python",
+        "llama_cpp",
+        "env_core",
+        "env_gguf",
+        "env_mlx",
+        "env_onnx"
+      ],
+      "variant": null
+    },
+    "progress": 0.4192634560906516,
+    "result": null,
+    "stage": "gguf:packages",
+    "stages": [
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188778070,
+        "idx": 0,
+        "key": "uv:download",
+        "label": "Download uv",
+        "started_at": 1793188773673,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188779090,
+        "idx": 1,
+        "key": "python:install",
+        "label": "Install Python 3.12",
+        "started_at": 1793188778070,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188782095,
+        "idx": 2,
+        "key": "llama:download",
+        "label": "Download llama.cpp binaries",
+        "started_at": 1793188779091,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188792185,
+        "idx": 3,
+        "key": "llama:source",
+        "label": "Fetch converter source",
+        "started_at": 1793188782096,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188797134,
+        "idx": 4,
+        "key": "llama:verify",
+        "label": "Verify and probe tools",
+        "started_at": 1793188792186,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188797146,
+        "idx": 5,
+        "key": "core:venv",
+        "label": "Create core environment",
+        "started_at": 1793188797134,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188805622,
+        "idx": 6,
+        "key": "core:packages",
+        "label": "Install packages",
+        "started_at": 1793188797146,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": "Probing core environment",
+        "finished_at": 1793188805828,
+        "idx": 7,
+        "key": "core:probe",
+        "label": "Probe capabilities",
+        "started_at": 1793188805623,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188805837,
+        "idx": 8,
+        "key": "gguf:venv",
+        "label": "Create gguf environment",
+        "started_at": 1793188805828,
+        "status": "done"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": 1793188805838,
+        "idx": 9,
+        "key": "gguf:packages",
+        "label": "Install packages",
+        "started_at": 1793188805837,
+        "status": "failed"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 10,
+        "key": "gguf:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 11,
+        "key": "mlx:venv",
+        "label": "Create mlx environment",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 12,
+        "key": "mlx:packages",
+        "label": "Install packages",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 13,
+        "key": "mlx:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 14,
+        "key": "onnx:venv",
+        "label": "Create onnx environment",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 15,
+        "key": "onnx:packages",
+        "label": "Install packages",
+        "started_at": null,
+        "status": "skipped"
+      },
+      {
+        "cached": false,
+        "detail": null,
+        "finished_at": null,
+        "idx": 16,
+        "key": "onnx:probe",
+        "label": "Probe capabilities",
+        "started_at": null,
+        "status": "skipped"
+      }
+    ],
+    "started_at": 1793188773672,
+    "status": "failed",
+    "title": "Install 7 components"
+  }
+]

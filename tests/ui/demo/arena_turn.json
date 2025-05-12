@@ -1,0 +1,25 @@
+{
+  "a": "7e397317a6f94e06bb3f9e47c3523d5e",
+  "b": "829a0350693b4e6cb044a938ed2905fb",
+  "prompt": "What is the capital of France? Answer in one sentence.",
+  "a_output": "The capital of France is Paris.",
+  "b_output": "The capital of France is Paris.",
+  "a_metrics": {
+    "finish_reason": "stop",
+    "prompt_tok_per_s": 211.74050696727096,
+    "prompt_tokens": 42,
+    "tok_per_s": 365.9174072138003,
+    "tokens": 8,
+    "total_ms": 219.28029099999998,
+    "ttft_ms": 200.172291
+  },
+  "b_metrics": {
+    "finish_reason": "stop",
+    "prompt_tok_per_s": 84.29029577866172,
+    "prompt_tokens": 42,
+    "tok_per_s": 45.65584623110989,
+    "tokens": 8,
+    "total_ms": 708.064333,
+    "ttft_ms": 576.4895829999999
+  }
+}

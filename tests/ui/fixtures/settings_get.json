@@ -1,0 +1,17 @@
+{
+  "accelerator": "auto",
+  "ai_base_url": "https://api.openai.com/v1",
+  "ai_default_model": "gpt-5.6-terra",
+  "ai_effort": "medium",
+  "concurrency": "1",
+  "hf_username": "",
+  "inspector_open": "false",
+  "keep_intermediates": "true",
+  "notifications": "true",
+  "onboarded": "",
+  "quantized_by": "",
+  "sidebar_collapsed": "false",
+  "theme": "system",
+  "threads": "0",
+  "workspace": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace"
+}

@@ -1,0 +1,365 @@
+{
+  "artifact_ids": [
+    "7e397317a6f94e06bb3f9e47c3523d5e",
+    "05a3a22d6efb4a6682a5335fc61f260a",
+    "60d88adad6344bf295621fe3a048fbf9"
+  ],
+  "created_at": 1793219265002,
+  "id": "b97ac634c9f34783b9a7782ad75f27ec",
+  "markdown": "---\nbase_model: HuggingFaceTB/SmolLM2-135M-Instruct\nbase_model_relation: quantized\nlicense: apache-2.0\npipeline_tag: text-generation\ntags:\n  - quantized\n  - iquantize\n  - gguf\n  - llama-cpp\n  - imatrix\n---\n\n# SmolLM2-135M-Instruct · GGUF\n\nQuantized versions of [HuggingFaceTB/SmolLM2-135M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct) (135M parameters, LlamaForCausalLM). Produced with iQuantize 0.1.0 and measured against the original model in the same runtime.\n\n## Files\n\n| Format | Variant | Size | Bits/weight | Perplexity | KL divergence | Same top token | Use when |\n|---|---|---:|---:|---:|---:|---:|---|\n| GGUF | BF16 (original) | 270.9 MB | 16 | 20.712 | 0 | 100% | Reference |\n| GGUF | `Q4_K_M` | 105.5 MB | 6.27 | 21.424 | 0.0369 | 88.2% | Best balance for most people |\n| GGUF | `Q8_0` | 144.8 MB | 8.61 | 20.779 | 0.0015 | 97.3% | Near-original quality; plenty of memory |\n| GGUF | `IQ3_M` | 90.2 MB | 5.37 | 23.160 | 0.1177 | 79.5% | Tight memory; some quality loss |\n\nLower perplexity and KL divergence are better; \"same top token\" is how often the quantized model's most likely next token matches the original's.\n\n## How these files were made\n\n1. **GGUF (llama.cpp b11935)**: the original safetensors were converted to a full-precision GGUF with `convert_hf_to_gguf.py`, then quantized with `llama-quantize`.\n   An importance matrix was computed with `llama-imatrix` on WikiText-2 (train split) (32 chunks × 512 tokens) so the most important weights keep more precision.\n   Some tensors have rows that are not a multiple of 256, so llama.cpp stored them with a 32-wide block type; that is why bits per weight are higher than the type names suggest.\n2. **Evaluation**: perplexity and KL divergence were measured on WikiText-2 (test split) (20 chunks × 512 tokens) against the original model in the same runtime.\n\n## Usage\n\n**llama.cpp**\n\n```bash\nllama-cli -hf <your-username>/<repo-name>:Q4_K_M -p \"Hello\"\n# or serve an OpenAI-compatible API\nllama-server -hf <your-username>/<repo-name>:Q4_K_M\n```\n\n**Ollama**\n\n```bash\nollama run hf.co/<your-username>/<repo-name>:Q4_K_M\n```\n\n**LM Studio**: search for `<your-username>/<repo-name>` in the model browser.\n\n## Hardware used\n\nApple M4 Pro · macos · 25.8 GB RAM · accelerators: metal, cpu.\n\n## Limitations\n\nQuantization reduces precision, so outputs can differ from the original model, especially at lower bit widths and on small models. All limitations, biases and license terms of the original model apply.\n\n## Reproduce\n\n<details><summary>Exact commands</summary>\n\n```bash\n'<app>/envs/gguf/bin/python' -u '<app>/tools/llama.cpp/src/convert_hf_to_gguf.py' '<workspace>/models/HuggingFaceTB__SmolLM2-135M-Instruct' --outfile '<workspace>/cache/gguf/061978f2b9afc59a/convert.tmp.gguf' --outtype auto\n'<app>/envs/core/bin/python' -u -I -X utf8 '<app>/drivers/calib_fetch.py' '{\"max_chars\":102575,\"out_path\":\"<workspace>/calibration/wikitext2-train-102575.txt\",\"preset\":\"wikitext2-train\"}'\n'<app>/tools/llama.cpp/bin/llama-imatrix' -m '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' -f '<workspace>/calibration/wikitext2-train-102575.txt' -o '<workspace>/cache/gguf/imatrix-290b97930c659438.gguf' --chunks 32 -c 512 -ngl 99\n'<app>/tools/llama.cpp/bin/llama-quantize' --imatrix '<workspace>/cache/gguf/imatrix-290b97930c659438.gguf' '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q4_K_M.gguf' Q4_K_M\n'<app>/tools/llama.cpp/bin/llama-quantize' --imatrix '<workspace>/cache/gguf/imatrix-290b97930c659438.gguf' '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-IQ3_M.gguf' IQ3_M\n'<app>/tools/llama.cpp/bin/llama-quantize' --imatrix '<workspace>/cache/gguf/imatrix-290b97930c659438.gguf' '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q8_0.gguf' Q8_0\n'<app>/envs/core/bin/python' -u -I -X utf8 '<app>/drivers/calib_fetch.py' '{\"max_chars\":71609,\"out_path\":\"<workspace>/calibration/wikitext2-test-71609.txt\",\"preset\":\"wikitext2-test\"}'\n'<app>/tools/llama.cpp/bin/llama-perplexity' -m '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' --chunks 20 -c 512 -ngl 99 -f '<workspace>/calibration/wikitext2-test-71609.txt' --kl-divergence-base '<workspace>/cache/gguf/061978f2b9afc59a/kld-7c416e92af5ce916.bin'\n'<app>/tools/llama.cpp/bin/llama-perplexity' -m '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q4_K_M.gguf' --chunks 20 -c 512 -ngl 99 --kl-divergence-base '<workspace>/cache/gguf/061978f2b9afc59a/kld-7c416e92af5ce916.bin' --kl-divergence\n'<app>/tools/llama.cpp/bin/llama-perplexity' -m '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-IQ3_M.gguf' --chunks 20 -c 512 -ngl 99 --kl-divergence-base '<workspace>/cache/gguf/061978f2b9afc59a/kld-7c416e92af5ce916.bin' --kl-divergence\n'<app>/tools/llama.cpp/bin/llama-perplexity' -m '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q8_0.gguf' --chunks 20 -c 512 -ngl 99 --kl-divergence-base '<workspace>/cache/gguf/061978f2b9afc59a/kld-7c416e92af5ce916.bin' --kl-divergence\n```\n\n</details>\n\n## License\n\nSame as the original model (apache-2.0).\n",
+  "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+  "provenance": {
+    "app": {
+      "name": "iQuantize",
+      "version": "0.1.0"
+    },
+    "commands": [
+      "'<app>/envs/gguf/bin/python' -u '<app>/tools/llama.cpp/src/convert_hf_to_gguf.py' '<workspace>/models/HuggingFaceTB__SmolLM2-135M-Instruct' --outfile '<workspace>/cache/gguf/061978f2b9afc59a/convert.tmp.gguf' --outtype auto",
+      "'<app>/envs/core/bin/python' -u -I -X utf8 '<app>/drivers/calib_fetch.py' '{\"max_chars\":102575,\"out_path\":\"<workspace>/calibration/wikitext2-train-102575.txt\",\"preset\":\"wikitext2-train\"}'",
+      "'<app>/tools/llama.cpp/bin/llama-imatrix' -m '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' -f '<workspace>/calibration/wikitext2-train-102575.txt' -o '<workspace>/cache/gguf/imatrix-290b97930c659438.gguf' --chunks 32 -c 512 -ngl 99",
+      "'<app>/tools/llama.cpp/bin/llama-quantize' --imatrix '<workspace>/cache/gguf/imatrix-290b97930c659438.gguf' '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q4_K_M.gguf' Q4_K_M",
+      "'<app>/tools/llama.cpp/bin/llama-quantize' --imatrix '<workspace>/cache/gguf/imatrix-290b97930c659438.gguf' '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-IQ3_M.gguf' IQ3_M",
+      "'<app>/tools/llama.cpp/bin/llama-quantize' --imatrix '<workspace>/cache/gguf/imatrix-290b97930c659438.gguf' '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q8_0.gguf' Q8_0",
+      "'<app>/envs/core/bin/python' -u -I -X utf8 '<app>/drivers/calib_fetch.py' '{\"max_chars\":71609,\"out_path\":\"<workspace>/calibration/wikitext2-test-71609.txt\",\"preset\":\"wikitext2-test\"}'",
+      "'<app>/tools/llama.cpp/bin/llama-perplexity' -m '<workspace>/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf' --chunks 20 -c 512 -ngl 99 -f '<workspace>/calibration/wikitext2-test-71609.txt' --kl-divergence-base '<workspace>/cache/gguf/061978f2b9afc59a/kld-7c416e92af5ce916.bin'",
+      "'<app>/tools/llama.cpp/bin/llama-perplexity' -m '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q4_K_M.gguf' --chunks 20 -c 512 -ngl 99 --kl-divergence-base '<workspace>/cache/gguf/061978f2b9afc59a/kld-7c416e92af5ce916.bin' --kl-divergence",
+      "'<app>/tools/llama.cpp/bin/llama-perplexity' -m '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-IQ3_M.gguf' --chunks 20 -c 512 -ngl 99 --kl-divergence-base '<workspace>/cache/gguf/061978f2b9afc59a/kld-7c416e92af5ce916.bin' --kl-divergence",
+      "'<app>/tools/llama.cpp/bin/llama-perplexity' -m '<workspace>/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q8_0.gguf' --chunks 20 -c 512 -ngl 99 --kl-divergence-base '<workspace>/cache/gguf/061978f2b9afc59a/kld-7c416e92af5ce916.bin' --kl-divergence"
+    ],
+    "evaluation": {
+      "chunks": 20,
+      "dataset": "WikiText-2 (test split)",
+      "kld_method": "full distribution (llama-perplexity)",
+      "tokens_per_chunk": 512
+    },
+    "generated_at": 1793219265001,
+    "hardware": {
+      "accelerators": [
+        "metal",
+        "cpu"
+      ],
+      "arch": "aarch64",
+      "cpu": "Apple M4 Pro",
+      "os": "macos",
+      "ram_bytes": 25769803776
+    },
+    "model": {
+      "architecture": "LlamaForCausalLM",
+      "context_length": 8192,
+      "dtype": "BF16",
+      "experts": null,
+      "gated": false,
+      "hidden_size": 576,
+      "layers": 30,
+      "license": "apache-2.0",
+      "license_name": null,
+      "model_type": "llama",
+      "name": "SmolLM2-135M-Instruct",
+      "parameters": 134515008,
+      "repo_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "tied_embeddings": true,
+      "vocab_size": 49152
+    },
+    "outputs": [
+      {
+        "bits_per_weight": 6.27,
+        "engine": null,
+        "fallback_tensors": 180,
+        "files": [
+          {
+            "bytes": 105455008,
+            "name": "SmolLM2-135M-Instruct-Q4_K_M.gguf"
+          }
+        ],
+        "format": "gguf",
+        "id": "7e397317a6f94e06bb3f9e47c3523d5e",
+        "imatrix": {
+          "calibration": {
+            "chars": 102575,
+            "description": "WikiText-2 (train split)",
+            "rows": 452,
+            "sha256": "f657c9f00da0a1a5afe93d26792bae7899188b344a7da7cf12b20cb981d0be62",
+            "source": "wikitext2-train"
+          },
+          "chunks": 32,
+          "ctx": 512
+        },
+        "method": null,
+        "metrics": {
+          "delta_p_mean": -0.0088,
+          "kld_max": 2.458782,
+          "kld_mean": 0.036876,
+          "kld_median": 0.025913,
+          "kld_p99": 0.227872,
+          "pp_tok_s": 17712.020153,
+          "ppl": 21.423611,
+          "ppl_base": 20.681758,
+          "ppl_err": 0.893691,
+          "ppl_ratio": 1.03587,
+          "reference_id": "829a0350693b4e6cb044a938ed2905fb",
+          "rms_delta_p": 0.04569,
+          "suite_exact": 0.16666666666666666,
+          "suite_rouge_l": 0.08455882352941176,
+          "suite_tok_s": 419.02224283499726,
+          "tg_tok_s": 437.387162,
+          "top1": 0.88157
+        },
+        "recipe": {
+          "base": "auto",
+          "imatrix": {
+            "chunks": 32,
+            "ctx": 512,
+            "enabled": true
+          },
+          "keep_split": false,
+          "leave_output_tensor": false,
+          "output_tensor_type": null,
+          "pure": false,
+          "split_max_size_gb": 48,
+          "tensor_types": [],
+          "token_embedding_type": null,
+          "types": [
+            "Q4_K_M",
+            "IQ3_M",
+            "Q8_0"
+          ],
+          "use_temp_file": false
+        },
+        "role": "quantized",
+        "sha256": "de9740e21bbefccd283db454e4089bda9117211a62cb1517e92a900e87d9076c",
+        "size_bytes": 105455008,
+        "tensor_types": [
+          {
+            "bits": 5.5,
+            "share": 0.5804404516706418,
+            "type": "Q5_0"
+          },
+          {
+            "bits": 8.5,
+            "share": 0.22198147585137865,
+            "type": "Q8_0"
+          },
+          {
+            "bits": 4.5,
+            "share": 0.10523566262583876,
+            "type": "Q4_K"
+          },
+          {
+            "bits": 6.5625,
+            "share": 0.09208120479760892,
+            "type": "Q6_K"
+          },
+          {
+            "bits": 32,
+            "share": 0.0002612050545319077,
+            "type": "F32"
+          }
+        ],
+        "variant": "Q4_K_M"
+      },
+      {
+        "bits_per_weight": 8.61,
+        "engine": null,
+        "fallback_tensors": 0,
+        "files": [
+          {
+            "bytes": 144811936,
+            "name": "SmolLM2-135M-Instruct-Q8_0.gguf"
+          }
+        ],
+        "format": "gguf",
+        "id": "05a3a22d6efb4a6682a5335fc61f260a",
+        "imatrix": {
+          "calibration": {
+            "chars": 102575,
+            "description": "WikiText-2 (train split)",
+            "rows": 452,
+            "sha256": "f657c9f00da0a1a5afe93d26792bae7899188b344a7da7cf12b20cb981d0be62",
+            "source": "wikitext2-train"
+          },
+          "chunks": 32,
+          "ctx": 512
+        },
+        "method": null,
+        "metrics": {
+          "delta_p_mean": -0.00101,
+          "kld_max": 0.020982,
+          "kld_mean": 0.001452,
+          "kld_median": 0.001167,
+          "kld_p99": 0.007475,
+          "ppl": 20.779052,
+          "ppl_base": 20.681758,
+          "ppl_err": 0.875655,
+          "ppl_ratio": 1.004704,
+          "reference_id": "829a0350693b4e6cb044a938ed2905fb",
+          "rms_delta_p": 0.00928,
+          "top1": 0.97255
+        },
+        "recipe": {
+          "base": "auto",
+          "imatrix": {
+            "chunks": 32,
+            "ctx": 512,
+            "enabled": true
+          },
+          "keep_split": false,
+          "leave_output_tensor": false,
+          "output_tensor_type": null,
+          "pure": false,
+          "split_max_size_gb": 48,
+          "tensor_types": [],
+          "token_embedding_type": null,
+          "types": [
+            "Q4_K_M",
+            "IQ3_M",
+            "Q8_0"
+          ],
+          "use_temp_file": false
+        },
+        "role": "quantized",
+        "sha256": "6b5c14f18066739d21386faecb48ef47904239a1ccede455c125b3127751ed1c",
+        "size_bytes": 144811936,
+        "tensor_types": [
+          {
+            "bits": 8.5,
+            "share": 0.999738794945468,
+            "type": "Q8_0"
+          },
+          {
+            "bits": 32,
+            "share": 0.0002612050545319077,
+            "type": "F32"
+          }
+        ],
+        "variant": "Q8_0"
+      },
+      {
+        "bits_per_weight": 5.37,
+        "engine": null,
+        "fallback_tensors": 180,
+        "files": [
+          {
+            "bytes": 90214048,
+            "name": "SmolLM2-135M-Instruct-IQ3_M.gguf"
+          }
+        ],
+        "format": "gguf",
+        "id": "60d88adad6344bf295621fe3a048fbf9",
+        "imatrix": {
+          "calibration": {
+            "chars": 102575,
+            "description": "WikiText-2 (train split)",
+            "rows": 452,
+            "sha256": "f657c9f00da0a1a5afe93d26792bae7899188b344a7da7cf12b20cb981d0be62",
+            "source": "wikitext2-train"
+          },
+          "chunks": 32,
+          "ctx": 512
+        },
+        "method": null,
+        "metrics": {
+          "delta_p_mean": -0.02029,
+          "kld_max": 3.809521,
+          "kld_mean": 0.117683,
+          "kld_median": 0.084195,
+          "kld_p99": 0.679728,
+          "ppl": 23.159918,
+          "ppl_base": 20.681758,
+          "ppl_err": 0.97831,
+          "ppl_ratio": 1.119823,
+          "reference_id": "829a0350693b4e6cb044a938ed2905fb",
+          "rms_delta_p": 0.08510999999999999,
+          "top1": 0.7951
+        },
+        "recipe": {
+          "base": "auto",
+          "imatrix": {
+            "chunks": 32,
+            "ctx": 512,
+            "enabled": true
+          },
+          "keep_split": false,
+          "leave_output_tensor": false,
+          "output_tensor_type": null,
+          "pure": false,
+          "split_max_size_gb": 48,
+          "tensor_types": [],
+          "token_embedding_type": null,
+          "types": [
+            "Q4_K_M",
+            "IQ3_M",
+            "Q8_0"
+          ],
+          "use_temp_file": false
+        },
+        "role": "quantized",
+        "sha256": "1fdbc552486cffd78c9e6b73e07b3dbdd159f9d3634831b3857d466640035fc9",
+        "size_bytes": 90214048,
+        "tensor_types": [
+          {
+            "bits": 4.5,
+            "share": 0.4932921685586191,
+            "type": "IQ4_NL"
+          },
+          {
+            "bits": 8.5,
+            "share": 0.2104713252516775,
+            "type": "Q8_0"
+          },
+          {
+            "bits": 3.4375,
+            "share": 0.17758518068110288,
+            "type": "IQ3_S"
+          },
+          {
+            "bits": 5.5,
+            "share": 0.09865843371172382,
+            "type": "Q5_0"
+          },
+          {
+            "bits": 4.5,
+            "share": 0.019731686742344764,
+            "type": "Q4_K"
+          },
+          {
+            "bits": 32,
+            "share": 0.0002612050545319077,
+            "type": "F32"
+          }
+        ],
+        "variant": "IQ3_M"
+      }
+    ],
+    "quantized_by": "",
+    "references": [
+      {
+        "format": "gguf",
+        "metrics": {
+          "ppl": 20.7121,
+          "ppl_err": 0.87419,
+          "reference_id": "7e397317a6f94e06bb3f9e47c3523d5e",
+          "suite_agreement": 0.6594713125543041,
+          "suite_exact": 0.16666666666666666,
+          "suite_rouge_l": 0.08449074074074074,
+          "suite_tok_s": 365.8457919759142
+        },
+        "size_bytes": 270886432,
+        "variant": "BF16"
+      }
+    ],
+    "toolchain": {
+      "llama_cpp": "b11935",
+      "llama_cpp_backend": "metal",
+      "mlx": "0.32.4",
+      "mlx_lm": "0.32.2",
+      "onnxruntime": "1.31.1",
+      "onnxruntime_genai": "0.18.0",
+      "python": "3.12.16"
+    }
+  },
+  "repo_id": null,
+  "title": "SmolLM2-135M-Instruct · GGUF",
+  "updated_at": 1793219265002,
+  "versions": 1
+}

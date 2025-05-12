@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "estimate": {
+        "body_bytes": 59719680,
+        "bpw": 9.983012894210871,
+        "bytes": 203187456,
+        "embed_bytes": 113246208,
+        "high_precision_share": 0.34775103029874244,
+        "norm_bytes": 140544,
+        "output_bytes": 30081024,
+        "params": 162826560
+      },
+      "ppl_delta": 0.8897013067498725,
+      "tier": "Noticeable loss",
+      "variant": "int4-cpu-b32-k_quant-head8"
+    }
+  ],
+  "kv_8k": 188743680,
+  "params": 134515008,
+  "row_widths": {
+    "not_256_aligned": [
+      576
+    ]
+  },
+  "source_bytes": 269030016
+}

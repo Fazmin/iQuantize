@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use iQuantize in your research or publish models made with it, please cite it using the metadata below."
+type: software
+title: "iQuantize: A Desktop Workspace for Quantizing Large Language Models to GGUF, MLX and ONNX"
+abstract: >-
+  iQuantize is a cross-platform desktop application for quantizing large
+  language models to the GGUF, MLX and ONNX formats. It recommends
+  quantization settings for a target device, shows each tensor being
+  quantized, measures the result against the original model (perplexity,
+  KL divergence, top-1 agreement, prompt suites and speed), and generates
+  model cards whose numbers come from those measurements.
+authors:
+  - name: iQuantize contributors
+    website: "https://github.com/Fazmin/iQuantize/blob/main/CONTRIBUTORS.md"
+version: 0.2.22
+date-released: 2026-10-29
+license:
+  - MIT
+  - Apache-2.0
+repository-code: "https://github.com/Fazmin/iQuantize"
+url: "https://github.com/Fazmin/iQuantize"
+keywords:
+  - quantization
+  - large language models
+  - GGUF
+  - llama.cpp
+  - MLX
+  - ONNX Runtime
+  - model compression
+  - Hugging Face

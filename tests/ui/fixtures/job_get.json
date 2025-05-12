@@ -1,0 +1,267 @@
+{
+  "created_at": 1793212374521,
+  "error": null,
+  "finished_at": 1793212429575,
+  "format": "gguf",
+  "id": "cc6db66aa70e4cab98a7326e0356fdd5",
+  "kind": "quantize",
+  "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+  "params": {
+    "forced_imatrix": [],
+    "recipe": {
+      "calibration": {
+        "column": null,
+        "config": null,
+        "dataset": null,
+        "path": null,
+        "source": "wikitext2-train",
+        "split": null
+      },
+      "eval": {
+        "chunks": 20,
+        "ctx": 512,
+        "kld": true,
+        "ppl": true,
+        "speed": false
+      },
+      "format": "gguf",
+      "gguf": {
+        "base": "auto",
+        "imatrix": {
+          "chunks": 32,
+          "ctx": 512,
+          "enabled": true
+        },
+        "keep_split": false,
+        "leave_output_tensor": false,
+        "output_tensor_type": null,
+        "pure": false,
+        "split_max_size_gb": 48,
+        "tensor_types": [],
+        "token_embedding_type": null,
+        "types": [
+          "Q4_K_M",
+          "IQ3_M",
+          "Q8_0"
+        ],
+        "use_temp_file": false
+      }
+    }
+  },
+  "progress": 1,
+  "result": {
+    "artifacts": [
+      {
+        "eval": {
+          "delta_p_mean": -0.0088,
+          "kld_max": 2.458782,
+          "kld_mean": 0.036876,
+          "kld_median": 0.025913,
+          "kld_p99": 0.227872,
+          "ppl": 21.423611,
+          "ppl_base": 20.681758,
+          "ppl_err": 0.893691,
+          "ppl_ratio": 1.03587,
+          "rms_delta_p": 0.04569,
+          "top1": 0.88157
+        },
+        "id": "7e397317a6f94e06bb3f9e47c3523d5e",
+        "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q4_K_M.gguf",
+        "summary": {
+          "fallback_tensors": 180,
+          "model_mib": 256.63,
+          "quant_bpw": 6.17,
+          "quant_mib": 98.87,
+          "seconds": 0.36681425,
+          "types": {
+            "F32": 35136,
+            "Q4_K": 14155776,
+            "Q5_0": 78077952,
+            "Q6_K": 12386304,
+            "Q8_0": 1548288
+          }
+        },
+        "variant": "Q4_K_M"
+      },
+      {
+        "eval": {
+          "delta_p_mean": -0.02029,
+          "kld_max": 3.809521,
+          "kld_mean": 0.117683,
+          "kld_median": 0.084195,
+          "kld_p99": 0.679728,
+          "ppl": 23.159918,
+          "ppl_base": 20.681758,
+          "ppl_err": 0.97831,
+          "ppl_ratio": 1.119823,
+          "rms_delta_p": 0.08510999999999999,
+          "top1": 0.7951
+        },
+        "id": "60d88adad6344bf295621fe3a048fbf9",
+        "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-IQ3_M.gguf",
+        "summary": {
+          "fallback_tensors": 180,
+          "model_mib": 256.63,
+          "quant_bpw": 5.26,
+          "quant_mib": 84.33,
+          "seconds": 1.174890917,
+          "types": {
+            "F32": 35136,
+            "IQ3_S": 23887872,
+            "IQ4_NL": 66355200,
+            "Q4_K": 2654208,
+            "Q5_0": 13271040
+          }
+        },
+        "variant": "IQ3_M"
+      },
+      {
+        "eval": {
+          "delta_p_mean": -0.00101,
+          "kld_max": 0.020982,
+          "kld_mean": 0.001452,
+          "kld_median": 0.001167,
+          "kld_p99": 0.007475,
+          "ppl": 20.779052,
+          "ppl_base": 20.681758,
+          "ppl_err": 0.875655,
+          "ppl_ratio": 1.004704,
+          "rms_delta_p": 0.00928,
+          "top1": 0.97255
+        },
+        "id": "05a3a22d6efb4a6682a5335fc61f260a",
+        "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q8_0.gguf",
+        "summary": {
+          "fallback_tensors": 0,
+          "model_mib": 256.63,
+          "quant_bpw": 8.51,
+          "quant_mib": 136.4,
+          "seconds": 0.19025425,
+          "types": {
+            "F32": 35136,
+            "Q8_0": 106168320
+          }
+        },
+        "variant": "Q8_0"
+      }
+    ],
+    "imatrix": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/cache/gguf/imatrix-290b97930c659438.gguf",
+    "reference_id": "829a0350693b4e6cb044a938ed2905fb"
+  },
+  "stage": "finalize",
+  "stages": [
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212378571,
+      "idx": 0,
+      "key": "convert",
+      "label": "Convert to GGUF",
+      "started_at": 1793212374522,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": "Writing text file",
+      "finished_at": 1793212381629,
+      "idx": 1,
+      "key": "calibration",
+      "label": "Prepare calibration text",
+      "started_at": 1793212378571,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212384333,
+      "idx": 2,
+      "key": "imatrix",
+      "label": "Compute importance matrix",
+      "started_at": 1793212381629,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212384701,
+      "idx": 3,
+      "key": "quantize:Q4_K_M",
+      "label": "Quantize Q4_K_M",
+      "started_at": 1793212384333,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212385876,
+      "idx": 4,
+      "key": "quantize:IQ3_M",
+      "label": "Quantize IQ3_M",
+      "started_at": 1793212384701,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212386067,
+      "idx": 5,
+      "key": "quantize:Q8_0",
+      "label": "Quantize Q8_0",
+      "started_at": 1793212385876,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": "Writing text file",
+      "finished_at": 1793212389645,
+      "idx": 6,
+      "key": "eval:reference",
+      "label": "Measure the original",
+      "started_at": 1793212386068,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212390559,
+      "idx": 7,
+      "key": "eval:Q4_K_M",
+      "label": "Evaluate Q4_K_M",
+      "started_at": 1793212389645,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212391584,
+      "idx": 8,
+      "key": "eval:IQ3_M",
+      "label": "Evaluate IQ3_M",
+      "started_at": 1793212390560,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212392525,
+      "idx": 9,
+      "key": "eval:Q8_0",
+      "label": "Evaluate Q8_0",
+      "started_at": 1793212391584,
+      "status": "done"
+    },
+    {
+      "cached": false,
+      "detail": null,
+      "finished_at": 1793212429574,
+      "idx": 10,
+      "key": "finalize",
+      "label": "Index and checksum outputs",
+      "started_at": 1793212392525,
+      "status": "done"
+    }
+  ],
+  "started_at": 1793212374521,
+  "status": "done",
+  "title": "GGUF · SmolLM2-135M-Instruct · Q4_K_M, IQ3_M, Q8_0"
+}

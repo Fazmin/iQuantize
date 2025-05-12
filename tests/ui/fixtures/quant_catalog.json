@@ -1,0 +1,874 @@
+{
+  "gguf": {
+    "flags": [
+      "--help",
+      "--allow-requantize",
+      "--leave-output-tensor",
+      "--pure",
+      "--imatrix",
+      "--include-weights",
+      "--exclude-weights",
+      "--output-tensor-type",
+      "--token-embedding-type",
+      "--tensor-type",
+      "--tensor-type-file",
+      "--prune-layers",
+      "--keep-split",
+      "--override-kv",
+      "--dry-run",
+      "--max-buffer-size"
+    ],
+    "outtypes": [
+      "f32",
+      "f16",
+      "bf16",
+      "q8_0",
+      "tq1_0",
+      "tq2_0",
+      "auto"
+    ],
+    "types": [
+      {
+        "alias_of": null,
+        "base": "Q1_0",
+        "body_bpw": 1.125,
+        "description": "1.125 bpw quantization",
+        "family": "legacy",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.Q1_0",
+        "name": "Q1_0",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "Q2_0",
+        "body_bpw": 2.25,
+        "description": "2.25 bpw quantization (group 64)",
+        "family": "legacy",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.Q2_0",
+        "name": "Q2_0",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q4_0",
+        "body_bpw": 4.508687307108388,
+        "description": "4.34G, +0.4685 ppl @ Llama-3-8B",
+        "family": "legacy",
+        "file_bpw_8b": 4.642478616566174,
+        "kb": "gguf.qtype.Q4_0",
+        "name": "Q4_0",
+        "ppl_delta_8b": 0.4685,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q4_1",
+        "body_bpw": 5.012571330650628,
+        "description": "4.78G, +0.4511 ppl @ Llama-3-8B",
+        "family": "legacy",
+        "file_bpw_8b": 5.113144651425418,
+        "kb": "gguf.qtype.Q4_1",
+        "name": "Q4_1",
+        "ppl_delta_8b": 0.4511,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "MXFP4",
+        "body_bpw": 4.25,
+        "description": "MXFP4 MoE",
+        "family": "microscaling",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.MXFP4_MOE",
+        "name": "MXFP4_MOE",
+        "ppl_delta_8b": 0.5072918088296883,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q5_0",
+        "body_bpw": 5.504148131368467,
+        "description": "5.21G, +0.1316 ppl @ Llama-3-8B",
+        "family": "legacy",
+        "file_bpw_8b": 5.573113730946951,
+        "kb": "gguf.qtype.Q5_0",
+        "name": "Q5_0",
+        "ppl_delta_8b": 0.1316,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q5_1",
+        "body_bpw": 6.008032154910707,
+        "description": "5.65G, +0.1062 ppl @ Llama-3-8B",
+        "family": "legacy",
+        "file_bpw_8b": 6.043779765806195,
+        "kb": "gguf.qtype.Q5_1",
+        "name": "Q5_1",
+        "ppl_delta_8b": 0.1062,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "IQ2_XXS",
+        "body_bpw": 2.06,
+        "description": "2.06 bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ2_XXS",
+        "name": "IQ2_XXS",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "IQ2_XS",
+        "body_bpw": 2.31,
+        "description": "2.31 bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ2_XS",
+        "name": "IQ2_XS",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "IQ2_S",
+        "body_bpw": 2.5,
+        "description": "2.5  bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ2_S",
+        "name": "IQ2_S",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "IQ2_S",
+        "body_bpw": 2.7,
+        "description": "2.7  bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ2_M",
+        "name": "IQ2_M",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "IQ1_S",
+        "body_bpw": 1.56,
+        "description": "1.56 bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ1_S",
+        "name": "IQ1_S",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "IQ1_M",
+        "body_bpw": 1.75,
+        "description": "1.75 bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ1_M",
+        "name": "IQ1_M",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "TQ1_0",
+        "body_bpw": 1.69,
+        "description": "1.69 bpw ternarization",
+        "family": "ternary",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.TQ1_0",
+        "name": "TQ1_0",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "TQ2_0",
+        "body_bpw": 2.06,
+        "description": "2.06 bpw ternarization",
+        "family": "ternary",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.TQ2_0",
+        "name": "TQ2_0",
+        "ppl_delta_8b": null,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q2_K",
+        "body_bpw": 2.9514172350837824,
+        "description": "2.96G, +3.5199 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 3.166298779962183,
+        "kb": "gguf.qtype.Q2_K",
+        "name": "Q2_K",
+        "ppl_delta_8b": 3.5199,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q2_K",
+        "body_bpw": 2.9514172350837824,
+        "description": "2.96G, +3.1836 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 3.166298779962183,
+        "kb": "gguf.qtype.Q2_K_S",
+        "name": "Q2_K_S",
+        "ppl_delta_8b": 3.1836,
+        "ppl_estimated": false,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "IQ3_XXS",
+        "body_bpw": 3.06,
+        "description": "3.06 bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ3_XXS",
+        "name": "IQ3_XXS",
+        "ppl_delta_8b": 2.198141541584002,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "IQ3_S",
+        "body_bpw": 3.44,
+        "description": "3.44 bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ3_S",
+        "name": "IQ3_S",
+        "ppl_delta_8b": 1.3129377054639118,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "IQ3_S",
+        "body_bpw": 3.66,
+        "description": "3.66 bpw quantization mix",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ3_M",
+        "name": "IQ3_M",
+        "ppl_delta_8b": 0.8048481508141668,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": "Q3_K_M",
+        "base": "Q3_K",
+        "body_bpw": 3.4375,
+        "description": "alias for Q3_K_M",
+        "family": "k-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.Q3_K",
+        "name": "Q3_K",
+        "ppl_delta_8b": 1.6467458515603952,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "IQ3_S",
+        "body_bpw": 3.3,
+        "description": "3.3 bpw quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ3_XS",
+        "name": "IQ3_XS",
+        "ppl_delta_8b": 1.5874534585251423,
+        "ppl_estimated": true,
+        "requires_imatrix": true
+      },
+      {
+        "alias_of": null,
+        "base": "Q3_K",
+        "body_bpw": 3.4440873684933284,
+        "description": "3.41G, +1.6321 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 3.647661770159137,
+        "kb": "gguf.qtype.Q3_K_S",
+        "name": "Q3_K_S",
+        "ppl_delta_8b": 1.6321,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q3_K",
+        "body_bpw": 3.850225721698521,
+        "description": "3.74G, +0.6569 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 4.00066129630357,
+        "kb": "gguf.qtype.Q3_K_M",
+        "name": "Q3_K_M",
+        "ppl_delta_8b": 0.6569,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q3_K",
+        "body_bpw": 4.2071351836061135,
+        "description": "4.03G, +0.5562 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 4.310873001097162,
+        "kb": "gguf.qtype.Q3_K_L",
+        "name": "Q3_K_L",
+        "ppl_delta_8b": 0.5562,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "IQ4_NL",
+        "body_bpw": 4.5,
+        "description": "4.50 bpw non-linear quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ4_NL",
+        "name": "IQ4_NL",
+        "ppl_delta_8b": 0.237253681799966,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "IQ4_XS",
+        "body_bpw": 4.25,
+        "description": "4.25 bpw non-linear quantization",
+        "family": "i-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.IQ4_XS",
+        "name": "IQ4_XS",
+        "ppl_delta_8b": 0.40583344706375063,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": "Q4_K_M",
+        "base": "Q4_K",
+        "body_bpw": 4.5,
+        "description": "alias for Q4_K_M",
+        "family": "k-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.Q4_K",
+        "name": "Q4_K",
+        "ppl_delta_8b": 0.29656710224995747,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q4_K",
+        "body_bpw": 4.545608975581588,
+        "description": "4.37G, +0.2689 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 4.6745694825793045,
+        "kb": "gguf.qtype.Q4_K_S",
+        "name": "Q4_K_S",
+        "ppl_delta_8b": 0.2689,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q4_K",
+        "body_bpw": 4.804060654893982,
+        "description": "4.58G, +0.1754 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 4.899205544671216,
+        "kb": "gguf.qtype.Q4_K_M",
+        "name": "Q4_K_M",
+        "ppl_delta_8b": 0.1754,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": "Q5_K_M",
+        "base": "Q5_K",
+        "body_bpw": 5.5,
+        "description": "alias for Q5_K_M",
+        "family": "k-quant",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.Q5_K",
+        "name": "Q5_K",
+        "ppl_delta_8b": 0.1052200017776899,
+        "ppl_estimated": true,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q5_K",
+        "body_bpw": 5.504148131368467,
+        "description": "5.21G, +0.1049 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 5.573113730946951,
+        "kb": "gguf.qtype.Q5_K_S",
+        "name": "Q5_K_S",
+        "ppl_delta_8b": 0.1049,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q5_K",
+        "body_bpw": 5.651834805261265,
+        "description": "5.33G, +0.0569 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 5.701477194999472,
+        "kb": "gguf.qtype.Q5_K_M",
+        "name": "Q5_K_M",
+        "ppl_delta_8b": 0.0569,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q6_K",
+        "body_bpw": 6.568748069983527,
+        "description": "6.14G, +0.0217 ppl @ Llama-3-8B",
+        "family": "k-quant",
+        "file_bpw_8b": 6.567930577353988,
+        "kb": "gguf.qtype.Q6_K",
+        "name": "Q6_K",
+        "ppl_delta_8b": 0.0217,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "Q8_0",
+        "body_bpw": 8.517000823356325,
+        "description": "7.96G, +0.0026 ppl @ Llama-3-8B",
+        "family": "legacy",
+        "file_bpw_8b": 8.514776448817223,
+        "kb": "gguf.qtype.Q8_0",
+        "name": "Q8_0",
+        "ppl_delta_8b": 0.0026,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "F16",
+        "body_bpw": 16,
+        "description": "14.00G, +0.0020 ppl @ Mistral-7B",
+        "family": "float",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.F16",
+        "name": "F16",
+        "ppl_delta_8b": 0,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "BF16",
+        "body_bpw": 16,
+        "description": "14.00G, -0.0050 ppl @ Mistral-7B",
+        "family": "float",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.BF16",
+        "name": "BF16",
+        "ppl_delta_8b": 0,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      },
+      {
+        "alias_of": null,
+        "base": "F32",
+        "body_bpw": 32,
+        "description": "26.00G              @ 7B",
+        "family": "float",
+        "file_bpw_8b": null,
+        "kb": "gguf.qtype.F32",
+        "name": "F32",
+        "ppl_delta_8b": 0,
+        "ppl_estimated": false,
+        "requires_imatrix": false
+      }
+    ]
+  },
+  "installed": {
+    "core": true,
+    "gguf": true,
+    "mlx": true,
+    "onnx": true
+  },
+  "memory_budget": 18554258718,
+  "mlx": {
+    "convert": {
+      "dtypes": [
+        "float16",
+        "bfloat16",
+        "float32"
+      ],
+      "flags": [
+        "--hf-path",
+        "--model",
+        "--mlx-path",
+        "--quantize",
+        "--q-group-size",
+        "--q-bits",
+        "--q-mode",
+        "--quant-predicate",
+        "--dtype",
+        "--upload-repo",
+        "--dequantize",
+        "--trust-remote-code"
+      ],
+      "options": [
+        {
+          "default": null,
+          "dest": "hf_path",
+          "flags": [
+            "--hf-path",
+            "--model"
+          ],
+          "help": "Path to the model. This can be a local path or a Hugging Face Hub model identifier."
+        },
+        {
+          "default": "mlx_model",
+          "dest": "mlx_path",
+          "flags": [
+            "--mlx-path"
+          ],
+          "help": "Path to save the MLX model."
+        },
+        {
+          "default": false,
+          "dest": "quantize",
+          "flags": [
+            "-q",
+            "--quantize"
+          ],
+          "help": "Generate a quantized model."
+        },
+        {
+          "default": null,
+          "dest": "q_group_size",
+          "flags": [
+            "--q-group-size"
+          ],
+          "help": "Group size for quantization."
+        },
+        {
+          "default": null,
+          "dest": "q_bits",
+          "flags": [
+            "--q-bits"
+          ],
+          "help": "Bits per weight for quantization."
+        },
+        {
+          "choices": [
+            "affine",
+            "mxfp4",
+            "nvfp4",
+            "mxfp8"
+          ],
+          "default": "affine",
+          "dest": "q_mode",
+          "flags": [
+            "--q-mode"
+          ],
+          "help": "The quantization mode."
+        },
+        {
+          "choices": [
+            "mixed_2_6",
+            "mixed_3_4",
+            "mixed_3_6",
+            "mixed_4_6"
+          ],
+          "default": null,
+          "dest": "quant_predicate",
+          "flags": [
+            "--quant-predicate"
+          ],
+          "help": "Mixed-bit quantization recipe."
+        },
+        {
+          "choices": [
+            "float16",
+            "bfloat16",
+            "float32"
+          ],
+          "default": null,
+          "dest": "dtype",
+          "flags": [
+            "--dtype"
+          ],
+          "help": "Type to save the non-quantized parameters. Defaults to config.json's `torch_dtype` or the current model weights dtype."
+        },
+        {
+          "default": null,
+          "dest": "upload_repo",
+          "flags": [
+            "--upload-repo"
+          ],
+          "help": "The Hugging Face repo to upload the model to."
+        },
+        {
+          "default": false,
+          "dest": "dequantize",
+          "flags": [
+            "-d",
+            "--dequantize"
+          ],
+          "help": "Dequantize a quantized model."
+        },
+        {
+          "default": false,
+          "dest": "trust_remote_code",
+          "flags": [
+            "--trust-remote-code"
+          ],
+          "help": "Trust remote code when loading tokenizer."
+        }
+      ],
+      "q_modes": [
+        "affine",
+        "mxfp4",
+        "nvfp4",
+        "mxfp8"
+      ],
+      "quant_predicates": [
+        "mixed_2_6",
+        "mixed_3_4",
+        "mixed_3_6",
+        "mixed_4_6"
+      ],
+      "source": "configure_parser"
+    },
+    "methods": {
+      "awq": {
+        "available": true,
+        "choices": {},
+        "flags": [
+          "--model",
+          "--mlx-path",
+          "--bits",
+          "--group-size",
+          "--embed-bits",
+          "--embed-group-size",
+          "--num-samples",
+          "--sequence-length",
+          "--n-grid",
+          "--seed",
+          "--trust-remote-code"
+        ],
+        "help": "usage: __main__.py [-h] [--model MODEL] [--mlx-path MLX_PATH] [--bits BITS]\n                   [--group-size GROUP_SIZE] [--embed-bits EMBED_BITS]\n                   [--embed-group-size EMBED_GROUP_SIZE]\n                   [--num-samples NUM_SAMPLES]\n                   [--sequence-length SEQUENCE_LENGTH] [--n-grid N_GRID]\n                   [--seed SEED] [--trust-remote-code]\n\noptions:\n  -h, --help            show this help message and exit\n  --model MODEL, -m MODEL\n  --mlx-path MLX_PATH\n  --bits BITS\n  --group-size GROUP_SIZE\n  --embed-bits EMBED_BITS\n  --embed-group-size EMBED_GROUP_SIZE\n  --num-samples NUM_SAMPLES\n  --sequence-length SEQUENCE_LENGTH\n  --n-grid N_GRID\n  --seed SEED\n  --trust-remote-code   Enable trusting remote code for tokenizer/model\n                        loading.\n",
+        "module": "mlx_lm awq"
+      },
+      "dwq": {
+        "available": true,
+        "choices": {},
+        "flags": [
+          "--model",
+          "--quantized-model",
+          "--mlx-path",
+          "--bits",
+          "--group-size",
+          "--num-samples",
+          "--max-seq-length",
+          "--seed",
+          "--learning-rate",
+          "--batch-size",
+          "--data-path",
+          "--grad-checkpoint",
+          "--target-dir",
+          "--targets-only",
+          "--pipeline",
+          "--trust-remote-code"
+        ],
+        "help": "usage: __main__.py [-h] --model MODEL [--quantized-model QUANTIZED_MODEL]\n                   [--mlx-path MLX_PATH] [--bits BITS]\n                   [--group-size GROUP_SIZE] [--num-samples NUM_SAMPLES]\n                   [--max-seq-length MAX_SEQ_LENGTH] [--seed SEED]\n                   [--learning-rate LEARNING_RATE] [--batch-size BATCH_SIZE]\n                   [--data-path DATA_PATH] [--grad-checkpoint]\n                   [--target-dir TARGET_DIR] [--targets-only] [--pipeline]\n                   [--trust-remote-code]\n\noptions:\n  -h, --help            show this help message and exit\n  --model MODEL, -m MODEL\n                        A model to distill from for DWQ. If `quantized-model`\n                        is not given the student model will be this model\n                        quantized according to `bits` and `group-size`.\n  --quantized-model QUANTIZED_MODEL\n                        An already quantized model (the student model) to\n                        improve with DWQ.\n  --mlx-path MLX_PATH   Path to save the quantized model.\n  --bits BITS           Bits per weight for quantization.\n  --group-size GROUP_SIZE\n                        Group size for quantization.\n  --num-samples NUM_SAMPLES\n                        Number of samples to use for training.\n  --max-seq-length MAX_SEQ_LENGTH\n  --seed SEED\n  --learning-rate LEARNING_RATE\n  --batch-size BATCH_SIZE\n  --data-path DATA_PATH\n                        A Hugging Face dataset which is compatible with an\n                        mlx-lm dataset format.\n  --grad-checkpoint     Use gradient checkpointing to reduce memory use.\n  --target-dir TARGET_DIR\n                        Directory to save/load targets.\n  --targets-only        Compute the targets and exit.\n  --pipeline            Use pipeline parallel instead of data parallel.\n  --trust-remote-code   Enable trusting remote code for tokenizer/model\n                        loading.\n",
+        "module": "mlx_lm dwq"
+      },
+      "dynamic_quant": {
+        "available": true,
+        "choices": {
+          "--accumulation-dtype": [
+            "float32",
+            "bfloat16"
+          ]
+        },
+        "flags": [
+          "--model",
+          "--mlx-path",
+          "--seed",
+          "--sensitivities",
+          "--target-bpw",
+          "--low-bits",
+          "--low-group-size",
+          "--high-bits",
+          "--high-group-size",
+          "--report-ppl",
+          "--grad-checkpoint",
+          "--accumulation-dtype",
+          "--trust-remote-code"
+        ],
+        "help": "usage: dynamic_quant.py [-h] [--model MODEL] [--mlx-path MLX_PATH]\n                        [--seed SEED] [--sensitivities SENSITIVITIES]\n                        [--target-bpw TARGET_BPW] [--low-bits LOW_BITS]\n                        [--low-group-size LOW_GROUP_SIZE]\n                        [--high-bits HIGH_BITS]\n                        [--high-group-size HIGH_GROUP_SIZE] [--report-ppl]\n                        [--grad-checkpoint]\n                        [--accumulation-dtype {float32,bfloat16}]\n                        [--trust-remote-code]\n\noptions:\n  -h, --help            show this help message and exit\n  --model MODEL, -m MODEL\n  --mlx-path MLX_PATH   Path to save the model\n  --seed SEED\n  --sensitivities SENSITIVITIES\n                        Path to a pre-computed sensitivity JSON file.\n  --target-bpw TARGET_BPW\n                        Target bits per weight.\n  --low-bits LOW_BITS\n  --low-group-size LOW_GROUP_SIZE\n  --high-bits HIGH_BITS\n  --high-group-size HIGH_GROUP_SIZE\n  --report-ppl          Compute the perplexity of the base and quantized\n                        models.\n  --grad-checkpoint     Use gradient checkpointing to reduce memory use.\n  --accumulation-dtype {float32,bfloat16}\n                        What type to use to accumulate the gradients for the\n                        sensitivities\n  --trust-remote-code   Enable trusting remote code for tokenizer/model\n                        loading.\n",
+        "module": "mlx_lm.quant.dynamic_quant"
+      },
+      "gptq": {
+        "available": true,
+        "choices": {},
+        "flags": [
+          "--model",
+          "--mlx-path",
+          "--bits",
+          "--group-size",
+          "--fallback-bits",
+          "--fallback-group-size",
+          "--num-samples",
+          "--sequence-length",
+          "--seed",
+          "--trust-remote-code"
+        ],
+        "help": "usage: gptq.py [-h] [--model MODEL] [--mlx-path MLX_PATH] [--bits BITS]\n               [--group-size GROUP_SIZE] [--fallback-bits FALLBACK_BITS]\n               [--fallback-group-size FALLBACK_GROUP_SIZE]\n               [--num-samples NUM_SAMPLES] [--sequence-length SEQUENCE_LENGTH]\n               [--seed SEED] [--trust-remote-code]\n\noptions:\n  -h, --help            show this help message and exit\n  --model MODEL, -m MODEL\n  --mlx-path MLX_PATH\n  --bits BITS           Quantization bits for GPTQ layers\n  --group-size GROUP_SIZE\n                        Quantization group size for GPTQ layers\n  --fallback-bits FALLBACK_BITS\n                        Quantization bits for non-GPTQ layers\n  --fallback-group-size FALLBACK_GROUP_SIZE\n                        Quantization group size for non-GPTQ layers\n  --num-samples NUM_SAMPLES\n                        Number of samples from the calibration dataset, use -1\n                        for all.\n  --sequence-length SEQUENCE_LENGTH\n                        Sequence length for the calibration data.\n  --seed SEED\n  --trust-remote-code   Enable trusting remote code for tokenizer/model\n                        loading.\n",
+        "module": "mlx_lm.quant.gptq"
+      }
+    },
+    "supported": true
+  },
+  "onnx": {
+    "builder": {
+      "execution_providers": [
+        "cpu",
+        "cuda",
+        "dml",
+        "webgpu",
+        "NvTensorRtRtx"
+      ],
+      "extra_option_keys": [
+        "accuracy_level",
+        "block_size",
+        "qmoe_block_size",
+        "qmoe_weights_prepacked",
+        "matmulnbits_weights_prepacked",
+        "is_symmetric",
+        "op_types_to_quantize",
+        "nodes_to_exclude",
+        "algo_config",
+        "matmul_mixed_precision",
+        "num_hidden_layers",
+        "filename",
+        "config_only",
+        "hf_token",
+        "hf_remote",
+        "exclude_embeds",
+        "exclude_lm_head",
+        "exclude_mtp",
+        "prune_lm_head",
+        "include_hidden_states",
+        "aux_hidden_state_layers",
+        "dflash2_path",
+        "dflash2_num_draft_tokens",
+        "max_draft_tokens",
+        "dflash2_fuse_gate_up",
+        "dflash2_fuse_qkv",
+        "fuse_mlp_gate_up",
+        "dflash2_precision",
+        "dspark_path",
+        "dspark_num_draft_tokens",
+        "dspark_top_k",
+        "mtp_quant_config",
+        "linear_attn_op",
+        "state_update_capacity",
+        "state_window",
+        "enable_cuda_fpa_intb_gemm",
+        "use_paged_attention",
+        "paged_block_size",
+        "paged_chunk_size",
+        "windowed_kv_cache",
+        "gpu_utilization_factor",
+        "max_batch_size",
+        "max_scheduled_tokens",
+        "num_blocks",
+        "shared_embeddings",
+        "enable_cuda_graph",
+        "enable_dml_graph",
+        "enable_webgpu_graph",
+        "use_device_allocator_for_initializers",
+        "use_qdq",
+        "moe_quant_type",
+        "use_8bits_moe",
+        "kv_cache_quant_scheme",
+        "kv_cache_rotation",
+        "kv_cache_scale_file",
+        "fuse_qkv",
+        "disable_qkv_fusion",
+        "fuse_qk_norm_gqa",
+        "use_webgpu_fp32",
+        "use_cuda_bf16",
+        "adapter_path"
+      ],
+      "flags": [
+        "--model_name",
+        "--input",
+        "--output",
+        "--precision",
+        "--execution_provider",
+        "--cache_dir",
+        "--extra_options",
+        "--builder_config_version",
+        "--target_options",
+        "--drafter_options",
+        "--speculative_options",
+        "--runtime_config",
+        "--search"
+      ],
+      "help": "usage: builder [-h] [-m MODEL_NAME] [-i INPUT] -o OUTPUT\n               [-p {int4,int8,bf16,fp16,fp32}] -e\n               {cpu,cuda,dml,webgpu,NvTensorRtRtx} [-c CACHE_DIR]\n               [--extra_options KEY=VALUE [KEY=VALUE ...]]\n               [--builder_config_version BUILDER_CONFIG_VERSION]\n               [--target_options TARGET_OPTIONS]\n               [--drafter_options DRAFTER_OPTIONS]\n               [--speculative_options SPECULATIVE_OPTIONS]\n               [--runtime_config RUNTIME_CONFIG] [--search SEARCH]\n\noptions:\n  -h, --help            show this help message and exit\n  -m MODEL_NAME, --model_name MODEL_NAME\n                        Model name in Hugging Face. Do not use if providing an input path to a Hugging Face directory in -i/--input.\n  -i INPUT, --input INPUT\n                        Input model source. Currently supported options are:\n                            hf_path: Path to folder on disk containing the Hugging Face config, model, tokenizer, etc.\n                            gguf_path: Path to float16/float32 GGUF file on disk containing the GGUF model\n  -o OUTPUT, --output OUTPUT\n                        Path to folder to store ONNX model and additional files (e.g. GenAI config, external data files, etc.)\n  -p {int4,int8,bf16,fp16,fp32}, --precision {int4,int8,bf16,fp16,fp32}\n                        Precision of model. Optional when target_options.quant_config specifies the target weight type.\n  -e {cpu,cuda,dml,webgpu,NvTensorRtRtx}, --execution_provider {cpu,cuda,dml,webgpu,NvTensorRtRtx}\n                        Execution provider to target with precision of model (e.g. FP16 CUDA, INT4 CPU, INT4 WebGPU, INT8 WebGPU)\n  -c CACHE_DIR, --cache_dir CACHE_DIR\n                        Cache directory for Hugging Face files and temporary ONNX external data files\n  --extra_options KEY=VALUE [KEY=VALUE ...]\n                        Key value pairs for various options. Currently supports:\n                            The weight-only MatMulNBits quantization options below apply to both `--precision int4` and `--precision int8`.\n                                (The former `int4_`-prefixed names, e.g. `int4_algo_config`, are deprecated aliases that still work but will be removed in a future release.)\n                            accuracy_level = 1/2/3/4: Specify the minimum accuracy level for activation of MatMul in int4/int8 weight-only (MatMulNBits) quantization.\n                                4 is int8, which means input A of int4 quantized MatMul is quantized to int8 and input B is upcasted to int8 for computation.\n                                3 is bf16.\n                                2 is fp16.\n                                1 is fp32.\n                                Default is 4 for the CPU EP and 0 for non-CPU EPs.\n                            block_size = 16/32/64/128/256: Specify the block size for int4/int8 weight-only (MatMulNBits) quantization.\n                                Default value is 32.\n                            qmoe_block_size = <=0/16/32/64/128/256: Specify the block size for QMoE expert weights quantization.\n                                Set <= 0 for per-channel quantization. Default is 128 for TRT-RTX, 32 for others.\n                                CPU, CUDA, and WebGPU block-wise QMoE support 32/64/128 only; TRT-RTX also accepts 16/256.\n                                WebGPU requires hidden_size and moe_intermediate_size to be divisible by qmoe_block_size.\n                                Raw block-wise INT4 QMoE requires both dimensions to be even.\n                                Supported EPs: CPU, CUDA, WebGPU, TRT-RTX.\n                            qmoe_weights_prepacked = -1/0/1: Specify the CUDA QMoE expert weight layout.\n                                -1 lets the builder choose automatically, 0 exports raw weights for runtime prepacking, and 1 exports CUTLASS-prepacked weights.\n                                Default is -1.\n                            matmulnbits_weights_prepacked = 0/1/2: Specify the CUDA MatMulNBits (int4/int8) weight layout.\n                                0 exports raw blockwise weights, 1 exports the SM80/Ampere fpA_intB prepacked layout, and 2 exports the SM90/Hopper fpA_intB prepacked layout.\n                                Only applies to the CUDA EP. Eligible prepacked nodes select fpA_intB automatically; the builder enables it for any ineligible nodes left in raw layout.\n                                Default is 0.\n                            is_symmetric = Quantize the weights symmetrically. Default is true.\n                                If true, quantization is done to int4/int8. If false, quantization is done to uint4/uint8.\n                            op_types_to_quantize = MatMul/Gather: Specify op types to target for int4/int8 weight-only quantization.\n                                Use this option when you want to quantize specific ops.\n                                Separate the op types with a '/' when passing them here (e.g. op_types_to_quantize=MatMul/Gather)\n                            nodes_to_exclude = Specify nodes to exclude from int4/int8 weight-only quantization.\n                                Use this option when you want to exclude certain nodes from being quantized.\n                                Separate the node names with a ',' when passing them here (e.g. nodes_to_exclude=/lm_head/MatMul,/model/embed_tokens/Gather)\n                            algo_config = Base method for int4/int8 weight-only quantization. Default is 'default'.\n                                Currently supported base methods are: 'default', 'rtn', 'k_quant'.\n                                - default = algo_config passed to MatMulNBitsQuantizer is None. Quantizer uses default RTN algorithm. All MatMuls are quantized to the requested bit width. Uses different node naming conventions to `rtn`.\n                                - rtn = RTN algorithm for weight-only quantization.\n                                - k_quant = k_quant algorithm for weight-only quantization.\n                                The following legacy compound values are still accepted as aliases (base method + matmul_mixed_precision):\n                                - rtn_last = rtn + matmul_mixed_precision=last_matmul:int8.\n                                - k_quant_last = k_quant + matmul_mixed_precision=last_matmul:int8.\n                                - k_quant_mixed = k_quant + matmul_mixed_precision=last_matmul:int8,mixed_layers:int8.\n                                - k_quant_linear = k_quant + matmul_mixed_precision=last_matmul:int8,linear_attn:int8.\n                            matmul_mixed_precision = Quantize selected MatMul groups with a different quant type than the int4 body.\n                                Format is a comma-separated list of 'selector:quant_type' pairs, e.g.\n                                matmul_mixed_precision=last_matmul:int8,mixed_layers:int8,linear_attn:int4\n                                Selectors:\n                                - last_matmul = the last MatMul (e.g. /lm_head/MatMul), the single largest, output-sensitive weight.\n                                - mixed_layers = the most quantization-sensitive MatMuls (llama.cpp mixed strategy: first/last eighth of layers plus every third layer's qkv_proj/v_proj/down_proj).\n                                - linear_attn = linear-attention projections and their MLPs (for hybrid attention models like Qwen3.5).\n                                Quant types:\n                                - 'int4'\n                                - 'int8'\n                                Using a quant-type name (not a bare bit count) lets new schemes (e.g. fp8/fp4) be added without a new option.\n                                Orthogonal to algo_config; can be combined with any base method ('default', 'rtn', 'k_quant').\n                            num_hidden_layers = Manually specify the number of layers in your ONNX model.\n                                Used for unit testing purposes.\n                            filename = Filename for ONNX model (default is 'model.onnx').\n                                For models with multiple components, each component is exported to its own ONNX model.\n                            config_only = Generate config and pre/post processing files only.\n                                Use this option when you already have your optimized and/or quantized ONNX model.\n                            hf_token = false/token: Use this to manage authentication with Hugging Face.\n                                Default behavior is to use the authentication token stored by `huggingface-cli login`.\n                                If false, authentication with Hugging Face will be disabled.\n                                If token, you can provide a custom authentication token that differs from the one stored in your environment.\n                                If you have already authenticated via `huggingface-cli login`, you do not need to use this flag because Hugging Face has already stored your authentication token for you.\n                            hf_remote = Use this to manage trusting remote code in Hugging Face repos.\n                                Default behavior is set to false. When false, transformers `from_pretrained()`\n                                calls will refuse to import or execute custom Python code shipped inside\n                                a Hugging Face repository (`trust_remote_code=False`).\n                                Set to true to opt in to executing repository-supplied code; only do this\n                                for repositories you fully trust because it is equivalent to running\n                                arbitrary code from that repository as the current user.\n                            exclude_embeds = Remove embedding layer from your ONNX model.\n                                Use this option when you want to remove the embedding layer from within your ONNX model.\n                                Instead of `input_ids`, you will have `inputs_embeds` as the input to your ONNX model.\n                            exclude_lm_head = Remove language modeling head from your ONNX model.\n                                Use this option when you want to remove the language modeling head from within your ONNX model.\n                                Instead of `logits`, you will have `hidden_states` as the output to your ONNX model.\n                            exclude_mtp = Skip the MTP head for a checkpoint that declares one. Default is false.\n                                The exported MTP workflow requires per-token logits from the main LM head, so this is\n                                how a checkpoint with `mtp_num_hidden_layers > 0` is built with prune_lm_head or\n                                exclude_lm_head. A block drafter (dflash2_path/dspark_path) already supersedes the head\n                                and does not need this option.\n                            prune_lm_head = Prune the LM head to only compute last-token logits during prefill. Default is false.\n                                When enabled for standard models, inserts Gather+Unsqueeze so the MatMul input is [B,1,H] instead\n                                of [B,S,H]. For paged-attention models, gathers the final packed hidden state for each sequence so\n                                the MatMul input is [B,H] instead of [num_tokens,H].\n                                Ignored when exclude_lm_head is true.\n                            include_hidden_states = Include hidden states as output from your ONNX model.\n                                Use this option when you want to have the hidden states as an output from your ONNX model.\n                                In addition to `logits`, you will have `hidden_states` as an output to your ONNX model.\n                            aux_hidden_state_layers = Comma-separated decoder layer indices whose incoming residual\n                                streams are concatenated into an extra `aux_hidden_states` output, for a speculative\n                                block drafter such as EAGLE3 or DFlash. Entry `i` is the residual stream entering\n                                layer i, so indices must lie in [1, num_hidden_layers). Default is empty (disabled).\n                            dflash2_path = Path to a DFlash 2 draft checkpoint. Exports an auxiliary `dflash2.onnx`\n                                block drafter beside the target model and adds a `dflash2` section to\n                                genai_config.json. Requires use_paged_attention=true. SpecForge taps each target\n                                layer's output, so aux_hidden_state_layers must be the drafter's\n                                `target_layer_ids` each plus one. Default is unset (disabled).\n                            dflash2_num_draft_tokens = Override the number of draft tokens the DFlash 2 block\n                                drafter proposes per step. Must be positive and no greater than the draft checkpoint's\n                                block size minus its anchor token. That checkpoint limit is the default.\n                            max_draft_tokens = Write `speculative.max_draft_tokens` into genai_config.json, capping how\n                                many drafted tokens the engine verifies per step. Must be between 1 and 16. Unlike\n                                dflash2_num_draft_tokens this does not change the exported drafter, so a model built\n                                once can be re-tuned by editing the config. Default is unset, which leaves the runtime\n                                default of 4 in effect.\n                            dflash2_fuse_gate_up = Experimental DFlash 2 MLP gate/up projection fusion.\n                                Accepts true or false (default). Requires dflash2_path. Combines gate/up\n                                weights into one MatMul or MatMulNBits followed by Split. Preserves BF16\n                                activations and body quantization; does not change the target or LM head.\n                                Requires re-export and workload-specific performance/quality validation.\n                            dflash2_fuse_qkv = Experimental DFlash 2 attention Q/K/V projection fusion.\n                                Accepts true or false (default). Requires dflash2_path. Stacks each layer's\n                                query-block rows over the shared context rows and projects both with one\n                                MatMul or MatMulNBits, feeding PagedAttention a packed QKV stream. Replaces\n                                five projections per layer with one; the Q computed for context rows is dropped.\n                                The fused drafter omits the q_row_map input, so it requires a runtime that\n                                treats q_row_map as optional; older runtimes reject the exported package.\n                            fuse_mlp_gate_up = Fuse each target model MLP's gate/up projections into one\n                                MatMul or MatMulNBits followed by Split. Default is false. Applies before\n                                target weight quantization and requires unpacked, unadapted gate/up\n                                floating-point projections.\n                            dflash2_precision = Weight precision for the DFlash 2 drafter body: bf16 (default),\n                                int4, or int8. bf16 keeps every projection dense. int4/int8 emit `MatMulNBits`\n                                at the target's block size for the attention and MLP projections, leaving the\n                                small dynamic-convolution and candidate-selector projections dense. The body\n                                uses the raw blockwise layout by default. On CUDA, a drafter quantization\n                                format with matmulnbits_weights_prepacked=1 or 2 emits that fpA-intB layout for\n                                projections the kernel supports (N % 64 for int4, N % 32 for int8); other\n                                projections stay raw, and the drafter session disables fpA-intB selection for them.\n                                Body activations and KV caches remain bf16; this option does not quantize the\n                                drafter's KV cache. When the target LM head uses a reproducible symmetric default\n                                layout, the drafter head uses its actual bit width, block size, initializer names,\n                                and prepack mode when eligible so `share_initializers` can fold it onto the target's\n                                copy. Dense or unsupported target LM-head layouts keep the drafter head dense.\n                            dspark_path = Path to a DSpark draft checkpoint. Exports an auxiliary `dspark.onnx`\n                                block drafter beside the target model and adds a `dspark` section to\n                                genai_config.json. Mutually exclusive with dflash2_path. Requires\n                                use_paged_attention=true. SpecForge taps each target layer's output, so\n                                aux_hidden_state_layers must be the drafter's `target_layer_ids` each plus one.\n                            dspark_num_draft_tokens = Override the number of draft tokens the DSpark block\n                                drafter proposes per step. Must be at least 2 and no greater than the draft checkpoint's\n                                block size. Default is the draft checkpoint's block size.\n                            dspark_top_k = Candidates the DSpark lattice keeps per block slot. Must be a positive integer no\n                                greater than the drafter vocabulary size. Default is 16. Memory and host-transfer costs grow\n                                quadratically with this value, so larger values should be benchmarked carefully.\n                            mtp_quant_config = JSON object/file: Configure MTP I/O, dense weights, MoE, and runtime using the\n                                structured QuantConfig schema independently from the main model.\n                            linear_attn_op = linear_attention/gated_delta_net: Select the recurrent operator for non-paged\n                                Qwen3.5/3.8 exports. Default is linear_attention. Paged exports always use GatedDeltaNet and\n                                ignore this option. gated_delta_net is CUDA-only, requires state_window=0, and supports fp16\n                                or bf16 I/O.\n                            state_update_capacity = Number of compact Qwen3.5/3.8 state updates to capture. Default is 0 (disabled).\n                                Must be an integer from 0 through 8 and requires use_paged_attention=true. This experimental\n                                contract requires Engine runtime work beyond the current onnxruntime-genai#2454 head.\n                            state_window = Configure hybrid Qwen recurrent/conv state history. Default is 0 (disabled).\n                                Must be a non-negative integer. For MTP verification, W must be at least num_speculative_tokens + 1.\n                                Qwen3.5/3.8 exports using GatedDeltaNet (paged, or linear_attn_op=gated_delta_net) require\n                                state_window=0.\n                                Requires ONNX Runtime kernels that implement this attribute.\n                            enable_cuda_fpa_intb_gemm = Select the CUDA fpA_intB MatMulNBits kernel family\n                                for weights exported in the default raw blockwise layout. Default is false.\n                                Writes ep.cuda.fpa_intb_gemm=1 to the decoder session options and only\n                                applies to the CUDA EP. Prepacked exports enable this automatically.\n                            use_paged_attention = Build the model with PagedAttention for the continuous-batching engine. Default is false.\n                                Replaces GroupQueryAttention with the PagedAttention contrib op, packs all sequences into a single\n                                flattened token axis (`input_ids` becomes 1D), stores the KV-cache in paged\n                                [num_blocks, block_size, num_kv_heads, head_size] buffers, and removes the `attention_mask` input.\n                                It also removes `position_ids` when RoPE is fused; architectures with external MRoPE retain packed\n                                position IDs (for example, Qwen3.5/3.8 uses [3, num_tokens]). The block_table,\n                                cumulative_sequence_lengths, and past_sequence_lengths metadata inputs are added. With\n                                prune_lm_head=true, adds a logits_indices input that selects the packed hidden states consumed\n                                by generation or draft verification, so the model outputs [num_logits, vocab_size] logits.\n                                By default, the model outputs [num_tokens, vocab_size] logits.\n                                Currently only supported for the CUDA execution provider with fp16 or bf16 precision. Cannot be\n                                combined with exclude_embeds or exclude_lm_head.\n                            paged_block_size = 16/32/64/128/256/...: Paged KV-cache block size used when use_paged_attention is set.\n                                Must be a power of two and at least 16, which is what the ONNX Runtime PagedAttention op\n                                accepts. Default is 256. Also written to the `engine.dynamic_batching` section of\n                                genai_config.json. The vendored FlashAttention paged kernel additionally needs the block\n                                to be a multiple of its tile (256 for head_size <= 64, 128 for head_size <= 128, else 64);\n                                a smaller block is still valid but makes ORT fall back to another attention backend. A\n                                quantized KV cache is exempt from the tile requirement alone: FlashAttention still serves\n                                it, through a dense dequantized path that has no page alignment to satisfy. A block\n                                drafter (dflash2_path/dspark_path) shares this block size and usually has a smaller head\n                                size, so it reaches its tile at a larger block than the target does.\n                            paged_chunk_size = Prefill chunk size written to `search.chunk_size` in genai_config.json.\n                                Applies only when use_paged_attention is set; it is ignored otherwise. Caps the\n                                prompt tokens ONE request contributes to a\n                                step, where max_scheduled_tokens caps the whole step, so a value at or above\n                                max_scheduled_tokens has no effect and a smaller one lets concurrent prefills\n                                interleave instead of running one request at a time. Models whose sliding-window\n                                layers are served from a ring of blocks hold only `paged_chunk_size +\n                                window_size - 1` positions, so they require chunking and default to\n                                paged_block_size. Must be a positive integer. Default is unset otherwise.\n                            windowed_kv_cache = Use a reduced KV cache for sliding-window layers. Default is true.\n                                With paged attention, eligible local layers use a ring of blocks while at least one full-context\n                                layer remains. Without paged attention, supported execution providers use their windowed-cache\n                                mode. Set to false to give every layer a full-length KV cache for comparison or compatibility.\n                            gpu_utilization_factor = Fraction of available GPU memory used for the paged KV-cache. Default is 0.6.\n                                Must be greater than 0 and at most 1.\n                            max_batch_size = Maximum number of requests in a dynamic batch. Default is 100.\n                                Must be a positive integer no greater than 256.\n                            max_scheduled_tokens = Maximum number of tokens the engine schedules into one forward pass.\n                                Must be a positive integer and requires use_paged_attention=true. Written to the\n                                `engine.dynamic_batching` section of genai_config.json. Bounds the peak prefill\n                                activation, which is the largest transient in a long-context deployment.\n                                Default is unset, which lets the runtime pick.\n                            num_blocks = Pin the paged KV-cache to an exact number of blocks instead of deriving it from\n                                free GPU memory. Must be a positive integer, requires use_paged_attention=true, and is\n                                mutually exclusive with gpu_utilization_factor. Written to the `engine.dynamic_batching`\n                                section of genai_config.json. The reachable context is num_blocks * paged_block_size\n                                tokens. Default is unset.\n                            shared_embeddings = Enable weight sharing between embedding and LM head layers. Default is false.\n                                Use this option to share weights and reduce model size by eliminating duplicate weights.\n                                Shares quantized weights using GatherBlockQuantized and shares unquantized weights using Gather.\n                                Only valid for models that tie their input and output embeddings (tie_word_embeddings=true in\n                                config.json). Setting shared_embeddings=true for a model with tie_word_embeddings=false raises a ValueError.\n                            enable_cuda_graph = Enable CUDA graph capture during inference. Default is false.\n                                If enabled, all nodes being placed on the CUDA EP is the prerequisite for the CUDA graph to be used correctly.\n                                It is not guaranteed that CUDA graph be enabled as it depends on the model and the graph structure.\n                            enable_dml_graph = Enable DML graph capture during inference. Default is true.\n                                If enabled, the model structure will be optimized for DML graph execution.\n                                DML EP uses graph capture by default for best performance.\n                            enable_webgpu_graph = Enable WebGPU graph capture during inference. Default is false.\n                                If enabled, the model structure will be optimized for WebGPU graph execution.\n                                This affects attention mask reformatting and position IDs handling.\n                            use_device_allocator_for_initializers = Write `session.use_device_allocator_for_initializers=1` into\n                                the decoder's session options. Default is false. Initializers then bypass the arena, so the\n                                originals a kernel replaces during PrePack (notably the fpA_intB MatMulNBits layout conversion)\n                                are returned to the driver instead of being retained as free arena blocks.\n                            use_qdq = Use the QDQ decomposition for ops.\n                                Use this option when you want to use quantize-dequantize ops. For example, you will have a quantized MatMul op instead of the MatMulNBits op.\n                            moe_quant_type = int2/int4/int8/mxfp4/nvfp4: Quantization scheme for MoE (QMoE) layers. Default is int4.\n                                int2 = 2-bit integer QMoE weights on CUDA. Requires qmoe_block_size=64 or 128.\n                                int4 = 4-bit integer QMoE weights (expert_weight_bits=4, quant_type=\"int\").\n                                int8 = 8-bit integer QMoE weights (expert_weight_bits=8, quant_type=\"int\").\n                                mxfp4 = MXFP4 QMoE weights on the CUDA EP (quant_type=\"fp4\", expert_weight_bits=4, block_size=32):\n                                    4-bit e2m1 weights with ue8m0 (float8e8m0) block scales and a per-expert float32 global scale.\n                                    Requires an ONNX Runtime build with onnxruntime_USE_FP4_QMOE=ON, precision=int4 or int8 with\n                                    symmetric integer quantization, and is only supported on the CUDA EP.\n                                nvfp4 = NVFP4 QMoE weights on the CUDA EP (quant_type=\"nvfp4\", expert_weight_bits=4, block_size=16):\n                                    4-bit e2m1 weights with FP8-E4M3 block scales and a per-expert float32 global scale.\n                                    Requires an ONNX Runtime build with NVFP4 QMoE support. The graph precision controls\n                                    unquantized tensors and model I/O; the expert weights remain NVFP4.\n                                This single option replaces the older per-type flags so new schemes can be added without a new flag.\n                            use_8bits_moe = [DEPRECATED] Use 'moe_quant_type=int8' instead. Use 8-bit quantization for MoE layers. Default is false.\n                                If true, the QMoE op will use 8-bit quantization. If false, the QMoE op will use 4-bit quantization.\n                            kv_cache_quant_scheme = Quantization scheme for the KV cache. Default is 'none' (no quantization).\n                                Supported values: none, int8_per_tensor, int8_per_channel, int8_per_token, int4_per_tensor, int4_per_channel, int4_per_token, fp8_per_tensor, fp8_per_channel.\n                                The `int8`/`int4`/`fp8` prefix selects the KV cache bit width and the `per_tensor`/`per_channel` suffix selects the scale granularity.\n                                Quantized KV cache is only supported for the CPU and CUDA execution providers.\n                                Per-token schemes require CUDA PagedAttention and use dynamic FP16 scale caches, without calibration.\n                                Paged INT4 requires an ORT build with onnxruntime_USE_INT4_KV_CACHE=ON.\n                            kv_cache_rotation = none (default) or hadamard. CUDA PagedAttention only, with head size 16, 32, 64, 128, or 256.\n                                Rotates Q/K after norm and RoPE, rotates V, and inversely rotates the output. Not compatible with per-channel scales.\n                            kv_cache_scale_file = Path to calibrated per-layer KV cache scales. Required for static quantized schemes; forbidden for per-token schemes.\n                                Format: {\"scales\": {\"k_scales\": [...per layer...], \"v_scales\": [...per layer...]}, \"layer_ids\": [...optional model layer IDs...]}.\n                                Each per-layer entry is a scalar (per_tensor) or a length-(num_kv_heads * head_size) vector (per_channel).\n                                An optional \"qmax\" records the divisor the file was calibrated with (128 for int8, 8 for int4, 448 for fp8);\n                                the builder then rescales to the requested scheme, so one file can serve several bit widths.\n                            fuse_qkv = Fuse the model's Q, K, and V projections. Default is true.\n                                Set to false to keep separate projections. Fusion is automatically disabled for unsupported EPs\n                                and incompatible projection or quantization configurations.\n                            disable_qkv_fusion = [DEPRECATED] Use 'fuse_qkv=false' instead.\n                                This inverse alias remains supported for compatibility. Default is false.\n                            fuse_qk_norm_gqa = Enable QK Norm GQA fusion for CUDA and WebGPU. Default is true.\n                                Set to false to keep explicit Q/K normalization nodes instead of passing Q/K norm weights into GroupQueryAttention.\n                            use_webgpu_fp32 = Use FP32 I/O precision for WebGPU EP.\n                                Use this option to enable GPUs that do not support FP16 on WebGPU (e.g. GTX 10xx).\n                            use_cuda_bf16 = Use BF16 I/O precision in quantized ONNX models for CUDA EP.\n                                Use this option to create quantized ONNX models that use BF16 precision.\n                            adapter_path = Path to folder on disk containing the adapter files (adapter_config.json and adapter model weights).\n                                Use this option for LoRA models.\n  --builder_config_version BUILDER_CONFIG_VERSION\n                        Structured model-builder configuration version. Version 2 enables the shared configuration envelope.\n  --target_options TARGET_OPTIONS\n                        Target export options as an inline JSON object or JSON file path.\n  --drafter_options DRAFTER_OPTIONS\n                        Drafter export options as an inline JSON object or JSON file path.\n  --speculative_options SPECULATIVE_OPTIONS\n                        Speculative graph options as an inline JSON object or JSON file path.\n  --runtime_config RUNTIME_CONFIG\n                        Runtime configuration fragment as an inline JSON object or JSON file path.\n  --search SEARCH       Legacy search settings as an inline JSON object or JSON file path.\n",
+      "importable": true,
+      "precisions": [
+        "int4",
+        "int8",
+        "bf16",
+        "fp16",
+        "fp32"
+      ],
+      "source": "parser"
+    },
+    "execution_providers": [
+      "cpu",
+      "webgpu"
+    ],
+    "optimum": null
+  }
+}

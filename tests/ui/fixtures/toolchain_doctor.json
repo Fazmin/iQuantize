@@ -1,0 +1,95 @@
+{
+  "checks": [
+    {
+      "key": "os",
+      "label": "Operating system",
+      "ok": true,
+      "value": "macOS 27.0.1 (macos, aarch64)"
+    },
+    {
+      "kb": "hw.cpu_threads",
+      "key": "cpu",
+      "label": "CPU",
+      "ok": true,
+      "value": "Apple M4 Pro · 14 threads"
+    },
+    {
+      "hint": null,
+      "kb": "hw.ram",
+      "key": "ram",
+      "label": "Memory",
+      "ok": true,
+      "value": "25.8 GB"
+    },
+    {
+      "kb": "tc.accelerator",
+      "key": "accel",
+      "label": "Accelerators",
+      "ok": true,
+      "value": "metal, cpu"
+    },
+    {
+      "hint": "Quantizing a 7–8B model needs roughly 30–40 GB free (original + F16 + outputs).",
+      "kb": "concept.disk_space",
+      "key": "disk",
+      "label": "Free space in workspace",
+      "ok": true,
+      "value": "163.8 GB"
+    },
+    {
+      "key": "net_hf",
+      "label": "huggingface.co",
+      "ok": true,
+      "value": "reachable"
+    },
+    {
+      "key": "net_gh",
+      "label": "GitHub (tool downloads)",
+      "ok": true,
+      "value": "reachable"
+    },
+    {
+      "key": "net_pypi",
+      "label": "PyPI (Python packages)",
+      "ok": true,
+      "value": "reachable"
+    },
+    {
+      "key": "secrets",
+      "label": "Secret storage",
+      "ok": true,
+      "value": "OS keychain"
+    },
+    {
+      "key": "gpu",
+      "label": "GPU (apple)",
+      "ok": true,
+      "value": "Apple M4 Pro · 25.8 GB"
+    }
+  ],
+  "platform": {
+    "accelerators": [
+      "metal",
+      "cpu"
+    ],
+    "apple_silicon": true,
+    "arch": "aarch64",
+    "cores": 14,
+    "cpu_brand": "Apple M4 Pro",
+    "detected": true,
+    "gpus": [
+      {
+        "cuda_version": null,
+        "driver": null,
+        "name": "Apple M4 Pro",
+        "vendor": "apple",
+        "vram_bytes": 25769803776
+      }
+    ],
+    "mlx_supported": true,
+    "os": "macos",
+    "os_version": "macOS 27.0.1",
+    "total_ram": 25769803776
+  },
+  "platform_key": "macos-aarch64"
+}

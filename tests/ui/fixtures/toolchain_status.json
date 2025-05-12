@@ -1,0 +1,162 @@
+{
+  "components": [
+    {
+      "deps": [],
+      "description": "Fast Python package and environment manager used to install everything else.",
+      "id": "uv",
+      "installed_at": 1793188778069,
+      "job_id": null,
+      "kb": "tc.uv",
+      "label": "uv package manager",
+      "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/tools/uv",
+      "recommended_variant": null,
+      "required": true,
+      "size_bytes": 28002336,
+      "status": "installed",
+      "supported": true,
+      "unsupported_reason": null,
+      "variant": null,
+      "variants": [],
+      "version": "0.13.6"
+    },
+    {
+      "deps": [
+        "uv"
+      ],
+      "description": "A private Python just for iQuantize. Your system Python is never touched.",
+      "id": "python",
+      "installed_at": 1793188779090,
+      "job_id": null,
+      "kb": "tc.python",
+      "label": "Python 3.12 (managed)",
+      "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/python",
+      "recommended_variant": null,
+      "required": true,
+      "size_bytes": 65281293,
+      "status": "installed",
+      "supported": true,
+      "unsupported_reason": null,
+      "variant": null,
+      "variants": [],
+      "version": "3.12.16"
+    },
+    {
+      "deps": [],
+      "description": "Quantizer, importance-matrix, perplexity, benchmark and inference server for GGUF.",
+      "id": "llama_cpp",
+      "installed_at": 1793188920832,
+      "job_id": null,
+      "kb": "tc.llamacpp",
+      "label": "llama.cpp tools",
+      "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/tools/llama.cpp",
+      "recommended_variant": "metal",
+      "required": true,
+      "size_bytes": 43418507,
+      "status": "installed",
+      "supported": true,
+      "unsupported_reason": null,
+      "variant": "metal",
+      "variants": [
+        {
+          "accel": "metal",
+          "assets": [
+            "llama-{tag}-bin-macos-arm64.tar.gz"
+          ],
+          "id": "metal",
+          "label": "Metal (Apple GPU)",
+          "min_cuda": null
+        }
+      ],
+      "version": "b11935"
+    },
+    {
+      "deps": [
+        "python"
+      ],
+      "description": "Hugging Face uploads and calibration/evaluation datasets.",
+      "id": "env_core",
+      "installed_at": 1793188805828,
+      "job_id": null,
+      "kb": "tc.env.core",
+      "label": "Hub & data tools",
+      "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/envs/core",
+      "recommended_variant": null,
+      "required": true,
+      "size_bytes": 214671762,
+      "status": "installed",
+      "supported": true,
+      "unsupported_reason": null,
+      "variant": null,
+      "variants": [],
+      "version": "huggingface_hub 2.3.0"
+    },
+    {
+      "deps": [
+        "python",
+        "llama_cpp"
+      ],
+      "description": "Converts Hugging Face checkpoints into a full-precision GGUF file.",
+      "id": "env_gguf",
+      "installed_at": 1793188949570,
+      "job_id": null,
+      "kb": "tc.env.gguf",
+      "label": "GGUF converter",
+      "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/envs/gguf",
+      "recommended_variant": null,
+      "required": true,
+      "size_bytes": 490277126,
+      "status": "installed",
+      "supported": true,
+      "unsupported_reason": null,
+      "variant": null,
+      "variants": [],
+      "version": "gguf 0.19.0"
+    },
+    {
+      "deps": [
+        "python"
+      ],
+      "description": "Apple's array framework and mlx-lm for fast, native quantized models on Apple Silicon.",
+      "id": "env_mlx",
+      "installed_at": 1793189263440,
+      "job_id": null,
+      "kb": "tc.env.mlx",
+      "label": "MLX",
+      "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/envs/mlx",
+      "recommended_variant": null,
+      "required": false,
+      "size_bytes": 546892886,
+      "status": "installed",
+      "supported": true,
+      "unsupported_reason": null,
+      "variant": null,
+      "variants": [],
+      "version": "mlx-lm 0.32.2"
+    },
+    {
+      "deps": [
+        "python"
+      ],
+      "description": "Builds INT4/INT8/FP16 ONNX models for Windows, the web, mobile and servers.",
+      "id": "env_onnx",
+      "installed_at": 1793212362409,
+      "job_id": null,
+      "kb": "tc.env.onnx",
+      "label": "ONNX Runtime GenAI",
+      "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/envs/onnx",
+      "recommended_variant": null,
+      "required": false,
+      "size_bytes": 895968808,
+      "status": "installed",
+      "supported": true,
+      "unsupported_reason": null,
+      "variant": null,
+      "variants": [],
+      "version": "onnxruntime-genai 0.18.0"
+    }
+  ],
+  "llama_tag": "b11935",
+  "platform_key": "macos-aarch64",
+  "python_version": "3.12",
+  "uv_version": "0.13.6"
+}

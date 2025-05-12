@@ -1,0 +1,545 @@
+[
+  {
+    "builtin": true,
+    "description": "Predict exact program output and write small functions; one wrong token changes the answer.",
+    "id": "code",
+    "name": "Code",
+    "prompts": [
+      {
+        "category": "python-output",
+        "prompt": "```python\nx = [3, 1, 4, 1, 5, 9, 2, 6]\nprint(sorted(set(x))[-3:])\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "[5, 6, 9]",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "python-output",
+        "prompt": "```python\ndef f(n):\n    return n if n < 2 else f(n - 1) + f(n - 2)\n\nprint(f(10))\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "55",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "python-output",
+        "prompt": "```python\ns = \"quantization\"\nprint(s[::-1][:5])\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "noita",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "python-output",
+        "prompt": "```python\ntotal = 0\nfor i in range(1, 20):\n    if i % 3 == 0 or i % 5 == 0:\n        total += i\nprint(total)\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "78",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "python-output",
+        "prompt": "```python\ncounts = {}\nfor w in \"the cat and the hat and the bat\".split():\n    counts[w] = counts.get(w, 0) + 1\nprint(max(counts, key=counts.get), counts[\"and\"])\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "the 2",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "python-output",
+        "prompt": "```python\nprint(-7 // 2, -7 % 2)\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "-4 1",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "python-output",
+        "prompt": "```python\nnums = [5, 3, 8]\nnums.append(nums.pop(0))\nprint(nums)\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "[3, 8, 5]",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "javascript-output",
+        "prompt": "```javascript\nconst a = [1, 2, 3, 4];\nconsole.log(a.map(x => x * x).filter(x => x % 2 === 0).reduce((s, x) => s + x, 0));\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "20",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "javascript-output",
+        "prompt": "```javascript\nconsole.log([10, 9, 1, 2].sort().join(\",\"));\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+        "reference": "1,10,2,9",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "sql",
+        "prompt": "Table orders(id, customer, amount) contains the rows (1, 'ana', 30), (2, 'bo', 20), (3, 'ana', 50), (4, 'cy', 45).\n\nWhat does this query return?\n\nSELECT customer, SUM(amount) FROM orders GROUP BY customer ORDER BY 2 DESC LIMIT 1;\n\nAnswer in the form name,total with no spaces.",
+        "reference": "ana,80",
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "write-function",
+        "prompt": "Write a Python function `is_palindrome(s)` that returns True if `s` reads the same forwards and backwards, ignoring case and any non-alphanumeric characters. Reply with only the code.",
+        "reference": null,
+        "system": "You are a precise programming assistant."
+      },
+      {
+        "category": "fix-bug",
+        "prompt": "This Python function should return the average of a list but crashes on an empty list. Fix it so it returns 0.0 for an empty list. Reply with only the corrected code.\n\n```python\ndef average(xs):\n    return sum(xs) / len(xs)\n```",
+        "reference": null,
+        "system": "You are a precise programming assistant."
+      }
+    ]
+  },
+  {
+    "builtin": true,
+    "description": "Precise formatting and constraint-following tasks where any deviation is easy to detect.",
+    "id": "instruction",
+    "name": "Instruction following",
+    "prompts": [
+      {
+        "category": "exact-output",
+        "prompt": "Reply with exactly the word OK in uppercase and nothing else.",
+        "reference": "OK",
+        "system": null
+      },
+      {
+        "category": "transform",
+        "prompt": "Write the word model backwards in uppercase letters. Output only the result.",
+        "reference": "LEDOM",
+        "system": null
+      },
+      {
+        "category": "sorting",
+        "prompt": "Sort these words alphabetically and output them separated by commas with no spaces: pear, apple, mango, kiwi",
+        "reference": "apple,kiwi,mango,pear",
+        "system": null
+      },
+      {
+        "category": "sequence",
+        "prompt": "Output the whole numbers from 10 down to 1 on a single line, separated by single spaces, with nothing else.",
+        "reference": "10 9 8 7 6 5 4 3 2 1",
+        "system": null
+      },
+      {
+        "category": "transform",
+        "prompt": "Repeat the following text exactly, but replace every vowel (a, e, i, o, u) with an asterisk: Small models run fast",
+        "reference": "Sm*ll m*d*ls r*n f*st",
+        "system": null
+      },
+      {
+        "category": "yes-no",
+        "prompt": "Answer only yes or no, in lowercase: is 91 a prime number?",
+        "reference": "no",
+        "system": null
+      },
+      {
+        "category": "json",
+        "prompt": "Convert the sentence into a JSON object with exactly two keys, name (string) and age (number). Output only the JSON on one line.\n\nSentence: Maria is 34 years old.",
+        "reference": "{\"name\": \"Maria\", \"age\": 34}",
+        "system": null
+      },
+      {
+        "category": "system-prompt",
+        "prompt": "What is the capital of Italy? Answer with one word.",
+        "reference": "ROME",
+        "system": "Always answer in capital letters only."
+      },
+      {
+        "category": "format",
+        "prompt": "Write the first four letters of the English alphabet in reverse order, separated by hyphens. Output only the result.",
+        "reference": "D-C-B-A",
+        "system": null
+      },
+      {
+        "category": "bullets",
+        "prompt": "Give exactly 3 bullet points, each starting with \"- \" and each at most 8 words, on why people quantize language models. No introduction or conclusion.",
+        "reference": null,
+        "system": null
+      },
+      {
+        "category": "length",
+        "prompt": "Describe the ocean in a single sentence of exactly seven words. Output only the sentence.",
+        "reference": null,
+        "system": null
+      },
+      {
+        "category": "negative-constraint",
+        "prompt": "Write two sentences about autumn without using the letter e anywhere.",
+        "reference": null,
+        "system": null
+      }
+    ]
+  },
+  {
+    "builtin": true,
+    "description": "Short factual questions, including less common facts that low-bit quantization tends to forget first.",
+    "id": "knowledge",
+    "name": "Knowledge",
+    "prompts": [
+      {
+        "category": "science",
+        "prompt": "What is the chemical symbol for tungsten? Answer with just the answer, no explanation.",
+        "reference": "W",
+        "system": null
+      },
+      {
+        "category": "science",
+        "prompt": "Which element has atomic number 26? Answer with just the answer, no explanation.",
+        "reference": "Iron",
+        "system": null
+      },
+      {
+        "category": "science",
+        "prompt": "What is the SI unit of electrical capacitance? Answer with just the answer, no explanation.",
+        "reference": "Farad",
+        "system": null
+      },
+      {
+        "category": "science",
+        "prompt": "Which mineral has a hardness of 10 on the Mohs scale? Answer with just the answer, no explanation.",
+        "reference": "Diamond",
+        "system": null
+      },
+      {
+        "category": "astronomy",
+        "prompt": "Titan is the largest moon of which planet? Answer with just the answer, no explanation.",
+        "reference": "Saturn",
+        "system": null
+      },
+      {
+        "category": "geography",
+        "prompt": "What is the capital city of Bhutan? Answer with just the answer, no explanation.",
+        "reference": "Thimphu",
+        "system": null
+      },
+      {
+        "category": "geography",
+        "prompt": "What is the capital city of Mongolia? Answer with just the answer, no explanation.",
+        "reference": "Ulaanbaatar",
+        "system": null
+      },
+      {
+        "category": "economics",
+        "prompt": "What is the official currency of Hungary? Answer with just the answer, no explanation.",
+        "reference": "Forint",
+        "system": null
+      },
+      {
+        "category": "history",
+        "prompt": "In what year did the Berlin Wall fall? Answer with just the answer, no explanation.",
+        "reference": "1989",
+        "system": null
+      },
+      {
+        "category": "literature",
+        "prompt": "Who wrote the novel One Hundred Years of Solitude? Answer with just the answer, no explanation.",
+        "reference": "Gabriel García Márquez",
+        "system": null
+      },
+      {
+        "category": "art",
+        "prompt": "Which painter created The Garden of Earthly Delights? Answer with just the answer, no explanation.",
+        "reference": "Hieronymus Bosch",
+        "system": null
+      },
+      {
+        "category": "computing",
+        "prompt": "Which programming language was created by Guido van Rossum? Answer with just the answer, no explanation.",
+        "reference": "Python",
+        "system": null
+      }
+    ]
+  },
+  {
+    "builtin": true,
+    "description": "Short questions and translations in several languages and scripts; low-bit models often degrade here first.",
+    "id": "multilingual",
+    "name": "Multilingual",
+    "prompts": [
+      {
+        "category": "spanish",
+        "prompt": "¿Cuál es la capital de Australia? Responde solo con el nombre de la ciudad.",
+        "reference": "Canberra",
+        "system": null
+      },
+      {
+        "category": "french",
+        "prompt": "Combien font sept fois huit ? Réponds uniquement avec le nombre.",
+        "reference": "56",
+        "system": null
+      },
+      {
+        "category": "german",
+        "prompt": "Welcher Wochentag folgt auf Donnerstag? Antworte nur mit einem Wort.",
+        "reference": "Freitag",
+        "system": null
+      },
+      {
+        "category": "german",
+        "prompt": "Wie lautet der Plural von \"Buch\"? Antworte nur mit dem Wort.",
+        "reference": "Bücher",
+        "system": null
+      },
+      {
+        "category": "portuguese",
+        "prompt": "Qual é o maior planeta do sistema solar? Responda apenas com o nome.",
+        "reference": "Júpiter",
+        "system": null
+      },
+      {
+        "category": "italian",
+        "prompt": "Traduci in inglese la parola \"gatto\". Rispondi solo con la traduzione.",
+        "reference": "cat",
+        "system": null
+      },
+      {
+        "category": "japanese",
+        "prompt": "日本の首都はどこですか？都市名だけで答えてください。",
+        "reference": "東京",
+        "system": null
+      },
+      {
+        "category": "chinese",
+        "prompt": "一年有几个月？只回答阿拉伯数字。",
+        "reference": "12",
+        "system": null
+      },
+      {
+        "category": "korean",
+        "prompt": "한국의 수도는 어디입니까? 도시 이름만 답하세요.",
+        "reference": "서울",
+        "system": null
+      },
+      {
+        "category": "vietnamese",
+        "prompt": "Thủ đô của Việt Nam là gì? Chỉ trả lời tên thành phố.",
+        "reference": "Hà Nội",
+        "system": null
+      },
+      {
+        "category": "swahili",
+        "prompt": "Tafsiri kwa Kiingereza neno \"maji\". Jibu kwa neno moja tu.",
+        "reference": "water",
+        "system": null
+      },
+      {
+        "category": "translation",
+        "prompt": "Translate into Spanish. Reply with only the translation: \"The library opens at nine in the morning.\"",
+        "reference": null,
+        "system": null
+      }
+    ]
+  },
+  {
+    "builtin": true,
+    "description": "Retrieve specific planted facts from a long passage; exposes long-context damage from quantization.",
+    "haystack": "Kestrel Point Field Station: Notes for Incoming Staff\n\nKestrel Point sits at the end of a gravel spit on the northern coast, about forty minutes by road from the nearest village of Harrowby. The station was founded as a weather post and has grown, in fits and starts, into a small research campus that studies seabirds, tides and the slow erosion of the cliffs. These notes collect what previous residents wished they had known on their first day. Read them once now and again after your first week; most of it will make more sense the second time.\n\nArrival and the road\n\nThe last six kilometres of road are unpaved and flood at spring tides. Check the tide table pinned in the entrance hall before you drive out, and never attempt the causeway section when water is across it, even if it looks shallow. The station's own vehicles are a white pickup and an older green van; keys hang in the boot room on hooks labelled with each vehicle's registration. Fill the tank whenever it drops below half. The fuel pump in Harrowby closes at six in the evening and does not open on Sundays.\n\nBuildings\n\nThere are five buildings. The main house holds the kitchen, the common room, the library and four bedrooms. The east lab, a converted boat shed, contains the wet benches, the sample freezers and the microscope room. The workshop sits behind the east lab and is where you will find tools, spare cable and more broken chairs than anyone can explain. The old lighthouse, which stopped guiding ships decades ago, now carries the station's radio mast and the rooftop weather instruments. It was rebuilt in 1931 after a winter storm cracked the original tower, and the stone stairs inside are steep, so use the handrail. Finally, the north archive is a small concrete building that stores paper records, old logbooks and the long-term specimen collection.\n\nThe north archive is kept locked because humidity and careless visitors are the two biggest threats to the collection. The keypad passcode for the north archive door is TALLOW-4819. Please do not write it on anything that leaves the station, and close the door fully behind you; the latch sticks in damp weather.\n\nDaily routine\n\nBreakfast is informal and early. Weather readings are taken at 07:00, 13:00 and 19:00 every day, regardless of who is on site, and logged both on paper and in the station database. Whoever is on weather duty also checks the rain gauge and empties it after recording. A rota on the kitchen door lists who is responsible for each slot. Swaps are fine as long as you change the rota yourself.\n\nDinner is the only meal people usually share. Cooking rotates through all residents, including visiting scientists, and the unwritten rule is that you cook something you would happily eat yourself. The station's longest-serving cook, a retired geologist named Ottilie Marsh, left behind a binder of recipes that has become something of a local legend. Her fish stew is the most requested dish, and the secret, she insisted, is a spoonful of smoked paprika added at the very end. Most people use too much on their first attempt.\n\nPower and water\n\nElectricity comes from a bank of solar panels on the workshop roof, a small wind turbine and a diesel backup generator. In summer the panels cover almost everything. In winter, especially during long grey spells, the generator runs for a few hours each evening. It is started from the control panel in the workshop; the instructions are laminated and taped beside the switch. Do not run the generator overnight unless the battery level falls below twenty percent, because the noise disturbs the nesting colony on the cliffs.\n\nWater comes from a borehole and is filtered in the main house. It is safe to drink, though it tastes faintly of iron. The hot water tank is small, so keep showers short when the station is full.\n\nThe seabird colony\n\nThe main research focus is the colony of guillemots and kittiwakes on the eastern cliffs. Counting takes place from two hides; the lower hide is reached by a fenced path and the upper hide by a ladder that should only be used in dry weather and never alone. During the breeding season, from roughly April to August, there is a strict rule against walking along the cliff edge beyond the white marker posts. Disturbance is the single biggest risk we pose to the birds, and repeat offenders have been asked to leave.\n\nThe colony has been counted every year since 1987. In the most recent full survey, observers recorded 2,214 occupied guillemot sites and 612 kittiwake nests. Both figures are lower than they were a decade ago, which is one of the reasons the station's funding was renewed.\n\nBees and the garden\n\nA former director kept bees, and the habit has continued. There are now 27 hives in the walled garden behind the main house, cared for by whoever volunteers in spring. If you are allergic to stings, tell the station manager on arrival so that you are not placed on garden duty. Honey from the hives is shared among residents and sold at the Harrowby summer fair, with the proceeds going to the station's small equipment fund.\n\nCommunication\n\nMobile signal is weak and unreliable. There is satellite internet in the main house, which is fine for email but struggles with video calls when several people are online. The radio in the lighthouse is used to contact the coastguard and the supply boat. Radio checks happen every Monday at 10:00; if you are the only person on site, you are responsible for making the call.\n\nThe supply boat\n\nMost heavy goods arrive by sea rather than by road. The supply boat, a sturdy blue vessel called the Marram, comes every second Thursday when the weather allows. It departs Harrowby harbour at 06:40 and usually reaches the station's jetty a little after eight. Orders must be placed with the station manager by the Monday before. The skipper will not unload in a swell above about one and a half metres, so expect delays in autumn.\n\nSafety\n\nEvery resident carries a handheld radio when working outside. Before heading to the hides, the shore or the far end of the spit, write your name, destination and expected return time on the whiteboard in the boot room, and wipe it off when you return. If someone is more than an hour overdue, the person on site raises the alarm by radio. The first-aid kit is in the kitchen, and a second, larger kit is in the east lab.\n\nThe station has a defibrillator mounted beside the main entrance. Training is offered every spring, and everyone who stays longer than a month is expected to attend.\n\nThe library\n\nThe library in the main house is small but well used. Field guides, tide almanacs and bound copies of past station reports fill most of the shelves, and there is a long-running tradition of leaving one novel behind when you depart. Borrowed books should be signed out in the notebook on the windowsill. The armchair by the stove is first come, first served, and arguments about it are older than anyone currently on staff. If you need a quiet place to write, the library is usually empty in the afternoons, when most residents are out on the cliffs or in the east lab.\n\nLeaving\n\nWhen you leave, strip your bed, empty your shelf in the fridge, return any borrowed books to the library and hand your keys to the station manager. Add a line to the visitors' book in the common room. People enjoy reading it on stormy evenings, and many of the best tips in these notes started there.",
+    "id": "needle",
+    "name": "Needle in a haystack",
+    "prompts": [
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What is the keypad passcode for the north archive door? Answer with just the passcode.",
+        "reference": "TALLOW-4819",
+        "system": null
+      },
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. In what year was the old lighthouse rebuilt? Answer with just the year.",
+        "reference": "1931",
+        "system": null
+      },
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What ingredient did the longest-serving cook say was the secret of her fish stew? Answer with just the ingredient.",
+        "reference": "smoked paprika",
+        "system": null
+      },
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What was the name of the station's longest-serving cook? Answer with just the name.",
+        "reference": "Ottilie Marsh",
+        "system": null
+      },
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. How many beehives are in the walled garden? Answer with just the number.",
+        "reference": "27",
+        "system": null
+      },
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What is the name of the supply boat? Answer with just the name.",
+        "reference": "Marram",
+        "system": null
+      },
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. At what time does the supply boat depart Harrowby harbour? Answer in HH:MM format only.",
+        "reference": "06:40",
+        "system": null
+      },
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. How many kittiwake nests were recorded in the most recent full survey? Answer with just the number.",
+        "reference": "612",
+        "system": null
+      },
+      {
+        "category": "retrieval",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. At what time are the weekly radio checks held? Answer in HH:MM format only.",
+        "reference": "10:00",
+        "system": null
+      },
+      {
+        "category": "conversion",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. The generator may only run overnight if the battery level falls below what percentage? Answer with just the number.",
+        "reference": "20",
+        "system": null
+      },
+      {
+        "category": "absent-fact",
+        "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What is the station manager's name? If the notes do not say, answer exactly: not stated",
+        "reference": "not stated",
+        "system": null
+      }
+    ]
+  },
+  {
+    "builtin": true,
+    "description": "Multi-step arithmetic, logic and date puzzles with short, exactly checkable answers.",
+    "id": "reasoning",
+    "name": "Reasoning",
+    "prompts": [
+      {
+        "category": "math",
+        "prompt": "A bakery sells muffins for $3 each and cookies for $2 each. Maya buys 7 muffins and some cookies and spends $41 in total. How many cookies did she buy? Answer with just the number.",
+        "reference": "10",
+        "system": null
+      },
+      {
+        "category": "math",
+        "prompt": "A 240-litre tank is 3/8 full. A pump adds 18 litres per minute while a leak removes 6 litres per minute. How many minutes until the tank is completely full? Answer with just the number.",
+        "reference": "12.5",
+        "system": null
+      },
+      {
+        "category": "math",
+        "prompt": "A jacket costs $80. It is discounted by 25%, and then a further 10% is taken off the discounted price. What is the final price in dollars? Answer with just the number.",
+        "reference": "54",
+        "system": null
+      },
+      {
+        "category": "math",
+        "prompt": "Compute (17 * 23) - (144 / 12) + 5^3. Answer with just the number.",
+        "reference": "504",
+        "system": null
+      },
+      {
+        "category": "math",
+        "prompt": "Lena has twice as many stickers as Omar. After Lena gives Omar 9 stickers, they have the same number. How many stickers did Lena have at first? Answer with just the number.",
+        "reference": "36",
+        "system": null
+      },
+      {
+        "category": "logic",
+        "prompt": "Ana is older than Ben. Ben is older than Cy. Dee is younger than Cy. Who is the second youngest? Answer with just the name.",
+        "reference": "Cy",
+        "system": null
+      },
+      {
+        "category": "logic",
+        "prompt": "A drawer holds 4 red, 3 blue and 5 green socks. In the dark, what is the minimum number of socks you must take out to be certain of having two socks of the same colour? Answer with just the number.",
+        "reference": "4",
+        "system": null
+      },
+      {
+        "category": "dates",
+        "prompt": "Today is a Wednesday. What day of the week will it be 100 days from today? Answer with just the day name.",
+        "reference": "Friday",
+        "system": null
+      },
+      {
+        "category": "time",
+        "prompt": "A train leaves at 09:45 and the journey takes 2 hours and 50 minutes. At what time does it arrive? Answer in 24-hour HH:MM format only.",
+        "reference": "12:35",
+        "system": null
+      },
+      {
+        "category": "pattern",
+        "prompt": "What is the next number in the sequence 2, 6, 12, 20, 30, ...? Answer with just the number.",
+        "reference": "42",
+        "system": null
+      },
+      {
+        "category": "units",
+        "prompt": "A recipe needs 750 grams of flour per loaf. How many kilograms of flour are needed for 6 loaves? Answer with just the number.",
+        "reference": "4.5",
+        "system": null
+      },
+      {
+        "category": "counting",
+        "prompt": "How many times does the letter s appear in the phrase \"mississippi assessment\"? Answer with just the number.",
+        "reference": "8",
+        "system": null
+      }
+    ]
+  },
+  {
+    "builtin": true,
+    "description": "Summaries under strict length or format limits, plus extraction questions with exact answers.",
+    "id": "summarization",
+    "name": "Summarization",
+    "prompts": [
+      {
+        "category": "extraction",
+        "prompt": "From: Priya\nSubject: Review meeting\n\nHi all, the design review we planned for Tuesday has to move because the lab is being rewired that day. Let's meet on Thursday, 12 March 2026, at 14:00 in the small conference room instead. Please bring the latest test results and your questions about the new sensor housing. Thanks!\n\nWhat is the new meeting date? Answer in YYYY-MM-DD format only.",
+        "reference": "2026-03-12",
+        "system": null
+      },
+      {
+        "category": "extraction",
+        "prompt": "Quarterly sales report. The Aurora lamp sold 1,240 units, up slightly from last quarter. The Brisa fan sold 980 units, held back by a late shipment from the supplier. The Cinder heater was the surprise of the quarter with 1,615 units after an early cold snap, while the Delta kettle sold 1,100 units, in line with forecasts.\n\nWhich product sold the most units this quarter? Answer with just the product name.",
+        "reference": "Cinder heater",
+        "system": null
+      },
+      {
+        "category": "extraction",
+        "prompt": "The community repair workshop ran two sessions on Saturday. The morning session had 42 participants and focused on bicycles and small furniture. The afternoon session had 35 participants and focused on electronics. Twelve people stayed for both sessions. Volunteers fixed 58 items in total, and the most common repair was replacing worn bicycle brake pads.\n\nHow many different people attended the workshop in total? Answer with just the number.",
+        "reference": "65",
+        "system": null
+      },
+      {
+        "category": "extraction",
+        "prompt": "Team sync notes. Jonas reported that the benchmark scripts now run nightly but still fail on the ARM runner. Mei will investigate the ARM failure before Friday. The group agreed the documentation is out of date; Sam will rewrite the installation guide. Everyone liked the new dashboard, but the colours are hard to read in dark mode, so Ana will adjust the palette. The next sync is in two weeks.\n\nWho will rewrite the installation guide? Answer with just the name.",
+        "reference": "Sam",
+        "system": null
+      },
+      {
+        "category": "one-sentence",
+        "prompt": "Over the past three years, the city of Larkford has replaced 120 of its 180 diesel buses with battery-electric models. The transit authority reports that fuel and maintenance costs on the converted routes fell by roughly a third, and residents near the main depot have noticed quieter mornings. The change has not been free of problems: the first winter showed that cold weather reduces battery range, forcing planners to shorten some routes and add fast chargers at two terminals. The remaining diesel buses are scheduled to be retired by the end of next year, provided the regional grid upgrade finishes on time.\n\nSummarize the text above in exactly one sentence.",
+        "reference": null,
+        "system": null
+      },
+      {
+        "category": "bullets",
+        "prompt": "Over the past three years, the city of Larkford has replaced 120 of its 180 diesel buses with battery-electric models. The transit authority reports that fuel and maintenance costs on the converted routes fell by roughly a third, and residents near the main depot have noticed quieter mornings. The change has not been free of problems: the first winter showed that cold weather reduces battery range, forcing planners to shorten some routes and add fast chargers at two terminals. The remaining diesel buses are scheduled to be retired by the end of next year, provided the regional grid upgrade finishes on time.\n\nSummarize the text above in exactly 3 bullet points, each starting with \"- \".",
+        "reference": null,
+        "system": null
+      },
+      {
+        "category": "action-items",
+        "prompt": "Team sync notes. Jonas reported that the benchmark scripts now run nightly but still fail on the ARM runner. Mei will investigate the ARM failure before Friday. The group agreed the documentation is out of date; Sam will rewrite the installation guide. Everyone liked the new dashboard, but the colours are hard to read in dark mode, so Ana will adjust the palette. The next sync is in two weeks.\n\nList the three action items as a numbered list in the form \"1. Name: task\". Output only the list.",
+        "reference": null,
+        "system": null
+      },
+      {
+        "category": "simplify",
+        "prompt": "Mountain glaciers act as natural water towers. During winter they store snow, and during the warm months they release meltwater that feeds rivers just when rain is scarce. As average temperatures rise, many glaciers are shrinking. At first, faster melting can actually increase river flow, which may hide the problem. Over time, however, as the ice volume falls, summer meltwater declines. Communities that rely on glacier-fed rivers for drinking water, farming and hydropower may then face shortages in late summer, even if total yearly rainfall does not change.\n\nExplain the text above to a ten-year-old in two sentences.",
+        "reference": null,
+        "system": null
+      },
+      {
+        "category": "title",
+        "prompt": "Mountain glaciers act as natural water towers. During winter they store snow, and during the warm months they release meltwater that feeds rivers just when rain is scarce. As average temperatures rise, many glaciers are shrinking. At first, faster melting can actually increase river flow, which may hide the problem. Over time, however, as the ice volume falls, summer meltwater declines. Communities that rely on glacier-fed rivers for drinking water, farming and hydropower may then face shortages in late summer, even if total yearly rainfall does not change.\n\nWrite a title for the text above of at most six words. Output only the title.",
+        "reference": null,
+        "system": null
+      },
+      {
+        "category": "tldr",
+        "prompt": "Quarterly sales report. The Aurora lamp sold 1,240 units, up slightly from last quarter. The Brisa fan sold 980 units, held back by a late shipment from the supplier. The Cinder heater was the surprise of the quarter with 1,615 units after an early cold snap, while the Delta kettle sold 1,100 units, in line with forecasts.\n\nWrite a TL;DR of the report in fewer than 20 words.",
+        "reference": null,
+        "system": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,727 @@
+{
+  "best": [
+    {
+      "bpw": 8.519555409014286,
+      "est_bytes": 143251008,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.957224696875,
+      "kb": "gguf.qtype.Q8_0",
+      "mem_bytes": 739157238,
+      "needs_imatrix": false,
+      "ppl_delta": 0.0078,
+      "reasons": [
+        "Near-lossless; a safe choice when memory isn't tight.",
+        "Fits: about 739.2 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": false
+        },
+        "types": [
+          "Q8_0"
+        ]
+      },
+      "score": 0.6145212015397808,
+      "stars": 5,
+      "tier": "Near-lossless",
+      "variant": "Q8_0",
+      "warnings": []
+    },
+    {
+      "bpw": 8.501959037908989,
+      "est_bytes": 142955136,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9572426752314814,
+      "kb": "mlx.bits.8",
+      "mem_bytes": 738846572,
+      "needs_imatrix": false,
+      "ppl_delta": 0.011152060455301,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Fits: about 738.8 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 8,
+            "dtype": null,
+            "group_size": 64,
+            "mode": "affine",
+            "recipe": null
+          }
+        ]
+      },
+      "score": 0.5952099469515082,
+      "stars": 5,
+      "tier": "Near-lossless",
+      "variant": "8bit-gs64",
+      "warnings": []
+    }
+  ],
+  "budget_bytes": 17280000000,
+  "candidates": [
+    {
+      "bpw": 8.519555409014286,
+      "est_bytes": 143251008,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.957224696875,
+      "kb": "gguf.qtype.Q8_0",
+      "mem_bytes": 739157238,
+      "needs_imatrix": false,
+      "ppl_delta": 0.0078,
+      "reasons": [
+        "Near-lossless; a safe choice when memory isn't tight.",
+        "Fits: about 739.2 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": false
+        },
+        "types": [
+          "Q8_0"
+        ]
+      },
+      "score": 0.6145212015397808,
+      "stars": 5,
+      "tier": "Near-lossless",
+      "variant": "Q8_0",
+      "warnings": []
+    },
+    {
+      "bpw": 8.501959037908989,
+      "est_bytes": 142955136,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9572426752314814,
+      "kb": "mlx.bits.8",
+      "mem_bytes": 738846572,
+      "needs_imatrix": false,
+      "ppl_delta": 0.011152060455301,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Fits: about 738.8 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 8,
+            "dtype": null,
+            "group_size": 64,
+            "mode": "affine",
+            "recipe": null
+          }
+        ]
+      },
+      "score": 0.5952099469515082,
+      "stars": 5,
+      "tier": "Near-lossless",
+      "variant": "8bit-gs64",
+      "warnings": []
+    },
+    {
+      "bpw": 6.502481448018053,
+      "est_bytes": 109335168,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9592855552083334,
+      "kb": "mlx.bits.6",
+      "mem_bytes": 703545606,
+      "needs_imatrix": false,
+      "ppl_delta": 0.09425385797796584,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Fits: about 703.5 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 6,
+            "dtype": null,
+            "group_size": 64,
+            "mode": "affine",
+            "recipe": null
+          }
+        ]
+      },
+      "score": 0.5391176503071331,
+      "stars": 4,
+      "tier": "Very good",
+      "variant": "6bit-gs64",
+      "warnings": []
+    },
+    {
+      "bpw": 8.12984960012789,
+      "est_bytes": 136698348,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.9576228619791668,
+      "kb": "gguf.qtype.Q6_K",
+      "mem_bytes": 732276945,
+      "needs_imatrix": false,
+      "ppl_delta": 0.0651,
+      "reasons": [
+        "Practically indistinguishable from the original for most tasks.",
+        "Fits: about 732.3 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": false
+        },
+        "types": [
+          "Q6_K"
+        ]
+      },
+      "score": 0.5088216849830931,
+      "stars": 5,
+      "tier": "Excellent",
+      "variant": "Q6_K",
+      "warnings": []
+    },
+    {
+      "bpw": 5.131129219425092,
+      "est_bytes": 86276736,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9606866752314814,
+      "kb": "mlx.recipe.mixed_4_6",
+      "mem_bytes": 679334252,
+      "needs_imatrix": false,
+      "ppl_delta": 0.369625370584292,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Mixed precision protects the most sensitive layers.",
+        "Fits: about 679.3 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 4,
+            "dtype": null,
+            "group_size": 64,
+            "mode": "affine",
+            "recipe": "mixed_4_6"
+          }
+        ]
+      },
+      "score": 0.5060558395715595,
+      "stars": 3,
+      "tier": "Good",
+      "variant": "mixed_4_6-gs64",
+      "warnings": []
+    },
+    {
+      "bpw": 6.562314176868651,
+      "est_bytes": 110341218,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.959224423726852,
+      "kb": "gguf.qtype.Q5_K_M",
+      "mem_bytes": 704601958,
+      "needs_imatrix": false,
+      "ppl_delta": 0.1707,
+      "reasons": [
+        "Visibly closer to the original than Q4 for a modest size increase.",
+        "Fits: about 704.6 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": false
+        },
+        "types": [
+          "Q5_K_M"
+        ]
+      },
+      "score": 0.5042525513718403,
+      "stars": 4,
+      "tier": "Very good",
+      "variant": "Q5_K_M",
+      "warnings": []
+    },
+    {
+      "bpw": 5.502742653072585,
+      "est_bytes": 92525184,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9603069951967592,
+      "kb": "mlx.bits.5",
+      "mem_bytes": 685895123,
+      "needs_imatrix": false,
+      "ppl_delta": 0.4089654565422769,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Fits: about 685.9 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 5,
+            "dtype": null,
+            "group_size": 64,
+            "mode": "affine",
+            "recipe": null
+          }
+        ]
+      },
+      "score": 0.48882399124914744,
+      "stars": 3,
+      "tier": "Good",
+      "variant": "5bit-gs64",
+      "warnings": []
+    },
+    {
+      "bpw": 5.002873255599851,
+      "est_bytes": 84120192,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9608177152199074,
+      "kb": "mlx.group_size.32",
+      "mem_bytes": 677069881,
+      "needs_imatrix": false,
+      "ppl_delta": 0.5584765512829066,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Fits: about 677.1 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 4,
+            "dtype": null,
+            "group_size": 32,
+            "mode": "affine",
+            "recipe": null
+          }
+        ]
+      },
+      "score": 0.487134802236041,
+      "stars": 3,
+      "tier": "Good",
+      "variant": "4bit-gs32",
+      "warnings": []
+    },
+    {
+      "bpw": 4.445453105128611,
+      "est_bytes": 74747520,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9613872351851852,
+      "kb": "mlx.recipe.mixed_3_6",
+      "mem_bytes": 667228576,
+      "needs_imatrix": false,
+      "ppl_delta": 0.8781478931324774,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Mixed precision protects the most sensitive layers.",
+        "Fits: about 667.2 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 3,
+            "dtype": null,
+            "group_size": 64,
+            "mode": "affine",
+            "recipe": "mixed_3_6"
+          }
+        ]
+      },
+      "score": 0.4794096047052146,
+      "stars": 2,
+      "tier": "Noticeable loss",
+      "variant": "mixed_3_6-gs64",
+      "warnings": [
+        "Expect noticeable loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 6.220997318009304,
+      "est_bytes": 104602188,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.9595731494791666,
+      "kb": "gguf.qtype.Q4_K_M",
+      "mem_bytes": 698575977,
+      "needs_imatrix": false,
+      "ppl_delta": 0.5262,
+      "reasons": [
+        "The community's default balance of size and quality; works everywhere llama.cpp runs.",
+        "Fits: about 698.6 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": false
+        },
+        "types": [
+          "Q4_K_M"
+        ]
+      },
+      "score": 0.452375717721984,
+      "stars": 3,
+      "tier": "Good",
+      "variant": "Q4_K_M",
+      "warnings": []
+    },
+    {
+      "bpw": 4.503003858127117,
+      "est_bytes": 75715200,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9613284351851852,
+      "kb": "mlx.bits.4",
+      "mem_bytes": 668244640,
+      "needs_imatrix": false,
+      "ppl_delta": 1.417754804610881,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Fits: about 668.2 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 4,
+            "dtype": null,
+            "group_size": 64,
+            "mode": "affine",
+            "recipe": null
+          }
+        ]
+      },
+      "score": 0.4509992129443731,
+      "stars": 2,
+      "tier": "Noticeable loss",
+      "variant": "4bit-gs64",
+      "warnings": [
+        "Expect noticeable loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 5.98300632744266,
+      "est_bytes": 100600518,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.959816306539352,
+      "kb": "gguf.qtype.Q4_K_S",
+      "mem_bytes": 694374223,
+      "needs_imatrix": false,
+      "ppl_delta": 0.8067,
+      "reasons": [
+        "Fits: about 694.4 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": false
+        },
+        "types": [
+          "Q4_K_S"
+        ]
+      },
+      "score": 0.4360756871029285,
+      "stars": 2,
+      "tier": "Noticeable loss",
+      "variant": "Q4_K_S",
+      "warnings": [
+        "Expect noticeable loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 5.299739223150476,
+      "est_bytes": 89111808,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.9605144052083332,
+      "kb": "gguf.qtype.IQ4_XS",
+      "mem_bytes": 682311078,
+      "needs_imatrix": true,
+      "ppl_delta": 1.217500341191252,
+      "reasons": [
+        "Slightly smaller than Q4_K_S at similar quality when built with an importance matrix.",
+        "Build it with an importance matrix (calibration data) to keep quality.",
+        "Fits: about 682.3 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": true
+        },
+        "types": [
+          "IQ4_XS"
+        ]
+      },
+      "score": 0.4345609350424482,
+      "stars": 2,
+      "tier": "Noticeable loss",
+      "variant": "IQ4_XS",
+      "warnings": [
+        "Expect noticeable loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 4.2530691593907495,
+      "est_bytes": 71512704,
+      "fits": true,
+      "format": "mlx",
+      "headroom": 0.9615837951967592,
+      "kb": "mlx.mode.mxfp4",
+      "mem_bytes": 663832019,
+      "needs_imatrix": false,
+      "ppl_delta": 3.2933679741785564,
+      "reasons": [
+        "Native Apple Silicon format: typically the fastest way to run on a Mac (LM Studio, mlx-lm).",
+        "Fits: about 663.8 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "mlx",
+        "variants": [
+          {
+            "bits": 4,
+            "dtype": null,
+            "group_size": 32,
+            "mode": "mxfp4",
+            "recipe": null
+          }
+        ]
+      },
+      "score": 0.4119854364628381,
+      "stars": 1,
+      "tier": "Heavy loss",
+      "variant": "mxfp4",
+      "warnings": [
+        "Expect heavy loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 5.5406830440808506,
+      "est_bytes": 93163128,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.96026823125,
+      "kb": "gguf.qtype.Q3_K_M",
+      "mem_bytes": 686564964,
+      "needs_imatrix": true,
+      "ppl_delta": 1.9707,
+      "reasons": [
+        "Build it with an importance matrix (calibration data) to keep quality.",
+        "Fits: about 686.6 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": true
+        },
+        "types": [
+          "Q3_K_M"
+        ]
+      },
+      "score": 0.4002764987844512,
+      "stars": 1,
+      "tier": "Heavy loss",
+      "variant": "Q3_K_M",
+      "warnings": [
+        "Small models lose a lot at 2–3 bits; prefer 4 bits or more.",
+        "Expect heavy loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 5.887673619288638,
+      "est_bytes": 98997558,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.9599137086226852,
+      "kb": "gguf.qtype.Q3_K_L",
+      "mem_bytes": 692691115,
+      "needs_imatrix": true,
+      "ppl_delta": 1.6686,
+      "reasons": [
+        "Build it with an importance matrix (calibration data) to keep quality.",
+        "Fits: about 692.7 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": true
+        },
+        "types": [
+          "Q3_K_L"
+        ]
+      },
+      "score": 0.39867770209246134,
+      "stars": 2,
+      "tier": "Noticeable loss",
+      "variant": "Q3_K_L",
+      "warnings": [
+        "Small models lose a lot at 2–3 bits; prefer 4 bits or more.",
+        "Expect noticeable loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 5.355734164621988,
+      "est_bytes": 90053328,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.9604571947916668,
+      "kb": "gguf.qtype.IQ3_M",
+      "mem_bytes": 683299674,
+      "needs_imatrix": true,
+      "ppl_delta": 2.4145444524425006,
+      "reasons": [
+        "Build it with an importance matrix (calibration data) to keep quality.",
+        "Fits: about 683.3 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": true
+        },
+        "types": [
+          "IQ3_M"
+        ]
+      },
+      "score": 0.3947716053121074,
+      "stars": 1,
+      "tier": "Heavy loss",
+      "variant": "IQ3_M",
+      "warnings": [
+        "Small models lose a lot at 2–3 bits; prefer 4 bits or more.",
+        "Expect heavy loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 5.064931223139057,
+      "est_bytes": 85163658,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.9607543101851852,
+      "kb": "gguf.qtype.IQ3_XXS",
+      "mem_bytes": 678165520,
+      "needs_imatrix": true,
+      "ppl_delta": 6.594424624752007,
+      "reasons": [
+        "Build it with an importance matrix (calibration data) to keep quality.",
+        "Fits: about 678.2 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": true
+        },
+        "types": [
+          "IQ3_XXS"
+        ]
+      },
+      "score": 0.34804175826571865,
+      "stars": 1,
+      "tier": "Heavy loss",
+      "variant": "IQ3_XXS",
+      "warnings": [
+        "Small models lose a lot at 2–3 bits; prefer 4 bits or more.",
+        "Expect heavy loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 5.374741114389258,
+      "est_bytes": 90372918,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.9604377752893518,
+      "kb": "gguf.qtype.Q2_K",
+      "mem_bytes": 683635243,
+      "needs_imatrix": true,
+      "ppl_delta": 10.5597,
+      "reasons": [
+        "Build it with an importance matrix (calibration data) to keep quality.",
+        "Fits: about 683.6 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": true
+        },
+        "types": [
+          "Q2_K"
+        ]
+      },
+      "score": 0.3122035141317989,
+      "stars": 1,
+      "tier": "Heavy loss",
+      "variant": "Q2_K",
+      "warnings": [
+        "Small models lose a lot at 2–3 bits; prefer 4 bits or more.",
+        "Expect heavy loss — answers may become less reliable."
+      ]
+    },
+    {
+      "bpw": 4.6106431781946595,
+      "est_bytes": 77525088,
+      "fits": true,
+      "format": "gguf",
+      "headroom": 0.961218459375,
+      "kb": "gguf.qtype.IQ2_M",
+      "mem_bytes": 670145022,
+      "needs_imatrix": true,
+      "ppl_delta": null,
+      "reasons": [
+        "Build it with an importance matrix (calibration data) to keep quality.",
+        "Fits: about 670.1 MB in memory at 8192-token context (17.3 GB budget)."
+      ],
+      "recipe": {
+        "format": "gguf",
+        "imatrix": {
+          "enabled": true
+        },
+        "types": [
+          "IQ2_M"
+        ]
+      },
+      "score": null,
+      "stars": 1,
+      "tier": "Heavy loss",
+      "variant": "IQ2_M",
+      "warnings": [
+        "Small models lose a lot at 2–3 bits; prefer 4 bits or more.",
+        "Expect heavy loss — answers may become less reliable."
+      ]
+    }
+  ],
+  "explore": [
+    {
+      "format": "gguf",
+      "variant": "Q8_0"
+    },
+    {
+      "format": "mlx",
+      "variant": "8bit-gs64"
+    },
+    {
+      "format": "mlx",
+      "variant": "6bit-gs64"
+    },
+    {
+      "format": "gguf",
+      "variant": "Q6_K"
+    },
+    {
+      "format": "mlx",
+      "variant": "mixed_4_6-gs64"
+    }
+  ],
+  "kv_bytes": 188743680,
+  "overhead_bytes": 400000000,
+  "penalty": 3
+}

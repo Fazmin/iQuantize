@@ -1,0 +1,40 @@
+{
+  "active_jobs": [],
+  "first_run": true,
+  "memory_budget": 18554258718,
+  "paths": {
+    "data": "/Users/demo/Library/Application Support/com.iquantize.desktop",
+    "models": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/models",
+    "outputs": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs",
+    "workspace": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace"
+  },
+  "platform": {
+    "accelerators": [
+      "metal",
+      "cpu"
+    ],
+    "apple_silicon": true,
+    "arch": "aarch64",
+    "cores": 14,
+    "cpu_brand": "Apple M4 Pro",
+    "detected": true,
+    "gpus": [
+      {
+        "cuda_version": null,
+        "driver": null,
+        "name": "Apple M4 Pro",
+        "vendor": "apple",
+        "vram_bytes": 25769803776
+      }
+    ],
+    "mlx_supported": true,
+    "os": "macos",
+    "os_version": "macOS 27.0.1",
+    "total_ram": 25769803776
+  },
+  "secrets_backend": {
+    "kind": "os-keychain",
+    "warning": null
+  },
+  "version": "0.1.0"
+}

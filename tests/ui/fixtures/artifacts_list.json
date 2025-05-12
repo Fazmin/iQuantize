@@ -1,0 +1,555 @@
+[
+  {
+    "bpw": 32.34453999363402,
+    "created_at": 1793212693019,
+    "exists": true,
+    "format": "onnx",
+    "id": "12024b54856348ca9eb096687b1ace94",
+    "job_id": "835c089493df4de4887ab19e377c66bd",
+    "meta": {
+      "variant": {
+        "accuracy_level": 4,
+        "algo": "k_quant",
+        "block_size": 32,
+        "ep": "cpu",
+        "head_int8": false,
+        "is_symmetric": true,
+        "precision": "fp32"
+      }
+    },
+    "metrics": {
+      "ppl": 20.749688992791512
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/cache/onnx/f1797bebf108a390",
+    "role": "reference",
+    "sha256": null,
+    "size_bytes": 543853257,
+    "variant": "fp32-cpu"
+  },
+  {
+    "bpw": 6.3501818324985715,
+    "created_at": 1793212690965,
+    "exists": true,
+    "format": "onnx",
+    "id": "06009c4214314b16862959d8050bc073",
+    "job_id": "835c089493df4de4887ab19e377c66bd",
+    "meta": {
+      "engine": "builder",
+      "onnxruntime_genai": "0.18.0",
+      "result": {
+        "ep": "cpu",
+        "extra_options": [
+          "block_size=32",
+          "accuracy_level=4",
+          "algo_config=k_quant",
+          "is_symmetric=true",
+          "matmul_mixed_precision=last_matmul:int8",
+          "hf_token=false"
+        ],
+        "precision": "int4"
+      },
+      "source_repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "source_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "variant": {
+        "accuracy_level": 4,
+        "algo": "k_quant",
+        "block_size": 32,
+        "ep": "cpu",
+        "head_int8": true,
+        "is_symmetric": true,
+        "precision": "int4"
+      }
+    },
+    "metrics": {
+      "delta_p_mean": 0.09862476798227082,
+      "kld_max": 2.8099364010766665,
+      "kld_mean": 0.15930761528651077,
+      "kld_median": 0.11717622650879424,
+      "kld_p99": 0.8714965138246603,
+      "peak_mem_bytes": 367525888,
+      "pp_tok_s": 2176.148884326464,
+      "ppl": 25.160807078297815,
+      "ppl_base": 20.749688992791512,
+      "reference_id": "12024b54856348ca9eb096687b1ace94",
+      "tg_tok_s": 465.0604605125358,
+      "top1": 0.7513725490196078
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/onnx/SmolLM2-135M-Instruct-ONNX-int4-cpu-b32-k_quant-head8",
+    "role": "quantized",
+    "sha256": null,
+    "size_bytes": 106774345,
+    "variant": "int4-cpu-b32-k_quant-head8"
+  },
+  {
+    "bpw": 4.467852330648488,
+    "created_at": 1793212431462,
+    "exists": true,
+    "format": "mlx",
+    "id": "f2da474f75d0486787c379cfc41cd152",
+    "job_id": "d6e89451cf0e41f291b6da3bbf7780b0",
+    "meta": {
+      "method": "convert",
+      "mlx_lm": "0.32.2",
+      "result": {
+        "bpw": 4.2530691593907495,
+        "estimated_tensor_bytes_in": 268959744,
+        "estimated_tensor_bytes_out": 71442432,
+        "files": [
+          {
+            "bytes": 81,
+            "path": "README.md"
+          },
+          {
+            "bytes": 368,
+            "path": "chat_template.jinja"
+          },
+          {
+            "bytes": 1147,
+            "path": "config.json"
+          },
+          {
+            "bytes": 132,
+            "path": "generation_config.json"
+          },
+          {
+            "bytes": 71564859,
+            "path": "model.safetensors"
+          },
+          {
+            "bytes": 34239,
+            "path": "model.safetensors.index.json"
+          },
+          {
+            "bytes": 3522871,
+            "path": "tokenizer.json"
+          },
+          {
+            "bytes": 452,
+            "path": "tokenizer_config.json"
+          }
+        ],
+        "mlx_path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/mlx/SmolLM2-135M-Instruct-MLX-mxfp4",
+        "quantization": {
+          "bits": 4,
+          "group_size": 32,
+          "mode": "mxfp4"
+        },
+        "quantized_layers": 211,
+        "size_bytes": 75124149,
+        "t": "result"
+      },
+      "rules": [],
+      "source_repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "source_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "variant": {
+        "bits": 4,
+        "dtype": null,
+        "group_size": 32,
+        "mode": "mxfp4",
+        "recipe": null
+      }
+    },
+    "metrics": {
+      "delta_p_mean": 0.19661964087140948,
+      "kld_max": 7.544412827730147,
+      "kld_mean": 0.642507572437884,
+      "kld_median": 0.4808721903460785,
+      "kld_p99": 3.193540018028154,
+      "ppl": 45.186308086080494,
+      "ppl_base": 20.73809488489108,
+      "reference_id": "42ecadabc4894a9289d522baf64959d9",
+      "top1": 0.5311764705882352
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/mlx/SmolLM2-135M-Instruct-MLX-mxfp4",
+    "role": "quantized",
+    "sha256": null,
+    "size_bytes": 75124149,
+    "variant": "mxfp4"
+  },
+  {
+    "bpw": 4.720038852467674,
+    "created_at": 1793212430682,
+    "exists": true,
+    "format": "mlx",
+    "id": "df227b9a8ea6456db6ff49744659000e",
+    "job_id": "d6e89451cf0e41f291b6da3bbf7780b0",
+    "meta": {
+      "method": "convert",
+      "mlx_lm": "0.32.2",
+      "result": {
+        "bpw": 4.503003858127117,
+        "estimated_tensor_bytes_in": 268959744,
+        "estimated_tensor_bytes_out": 75644928,
+        "files": [
+          {
+            "bytes": 81,
+            "path": "README.md"
+          },
+          {
+            "bytes": 368,
+            "path": "chat_template.jinja"
+          },
+          {
+            "bytes": 1149,
+            "path": "config.json"
+          },
+          {
+            "bytes": 132,
+            "path": "generation_config.json"
+          },
+          {
+            "bytes": 75790438,
+            "path": "model.safetensors"
+          },
+          {
+            "bytes": 49017,
+            "path": "model.safetensors.index.json"
+          },
+          {
+            "bytes": 3522871,
+            "path": "tokenizer.json"
+          },
+          {
+            "bytes": 452,
+            "path": "tokenizer_config.json"
+          }
+        ],
+        "mlx_path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/mlx/SmolLM2-135M-Instruct-MLX-4bit-gs64",
+        "quantization": {
+          "bits": 4,
+          "group_size": 64,
+          "mode": "affine"
+        },
+        "quantized_layers": 211,
+        "size_bytes": 79364508,
+        "t": "result"
+      },
+      "rules": [],
+      "source_repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "source_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "variant": {
+        "bits": 4,
+        "dtype": null,
+        "group_size": 64,
+        "mode": "affine",
+        "recipe": null
+      }
+    },
+    "metrics": {
+      "delta_p_mean": 0.13536943225893985,
+      "kld_max": 7.441814128290466,
+      "kld_mean": 0.28681352090324974,
+      "kld_median": 0.22433375761797797,
+      "kld_p99": 1.4284686307172758,
+      "peak_mem_bytes": 296839000,
+      "pp_tok_s": 12416.480072139451,
+      "ppl": 29.324882830264443,
+      "ppl_base": 20.73809488489108,
+      "reference_id": "42ecadabc4894a9289d522baf64959d9",
+      "tg_tok_s": 601.2519276748569,
+      "top1": 0.6513725490196078
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/mlx/SmolLM2-135M-Instruct-MLX-4bit-gs64",
+    "role": "quantized",
+    "sha256": null,
+    "size_bytes": 79364508,
+    "variant": "4bit-gs64"
+  },
+  {
+    "bpw": 16.20655866146921,
+    "created_at": 1793212429578,
+    "exists": true,
+    "format": "mlx",
+    "id": "42ecadabc4894a9289d522baf64959d9",
+    "job_id": "d6e89451cf0e41f291b6da3bbf7780b0",
+    "meta": {
+      "note": "Original weights loaded directly by mlx-lm"
+    },
+    "metrics": {
+      "ppl": 20.73809488489108
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/models/HuggingFaceTB__SmolLM2-135M-Instruct",
+    "role": "reference",
+    "sha256": null,
+    "size_bytes": 272503171,
+    "variant": "bf16 (original)"
+  },
+  {
+    "bpw": 8.612388351491605,
+    "created_at": 1793212386067,
+    "exists": true,
+    "format": "gguf",
+    "id": "05a3a22d6efb4a6682a5335fc61f260a",
+    "job_id": "cc6db66aa70e4cab98a7326e0356fdd5",
+    "meta": {
+      "base_type": "BF16",
+      "imatrix": {
+        "calibration": {
+          "chars": 102575,
+          "description": "WikiText-2 (train split)",
+          "rows": 452,
+          "sha256": "f657c9f00da0a1a5afe93d26792bae7899188b344a7da7cf12b20cb981d0be62",
+          "source": "wikitext2-train"
+        },
+        "chunks": 32,
+        "ctx": 512
+      },
+      "llama_tag": "b11935",
+      "quant_type": "Q8_0",
+      "recipe": {
+        "base": "auto",
+        "imatrix": {
+          "chunks": 32,
+          "ctx": 512,
+          "enabled": true
+        },
+        "keep_split": false,
+        "leave_output_tensor": false,
+        "output_tensor_type": null,
+        "pure": false,
+        "split_max_size_gb": 48,
+        "tensor_types": [],
+        "token_embedding_type": null,
+        "types": [
+          "Q4_K_M",
+          "IQ3_M",
+          "Q8_0"
+        ],
+        "use_temp_file": false
+      },
+      "reported": {
+        "fallback_tensors": 0,
+        "model_mib": 256.63,
+        "quant_bpw": 8.51,
+        "quant_mib": 136.4,
+        "seconds": 0.19025425,
+        "types": {
+          "F32": 35136,
+          "Q8_0": 106168320
+        }
+      },
+      "source_repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "source_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac"
+    },
+    "metrics": {
+      "delta_p_mean": -0.00101,
+      "kld_max": 0.020982,
+      "kld_mean": 0.001452,
+      "kld_median": 0.001167,
+      "kld_p99": 0.007475,
+      "ppl": 20.779052,
+      "ppl_base": 20.681758,
+      "ppl_err": 0.875655,
+      "ppl_ratio": 1.004704,
+      "reference_id": "829a0350693b4e6cb044a938ed2905fb",
+      "rms_delta_p": 0.00928,
+      "top1": 0.97255
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q8_0.gguf",
+    "role": "quantized",
+    "sha256": "6b5c14f18066739d21386faecb48ef47904239a1ccede455c125b3127751ed1c",
+    "size_bytes": 144811936,
+    "variant": "Q8_0"
+  },
+  {
+    "bpw": 5.365292651954494,
+    "created_at": 1793212385876,
+    "exists": true,
+    "format": "gguf",
+    "id": "60d88adad6344bf295621fe3a048fbf9",
+    "job_id": "cc6db66aa70e4cab98a7326e0356fdd5",
+    "meta": {
+      "base_type": "BF16",
+      "imatrix": {
+        "calibration": {
+          "chars": 102575,
+          "description": "WikiText-2 (train split)",
+          "rows": 452,
+          "sha256": "f657c9f00da0a1a5afe93d26792bae7899188b344a7da7cf12b20cb981d0be62",
+          "source": "wikitext2-train"
+        },
+        "chunks": 32,
+        "ctx": 512
+      },
+      "llama_tag": "b11935",
+      "quant_type": "IQ3_M",
+      "recipe": {
+        "base": "auto",
+        "imatrix": {
+          "chunks": 32,
+          "ctx": 512,
+          "enabled": true
+        },
+        "keep_split": false,
+        "leave_output_tensor": false,
+        "output_tensor_type": null,
+        "pure": false,
+        "split_max_size_gb": 48,
+        "tensor_types": [],
+        "token_embedding_type": null,
+        "types": [
+          "Q4_K_M",
+          "IQ3_M",
+          "Q8_0"
+        ],
+        "use_temp_file": false
+      },
+      "reported": {
+        "fallback_tensors": 180,
+        "model_mib": 256.63,
+        "quant_bpw": 5.26,
+        "quant_mib": 84.33,
+        "seconds": 1.174890917,
+        "types": {
+          "F32": 35136,
+          "IQ3_S": 23887872,
+          "IQ4_NL": 66355200,
+          "Q4_K": 2654208,
+          "Q5_0": 13271040
+        }
+      },
+      "source_repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "source_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac"
+    },
+    "metrics": {
+      "delta_p_mean": -0.02029,
+      "kld_max": 3.809521,
+      "kld_mean": 0.117683,
+      "kld_median": 0.084195,
+      "kld_p99": 0.679728,
+      "ppl": 23.159918,
+      "ppl_base": 20.681758,
+      "ppl_err": 0.97831,
+      "ppl_ratio": 1.119823,
+      "reference_id": "829a0350693b4e6cb044a938ed2905fb",
+      "rms_delta_p": 0.08510999999999999,
+      "top1": 0.7951
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-IQ3_M.gguf",
+    "role": "quantized",
+    "sha256": "1fdbc552486cffd78c9e6b73e07b3dbdd159f9d3634831b3857d466640035fc9",
+    "size_bytes": 90214048,
+    "variant": "IQ3_M"
+  },
+  {
+    "bpw": 6.271717011680956,
+    "created_at": 1793212384700,
+    "exists": true,
+    "format": "gguf",
+    "id": "7e397317a6f94e06bb3f9e47c3523d5e",
+    "job_id": "cc6db66aa70e4cab98a7326e0356fdd5",
+    "meta": {
+      "base_type": "BF16",
+      "imatrix": {
+        "calibration": {
+          "chars": 102575,
+          "description": "WikiText-2 (train split)",
+          "rows": 452,
+          "sha256": "f657c9f00da0a1a5afe93d26792bae7899188b344a7da7cf12b20cb981d0be62",
+          "source": "wikitext2-train"
+        },
+        "chunks": 32,
+        "ctx": 512
+      },
+      "llama_tag": "b11935",
+      "quant_type": "Q4_K_M",
+      "recipe": {
+        "base": "auto",
+        "imatrix": {
+          "chunks": 32,
+          "ctx": 512,
+          "enabled": true
+        },
+        "keep_split": false,
+        "leave_output_tensor": false,
+        "output_tensor_type": null,
+        "pure": false,
+        "split_max_size_gb": 48,
+        "tensor_types": [],
+        "token_embedding_type": null,
+        "types": [
+          "Q4_K_M",
+          "IQ3_M",
+          "Q8_0"
+        ],
+        "use_temp_file": false
+      },
+      "reported": {
+        "fallback_tensors": 180,
+        "model_mib": 256.63,
+        "quant_bpw": 6.17,
+        "quant_mib": 98.87,
+        "seconds": 0.36681425,
+        "types": {
+          "F32": 35136,
+          "Q4_K": 14155776,
+          "Q5_0": 78077952,
+          "Q6_K": 12386304,
+          "Q8_0": 1548288
+        }
+      },
+      "source_repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "source_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac"
+    },
+    "metrics": {
+      "delta_p_mean": -0.0088,
+      "kld_max": 2.458782,
+      "kld_mean": 0.036876,
+      "kld_median": 0.025913,
+      "kld_p99": 0.227872,
+      "pp_tok_s": 17712.020153,
+      "ppl": 21.423611,
+      "ppl_base": 20.681758,
+      "ppl_err": 0.893691,
+      "ppl_ratio": 1.03587,
+      "reference_id": "829a0350693b4e6cb044a938ed2905fb",
+      "rms_delta_p": 0.04569,
+      "suite_exact": 0.16666666666666666,
+      "suite_rouge_l": 0.08455882352941176,
+      "suite_tok_s": 419.02224283499726,
+      "tg_tok_s": 437.387162,
+      "top1": 0.88157
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/outputs/SmolLM2-135M-Instruct/gguf/SmolLM2-135M-Instruct-Q4_K_M.gguf",
+    "role": "quantized",
+    "sha256": "de9740e21bbefccd283db454e4089bda9117211a62cb1517e92a900e87d9076c",
+    "size_bytes": 105455008,
+    "variant": "Q4_K_M"
+  },
+  {
+    "bpw": 16.11040647598222,
+    "created_at": 1793212378571,
+    "exists": true,
+    "format": "gguf",
+    "id": "829a0350693b4e6cb044a938ed2905fb",
+    "job_id": "cc6db66aa70e4cab98a7326e0356fdd5",
+    "meta": {
+      "llama_tag": "b11935",
+      "quant_type": "BF16",
+      "source_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac"
+    },
+    "metrics": {
+      "ppl": 20.7121,
+      "ppl_err": 0.87419,
+      "reference_id": "7e397317a6f94e06bb3f9e47c3523d5e",
+      "suite_agreement": 0.6594713125543041,
+      "suite_exact": 0.16666666666666666,
+      "suite_rouge_l": 0.08449074074074074,
+      "suite_tok_s": 365.8457919759142
+    },
+    "model_id": "fee803baabbb43fe8c046e75dde0ffc5",
+    "path": "/Users/demo/Library/Application Support/com.iquantize.desktop/workspace/cache/gguf/061978f2b9afc59a/SmolLM2-135M-Instruct-AUTO.gguf",
+    "role": "reference",
+    "sha256": null,
+    "size_bytes": 270886432,
+    "variant": "BF16"
+  }
+]
