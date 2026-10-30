@@ -105,7 +105,7 @@ If you use iQuantize in research, or publish models made with it, please cite it
   author  = {Nizam, Fazmin},
   title   = {{iQuantize: A Desktop Workspace for Quantizing Large Language Models to GGUF, MLX and ONNX}},
   year    = {2026},
-  version = {0.2.21},
+  version = {0.2.22},
   url     = {https://github.com/Fazmin/iQuantize},
   license = {MIT}
 }
@@ -113,7 +113,7 @@ If you use iQuantize in research, or publish models made with it, please cite it
 
 **APA**
 
-> Nizam, F. (2026). *iQuantize: A desktop workspace for quantizing large language models to GGUF, MLX and ONNX* (Version 0.2.21) [Computer software]. https://github.com/Fazmin/iQuantize
+> Nizam, F. (2026). *iQuantize: A desktop workspace for quantizing large language models to GGUF, MLX and ONNX* (Version 0.2.22) [Computer software]. https://github.com/Fazmin/iQuantize
 
 When you publish a model made with iQuantize, its model card and `quantization_report.json` already record the exact tool versions, recipe and measurements, so others can reproduce it.
 
