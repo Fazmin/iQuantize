@@ -318,7 +318,10 @@ mod tests {
         assert_eq!(next_cursor(link).as_deref(), Some("eyJhIjoxfQ=="));
         let both = r#"<https://huggingface.co/api/models?cursor=prev>; rel="prev", <https://huggingface.co/api/models?cursor=nxt>; rel="next""#;
         assert_eq!(next_cursor(both).as_deref(), Some("nxt"));
-        assert_eq!(next_cursor(r#"<https://huggingface.co/api/models?cursor=p>; rel="prev""#), None);
+        assert_eq!(
+            next_cursor(r#"<https://huggingface.co/api/models?cursor=p>; rel="prev""#),
+            None
+        );
         assert_eq!(next_cursor(""), None);
     }
 }

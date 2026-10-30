@@ -3,11 +3,9 @@
 [![CI](https://github.com/Fazmin/iQuantize/actions/workflows/ci.yml/badge.svg)](https://github.com/Fazmin/iQuantize/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-![The iQuantize live view in light mode, three-quarters of the way through quantizing SmolLM2-135M-Instruct to GGUF Q4_K_M: the Model X-ray of every tensor, the size meter at 106 MB down from 269 MB, the precision mix, system gauges and the llama-quantize log](docs/media/iquantize-hero.png)
-
 A desktop workspace for quantizing LLMs to **GGUF**, **MLX** and **ONNX**, step by step. You can see exactly what changes, compare the result against the original, and publish it to Hugging Face with a model card that states how it was made.
 
-[![iQuantize quantizing SmolLM2-135M-Instruct to GGUF Q4_K_M: the tensor map fills in as each tensor is quantized and the size drops from 269 MB to 104 MB](docs/media/iquantize-demo.webp)](docs/media/iquantize-demo.mp4)
+![The iQuantize live view in light mode, three-quarters of the way through quantizing SmolLM2-135M-Instruct to GGUF Q4_K_M: the Model X-ray of every tensor, the size meter at 106 MB down from 269 MB, the precision mix, system gauges and the llama-quantize log](docs/media/iquantize-hero.png)
 
 **[Watch the 45-second demo](docs/media/iquantize-demo.mp4)**: plan a quantization, watch it run, compare it with the original, measure it, write the model card and publish.
 
@@ -49,7 +47,7 @@ The app installs its own Python, llama.cpp and packages into the app-data folder
 - `IQUANTIZE_KEY_FILE=1` stores the secrets key in a file instead of the keychain, which avoids keychain prompts on every rebuild.
 - `IQUANTIZE_DEV_SCRIPT=script.json` (debug builds only) runs a JSON script of real IPC calls and page visits at startup and logs the results. It's used for end-to-end runs; see `src/js/lib/devtools.js`.
 - `node tests/ui/harness.mjs <outDir> /route …` takes headless Chrome screenshots of the UI with a mocked bridge, using real captured responses from `tests/ui/fixtures`.
-- `node tests/ui/demo.mjs docs/media/iquantize-demo.mp4` re-records the demo video above, and `node tests/ui/demo.mjs --hero docs/media/iquantize-hero.png` re-renders the screenshot at the top. It drives the same mocked UI with a cursor and captions, replays a real Q4_K_M run and arena turn from `tests/ui/demo`, and also writes the WebP preview if libwebp's `img2webp` is installed. It needs ffmpeg. Run it while the machine is awake, because a sleeping Mac throttles the capture.
+- `node tests/ui/demo.mjs docs/media/iquantize-demo.mp4` re-records the demo video above, and `node tests/ui/demo.mjs --hero docs/media/iquantize-hero.png` re-renders the screenshot at the top. It drives the same mocked UI with a cursor and captions, replays a real Q4_K_M run and arena turn from `tests/ui/demo`, and needs ffmpeg. Run it while the machine is awake, because a sleeping Mac throttles the capture.
 
 ## Layout
 
