@@ -1,0 +1,871 @@
+objc[3390]: Class MATStreamingSessionDelegate is implemented in both /tmp/x (0x10d864820) and /tmp/x (0x10b67c640). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+objc[3390]: Class MATStreamingSessionDelegate is implemented in both /tmp/x (0x10d864820) and /tmp/x (0x1180a5bf0). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+W1028 14:02:41.462000 3390 tmp/iquantize/driver-test/venv-onnx/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Valid precision + execution provider combinations are: FP32 CPU, FP32 CUDA, FP16 CUDA, FP16 DML, FP16 TRT-RTX, BF16 CUDA, BF16 TRT-RTX, INT8 CPU, INT8 CUDA, INT8 WebGPU, INT4 CPU, INT4 CUDA, INT4 DML, INT4 WebGPU
+Extra options: {'block_size': '32', 'accuracy_level': '4', 'algo_config': 'k_quant', 'is_symmetric': 'true', 'matmul_mixed_precision': 'last_matmul:int8'}
+GroupQueryAttention (GQA) is used in this model.
+
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 272/272 [00:00<00:00, 26389.64it/s]
+Reading embedding layer
+Reading layer 0
+Reading layer 1
+Reading layer 2
+Reading layer 3
+Reading layer 4
+Reading layer 5
+Reading layer 6
+Reading layer 7
+Reading layer 8
+Reading layer 9
+Reading layer 10
+Reading layer 11
+Reading layer 12
+Reading layer 13
+Reading layer 14
+Reading layer 15
+Reading layer 16
+Reading layer 17
+Reading layer 18
+Reading layer 19
+Reading layer 20
+Reading layer 21
+Reading layer 22
+Reading layer 23
+Reading layer 24
+Reading layer 25
+Reading layer 26
+Reading layer 27
+Reading layer 28
+Reading layer 29
+Reading final norm
+Reading LM head
+Saving ONNX model in /tmp/x
+2026-10-28 14:02:41,858 onnxruntime.quantization.matmul_nbits_quantizer [INFO] - start to quantize model with k_quant algorithm...
+2026-10-28 14:02:41,861 onnx_ir.serde [WARNING] - Input 'lm_head.MatMul.weight_Q8G32' of node '/model/embed_tokens/Reshape' (::Reshape:) cannot be found in any scope. The model is invalid but we will still create a new input for the node (current depth: 1)
+2026-10-28 14:02:41,861 onnx_ir.serde [WARNING] - Input 'lm_head.MatMul.weight_scale' of node '/model/embed_tokens/GatherBlockQuantized' (com.microsoft::GatherBlockQuantized:) cannot be found in any scope. The model is invalid but we will still create a new input for the node (current depth: 1)
+2026-10-28 14:02:41,861 onnx_ir.serde [WARNING] - Input 'lm_head.MatMul.weight_zp' of node '/model/embed_tokens/GatherBlockQuantized' (com.microsoft::GatherBlockQuantized:) cannot be found in any scope. The model is invalid but we will still create a new input for the node (current depth: 1)
+
+Progress: [                    ] 0.66%
+
+Progress: [                    ] 1.32%
+
+Progress: [                    ] 1.99%
+
+Progress: [                    ] 2.65%
+
+Progress: [                    ] 3.31%
+
+Progress: [                    ] 3.97%
+
+Progress: [                    ] 4.64%
+
+Progress: [#                   ] 5.30%
+
+Progress: [#                   ] 5.96%
+
+Progress: [#                   ] 6.62%
+
+Progress: [#                   ] 7.28%
+
+Progress: [#                   ] 7.95%
+
+Progress: [#                   ] 8.61%
+
+Progress: [#                   ] 9.27%
+
+Progress: [#                   ] 9.93%
+
+Progress: [##                  ] 10.60%
+
+Progress: [##                  ] 11.26%
+
+Progress: [##                  ] 11.92%
+
+Progress: [##                  ] 12.58%
+
+Progress: [##                  ] 13.25%
+
+Progress: [##                  ] 13.91%
+
+Progress: [##                  ] 14.57%
+
+Progress: [###                 ] 15.23%
+
+Progress: [###                 ] 15.89%
+
+Progress: [###                 ] 16.56%
+
+Progress: [###                 ] 17.22%
+
+Progress: [###                 ] 17.88%
+
+Progress: [###                 ] 18.54%
+
+Progress: [###                 ] 19.21%
+
+Progress: [###                 ] 19.87%
+
+Progress: [####                ] 20.53%
+
+Progress: [####                ] 21.19%
+
+Progress: [####                ] 21.85%
+
+Progress: [####                ] 22.52%
+
+Progress: [####                ] 23.18%
+
+Progress: [####                ] 23.84%
+
+Progress: [####                ] 24.50%
+
+Progress: [#####               ] 25.17%
+
+Progress: [#####               ] 25.83%
+
+Progress: [#####               ] 26.49%
+
+Progress: [#####               ] 27.15%
+
+Progress: [#####               ] 27.81%
+
+Progress: [#####               ] 28.48%
+
+Progress: [#####               ] 29.14%
+
+Progress: [#####               ] 29.80%
+
+Progress: [######              ] 30.46%
+
+Progress: [######              ] 31.13%
+
+Progress: [######              ] 31.79%
+
+Progress: [######              ] 32.45%
+
+Progress: [######              ] 33.11%
+
+Progress: [######              ] 33.77%
+
+Progress: [######              ] 34.44%
+
+Progress: [#######             ] 35.10%
+
+Progress: [#######             ] 35.76%
+
+Progress: [#######             ] 36.42%
+
+Progress: [#######             ] 37.09%
+
+Progress: [#######             ] 37.75%
+
+Progress: [#######             ] 38.41%
+
+Progress: [#######             ] 39.07%
+
+Progress: [#######             ] 39.74%
+
+Progress: [########            ] 40.40%
+
+Progress: [########            ] 41.06%
+
+Progress: [########            ] 41.72%
+
+Progress: [########            ] 42.38%
+
+Progress: [########            ] 43.05%
+
+Progress: [########            ] 43.71%
+
+Progress: [########            ] 44.37%
+
+Progress: [#########           ] 45.03%
+
+Progress: [#########           ] 45.70%
+
+Progress: [#########           ] 46.36%
+
+Progress: [#########           ] 47.02%
+
+Progress: [#########           ] 47.68%
+
+Progress: [#########           ] 48.34%
+
+Progress: [#########           ] 49.01%
+
+Progress: [#########           ] 49.67%
+
+Progress: [##########          ] 50.33%
+
+Progress: [##########          ] 50.99%
+
+Progress: [##########          ] 51.66%
+
+Progress: [##########          ] 52.32%
+
+Progress: [##########          ] 52.98%
+
+Progress: [##########          ] 53.64%
+
+Progress: [##########          ] 54.30%
+
+Progress: [##########          ] 54.97%
+
+Progress: [###########         ] 55.63%
+
+Progress: [###########         ] 56.29%
+
+Progress: [###########         ] 56.95%
+
+Progress: [###########         ] 57.62%
+
+Progress: [###########         ] 58.28%
+
+Progress: [###########         ] 58.94%
+
+Progress: [###########         ] 59.60%
+
+Progress: [############        ] 60.26%
+
+Progress: [############        ] 60.93%
+
+Progress: [############        ] 61.59%
+
+Progress: [############        ] 62.25%
+
+Progress: [############        ] 62.91%
+
+Progress: [############        ] 63.58%
+
+Progress: [############        ] 64.24%
+
+Progress: [############        ] 64.90%
+
+Progress: [#############       ] 65.56%
+
+Progress: [#############       ] 66.23%
+
+Progress: [#############       ] 66.89%
+
+Progress: [#############       ] 67.55%
+
+Progress: [#############       ] 68.21%
+
+Progress: [#############       ] 68.87%
+
+Progress: [#############       ] 69.54%
+
+Progress: [##############      ] 70.20%
+
+Progress: [##############      ] 70.86%
+
+Progress: [##############      ] 71.52%
+
+Progress: [##############      ] 72.19%
+
+Progress: [##############      ] 72.85%
+
+Progress: [##############      ] 73.51%
+
+Progress: [##############      ] 74.17%
+
+Progress: [##############      ] 74.83%
+
+Progress: [###############     ] 75.50%
+
+Progress: [###############     ] 76.16%
+
+Progress: [###############     ] 76.82%
+
+Progress: [###############     ] 77.48%
+
+Progress: [###############     ] 78.15%
+
+Progress: [###############     ] 78.81%
+
+Progress: [###############     ] 79.47%
+
+Progress: [################    ] 80.13%
+
+Progress: [################    ] 80.79%
+
+Progress: [################    ] 81.46%
+
+Progress: [################    ] 82.12%
+
+Progress: [################    ] 82.78%
+
+Progress: [################    ] 83.44%
+
+Progress: [################    ] 84.11%
+
+Progress: [################    ] 84.77%
+
+Progress: [#################   ] 85.43%
+
+Progress: [#################   ] 86.09%
+
+Progress: [#################   ] 86.75%
+
+Progress: [#################   ] 87.42%
+
+Progress: [#################   ] 88.08%
+
+Progress: [#################   ] 88.74%
+
+Progress: [#################   ] 89.40%
+
+Progress: [##################  ] 90.07%
+
+Progress: [##################  ] 90.73%
+
+Progress: [##################  ] 91.39%
+
+Progress: [##################  ] 92.05%
+
+Progress: [##################  ] 92.72%
+
+Progress: [##################  ] 93.38%
+
+Progress: [##################  ] 94.04%
+
+Progress: [##################  ] 94.70%
+
+Progress: [################### ] 95.36%
+
+Progress: [################### ] 96.03%
+
+Progress: [################### ] 96.69%
+
+Progress: [################### ] 97.35%
+
+Progress: [################### ] 98.01%
+
+Progress: [################### ] 98.68%
+
+Progress: [################### ] 99.34%
+
+Progress: [####################] 100.00%
+2026-10-28 14:03:47,506 onnxruntime.quantization.matmul_nbits_quantizer [INFO] - complete quantization of model with k_quant algorithm.
+
+0it [00:00, ?it/s]
+Saving model.layers.0.input_layernorm.weight (f32, [576]):   0%|          | 1/516 [00:00<00:13, 37.24it/s]
+Saving cos_cache (f32, [8192,32]):   0%|          | 2/516 [00:00<00:06, 74.18it/s]                        
+Saving sin_cache (f32, [8192,32]):   1%|          | 3/516 [00:00<00:04, 110.27it/s]
+Saving model.layers.0.post_attention_layernorm.weight (f32, [576]):   1%|          | 4/516 [00:00<00:03, 146.22it/s]
+Saving model.layers.1.input_layernorm.weight (f32, [576]):   1%|          | 5/516 [00:00<00:02, 182.60it/s]         
+Saving model.layers.1.post_attention_layernorm.weight (f32, [576]):   1%|          | 6/516 [00:00<00:02, 218.87it/s]
+Saving model.layers.2.input_layernorm.weight (f32, [576]):   1%|▏         | 7/516 [00:00<00:01, 255.13it/s]         
+Saving model.layers.2.post_attention_layernorm.weight (f32, [576]):   2%|▏         | 8/516 [00:00<00:01, 291.27it/s]
+Saving model.layers.3.input_layernorm.weight (f32, [576]):   2%|▏         | 9/516 [00:00<00:01, 327.37it/s]         
+Saving model.layers.3.post_attention_layernorm.weight (f32, [576]):   2%|▏         | 10/516 [00:00<00:01, 363.41it/s]
+Saving model.layers.4.input_layernorm.weight (f32, [576]):   2%|▏         | 11/516 [00:00<00:01, 399.42it/s]         
+Saving model.layers.4.post_attention_layernorm.weight (f32, [576]):   2%|▏         | 12/516 [00:00<00:01, 435.29it/s]
+Saving model.layers.5.input_layernorm.weight (f32, [576]):   3%|▎         | 13/516 [00:00<00:01, 471.14it/s]         
+Saving model.layers.5.post_attention_layernorm.weight (f32, [576]):   3%|▎         | 14/516 [00:00<00:00, 506.99it/s]
+Saving model.layers.6.input_layernorm.weight (f32, [576]):   3%|▎         | 15/516 [00:00<00:00, 542.75it/s]         
+Saving model.layers.6.post_attention_layernorm.weight (f32, [576]):   3%|▎         | 16/516 [00:00<00:00, 578.49it/s]
+Saving model.layers.7.input_layernorm.weight (f32, [576]):   3%|▎         | 17/516 [00:00<00:00, 614.01it/s]         
+Saving model.layers.7.post_attention_layernorm.weight (f32, [576]):   3%|▎         | 18/516 [00:00<00:00, 649.63it/s]
+Saving model.layers.8.input_layernorm.weight (f32, [576]):   4%|▎         | 19/516 [00:00<00:00, 684.98it/s]         
+Saving model.layers.8.post_attention_layernorm.weight (f32, [576]):   4%|▍         | 20/516 [00:00<00:00, 720.47it/s]
+Saving model.layers.9.input_layernorm.weight (f32, [576]):   4%|▍         | 21/516 [00:00<00:00, 755.83it/s]         
+Saving model.layers.9.post_attention_layernorm.weight (f32, [576]):   4%|▍         | 22/516 [00:00<00:00, 791.19it/s]
+Saving model.layers.10.input_layernorm.weight (f32, [576]):   4%|▍         | 23/516 [00:00<00:00, 826.56it/s]        
+Saving model.layers.10.post_attention_layernorm.weight (f32, [576]):   5%|▍         | 24/516 [00:00<00:00, 861.79it/s]
+Saving model.layers.11.input_layernorm.weight (f32, [576]):   5%|▍         | 25/516 [00:00<00:00, 897.05it/s]         
+Saving model.layers.11.post_attention_layernorm.weight (f32, [576]):   5%|▌         | 26/516 [00:00<00:00, 932.16it/s]
+Saving model.layers.12.input_layernorm.weight (f32, [576]):   5%|▌         | 27/516 [00:00<00:00, 967.33it/s]         
+Saving model.layers.12.post_attention_layernorm.weight (f32, [576]):   5%|▌         | 28/516 [00:00<00:00, 1002.36it/s]
+Saving model.layers.13.input_layernorm.weight (f32, [576]):   6%|▌         | 29/516 [00:00<00:00, 1037.31it/s]         
+Saving model.layers.13.post_attention_layernorm.weight (f32, [576]):   6%|▌         | 30/516 [00:00<00:00, 1072.35it/s]
+Saving model.layers.14.input_layernorm.weight (f32, [576]):   6%|▌         | 31/516 [00:00<00:00, 1107.22it/s]         
+Saving model.layers.14.post_attention_layernorm.weight (f32, [576]):   6%|▌         | 32/516 [00:00<00:00, 1142.16it/s]
+Saving model.layers.15.input_layernorm.weight (f32, [576]):   6%|▋         | 33/516 [00:00<00:00, 1176.93it/s]         
+Saving model.layers.15.post_attention_layernorm.weight (f32, [576]):   7%|▋         | 34/516 [00:00<00:00, 1211.47it/s]
+Saving model.layers.16.input_layernorm.weight (f32, [576]):   7%|▋         | 35/516 [00:00<00:00, 1245.16it/s]         
+Saving model.layers.16.post_attention_layernorm.weight (f32, [576]):   7%|▋         | 36/516 [00:00<00:00, 1279.74it/s]
+Saving model.layers.17.input_layernorm.weight (f32, [576]):   7%|▋         | 37/516 [00:00<00:00, 1314.21it/s]         
+Saving model.layers.17.post_attention_layernorm.weight (f32, [576]):   7%|▋         | 38/516 [00:00<00:00, 1348.67it/s]
+Saving model.layers.18.input_layernorm.weight (f32, [576]):   8%|▊         | 39/516 [00:00<00:00, 1383.18it/s]         
+Saving model.layers.18.post_attention_layernorm.weight (f32, [576]):   8%|▊         | 40/516 [00:00<00:00, 1417.55it/s]
+Saving model.layers.19.input_layernorm.weight (f32, [576]):   8%|▊         | 41/516 [00:00<00:00, 1452.00it/s]         
+Saving model.layers.19.post_attention_layernorm.weight (f32, [576]):   8%|▊         | 42/516 [00:00<00:00, 1486.31it/s]
+Saving model.layers.20.input_layernorm.weight (f32, [576]):   8%|▊         | 43/516 [00:00<00:00, 1520.61it/s]         
+Saving model.layers.20.post_attention_layernorm.weight (f32, [576]):   9%|▊         | 44/516 [00:00<00:00, 1554.89it/s]
+Saving model.layers.21.input_layernorm.weight (f32, [576]):   9%|▊         | 45/516 [00:00<00:00, 1588.98it/s]         
+Saving model.layers.21.post_attention_layernorm.weight (f32, [576]):   9%|▉         | 46/516 [00:00<00:00, 1623.21it/s]
+Saving model.layers.22.input_layernorm.weight (f32, [576]):   9%|▉         | 47/516 [00:00<00:00, 1657.09it/s]         
+Saving model.layers.22.post_attention_layernorm.weight (f32, [576]):   9%|▉         | 48/516 [00:00<00:00, 1691.21it/s]
+Saving model.layers.23.input_layernorm.weight (f32, [576]):   9%|▉         | 49/516 [00:00<00:00, 1725.11it/s]         
+Saving model.layers.23.post_attention_layernorm.weight (f32, [576]):  10%|▉         | 50/516 [00:00<00:00, 1759.08it/s]
+Saving model.layers.24.input_layernorm.weight (f32, [576]):  10%|▉         | 51/516 [00:00<00:00, 1792.93it/s]         
+Saving model.layers.24.post_attention_layernorm.weight (f32, [576]):  10%|█         | 52/516 [00:00<00:00, 1826.80it/s]
+Saving model.layers.25.input_layernorm.weight (f32, [576]):  10%|█         | 53/516 [00:00<00:00, 1860.38it/s]         
+Saving model.layers.25.post_attention_layernorm.weight (f32, [576]):  10%|█         | 54/516 [00:00<00:00, 1893.94it/s]
+Saving model.layers.26.input_layernorm.weight (f32, [576]):  11%|█         | 55/516 [00:00<00:00, 1927.40it/s]         
+Saving model.layers.26.post_attention_layernorm.weight (f32, [576]):  11%|█         | 56/516 [00:00<00:00, 1961.00it/s]
+Saving model.layers.27.input_layernorm.weight (f32, [576]):  11%|█         | 57/516 [00:00<00:00, 1994.49it/s]         
+Saving model.layers.27.post_attention_layernorm.weight (f32, [576]):  11%|█         | 58/516 [00:00<00:00, 2027.84it/s]
+Saving model.layers.28.input_layernorm.weight (f32, [576]):  11%|█▏        | 59/516 [00:00<00:00, 2061.44it/s]         
+Saving model.layers.28.post_attention_layernorm.weight (f32, [576]):  12%|█▏        | 60/516 [00:00<00:00, 2094.53it/s]
+Saving model.layers.29.input_layernorm.weight (f32, [576]):  12%|█▏        | 61/516 [00:00<00:00, 2127.74it/s]         
+Saving model.layers.29.post_attention_layernorm.weight (f32, [576]):  12%|█▏        | 62/516 [00:00<00:00, 2161.19it/s]
+Saving model.layers.30.final_norm_layernorm.weight (f32, [576]):  12%|█▏        | 63/516 [00:00<00:00, 2194.06it/s]    
+Saving model.layers.0.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  12%|█▏        | 64/516 [00:00<00:00, 2227.33it/s]
+Saving model.layers.0.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  13%|█▎        | 65/516 [00:00<00:00, 2258.59it/s]     
+Saving model.layers.0.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  13%|█▎        | 66/516 [00:00<00:00, 2290.24it/s]
+Saving model.layers.0.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  13%|█▎        | 67/516 [00:00<00:00, 2320.59it/s]    
+Saving model.layers.0.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  13%|█▎        | 68/516 [00:00<00:00, 2353.12it/s]     
+Saving model.layers.0.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  13%|█▎        | 69/516 [00:00<00:00, 2384.66it/s]
+Saving model.layers.0.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  14%|█▎        | 70/516 [00:00<00:00, 2416.29it/s]
+Saving model.layers.0.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  14%|█▍        | 71/516 [00:00<00:00, 2448.19it/s]     
+Saving model.layers.0.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  14%|█▍        | 72/516 [00:00<00:00, 2480.47it/s]
+Saving model.layers.0.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  14%|█▍        | 73/516 [00:00<00:00, 2509.81it/s]    
+Saving model.layers.0.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  14%|█▍        | 74/516 [00:00<00:00, 2541.65it/s]     
+Saving model.layers.0.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  15%|█▍        | 75/516 [00:00<00:00, 2572.01it/s]
+Saving model.layers.0.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  15%|█▍        | 76/516 [00:00<00:00, 2601.86it/s] 
+Saving model.layers.0.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  15%|█▍        | 77/516 [00:00<00:00, 2631.95it/s]    
+Saving model.layers.0.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  15%|█▌        | 78/516 [00:00<00:00, 2663.59it/s]
+Saving model.layers.1.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  15%|█▌        | 79/516 [00:00<00:00, 2693.11it/s]  
+Saving model.layers.1.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  16%|█▌        | 80/516 [00:00<00:00, 2724.70it/s]     
+Saving model.layers.1.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  16%|█▌        | 81/516 [00:00<00:00, 2756.61it/s]
+Saving model.layers.1.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  16%|█▌        | 82/516 [00:00<00:00, 2786.66it/s]    
+Saving model.layers.1.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  16%|█▌        | 83/516 [00:00<00:00, 2818.07it/s]     
+Saving model.layers.1.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  16%|█▋        | 84/516 [00:00<00:00, 2849.18it/s]
+Saving model.layers.1.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  16%|█▋        | 85/516 [00:00<00:00, 2879.42it/s]
+Saving model.layers.1.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  17%|█▋        | 86/516 [00:00<00:00, 2910.24it/s]     
+Saving model.layers.1.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  17%|█▋        | 87/516 [00:00<00:00, 2941.38it/s]
+Saving model.layers.1.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  17%|█▋        | 88/516 [00:00<00:00, 2970.28it/s]    
+Saving model.layers.1.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  17%|█▋        | 89/516 [00:00<00:00, 3000.80it/s]     
+Saving model.layers.1.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  17%|█▋        | 90/516 [00:00<00:00, 3031.73it/s]
+Saving model.layers.1.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  18%|█▊        | 91/516 [00:00<00:00, 3059.35it/s] 
+Saving model.layers.1.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  18%|█▊        | 92/516 [00:00<00:00, 3089.21it/s]    
+Saving model.layers.1.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  18%|█▊        | 93/516 [00:00<00:00, 3120.39it/s]
+Saving model.layers.2.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  18%|█▊        | 94/516 [00:00<00:00, 3148.65it/s]  
+Saving model.layers.2.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  18%|█▊        | 95/516 [00:00<00:00, 3179.40it/s]     
+Saving model.layers.2.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  19%|█▊        | 96/516 [00:00<00:00, 3210.39it/s]
+Saving model.layers.2.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  19%|█▉        | 97/516 [00:00<00:00, 3239.82it/s]    
+Saving model.layers.2.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  19%|█▉        | 98/516 [00:00<00:00, 3270.49it/s]     
+Saving model.layers.2.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  19%|█▉        | 99/516 [00:00<00:00, 3301.45it/s]
+Saving model.layers.2.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  19%|█▉        | 100/516 [00:00<00:00, 3331.25it/s]
+Saving model.layers.2.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  20%|█▉        | 101/516 [00:00<00:00, 3361.41it/s]     
+Saving model.layers.2.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  20%|█▉        | 102/516 [00:00<00:00, 3392.08it/s]
+Saving model.layers.2.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  20%|█▉        | 103/516 [00:00<00:00, 3419.53it/s]    
+Saving model.layers.2.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  20%|██        | 104/516 [00:00<00:00, 3449.07it/s]     
+Saving model.layers.2.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  20%|██        | 105/516 [00:00<00:00, 3479.60it/s]
+Saving model.layers.2.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  21%|██        | 106/516 [00:00<00:00, 3492.81it/s] 
+Saving model.layers.2.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  21%|██        | 107/516 [00:00<00:00, 3522.05it/s]    
+Saving model.layers.2.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  21%|██        | 108/516 [00:00<00:00, 3551.93it/s]
+Saving model.layers.3.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  21%|██        | 109/516 [00:00<00:00, 3576.38it/s]  
+Saving model.layers.3.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  21%|██▏       | 110/516 [00:00<00:00, 3605.61it/s]     
+Saving model.layers.3.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  22%|██▏       | 111/516 [00:00<00:00, 3635.54it/s]
+Saving model.layers.3.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  22%|██▏       | 112/516 [00:00<00:00, 3663.83it/s]    
+Saving model.layers.3.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  22%|██▏       | 113/516 [00:00<00:00, 3693.18it/s]     
+Saving model.layers.3.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  22%|██▏       | 114/516 [00:00<00:00, 3723.19it/s]
+Saving model.layers.3.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  22%|██▏       | 115/516 [00:00<00:00, 3751.93it/s]
+Saving model.layers.3.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  22%|██▏       | 116/516 [00:00<00:00, 3780.47it/s]     
+Saving model.layers.3.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  23%|██▎       | 117/516 [00:00<00:00, 3809.84it/s]
+Saving model.layers.3.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  23%|██▎       | 118/516 [00:00<00:00, 3833.03it/s]    
+Saving model.layers.3.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  23%|██▎       | 119/516 [00:00<00:00, 3861.62it/s]     
+Saving model.layers.3.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  23%|██▎       | 120/516 [00:00<00:00, 3891.06it/s]
+Saving model.layers.3.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  23%|██▎       | 121/516 [00:00<00:00, 3916.76it/s] 
+Saving model.layers.3.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  24%|██▎       | 122/516 [00:00<00:00, 3944.93it/s]    
+Saving model.layers.3.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  24%|██▍       | 123/516 [00:00<00:00, 3974.17it/s]
+Saving model.layers.4.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  24%|██▍       | 124/516 [00:00<00:00, 4000.01it/s]  
+Saving model.layers.4.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  24%|██▍       | 125/516 [00:00<00:00, 4028.74it/s]     
+Saving model.layers.4.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  24%|██▍       | 126/516 [00:00<00:00, 4057.98it/s]
+Saving model.layers.4.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  25%|██▍       | 127/516 [00:00<00:00, 4085.07it/s]    
+Saving model.layers.4.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  25%|██▍       | 128/516 [00:00<00:00, 4113.89it/s]     
+Saving model.layers.4.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  25%|██▌       | 129/516 [00:00<00:00, 4143.24it/s]
+Saving model.layers.4.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  25%|██▌       | 130/516 [00:00<00:00, 4170.69it/s]
+Saving model.layers.4.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  25%|██▌       | 131/516 [00:00<00:00, 4191.36it/s]     
+Saving model.layers.4.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  26%|██▌       | 132/516 [00:00<00:00, 4185.30it/s]
+Saving model.layers.4.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  26%|██▌       | 133/516 [00:00<00:00, 4193.99it/s]    
+Saving model.layers.4.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  26%|██▌       | 134/516 [00:00<00:00, 4208.15it/s]     
+Saving model.layers.4.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  26%|██▌       | 135/516 [00:00<00:00, 4208.74it/s]
+Saving model.layers.4.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  26%|██▋       | 136/516 [00:00<00:00, 4220.21it/s] 
+Saving model.layers.4.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  27%|██▋       | 137/516 [00:00<00:00, 4235.61it/s]    
+Saving model.layers.4.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  27%|██▋       | 138/516 [00:00<00:00, 4262.94it/s]
+Saving model.layers.5.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  27%|██▋       | 139/516 [00:00<00:00, 4275.35it/s]  
+Saving model.layers.5.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  27%|██▋       | 140/516 [00:00<00:00, 4295.96it/s]     
+Saving model.layers.5.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  27%|██▋       | 141/516 [00:00<00:00, 4319.07it/s]
+Saving model.layers.5.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  28%|██▊       | 142/516 [00:00<00:00, 4338.26it/s]    
+Saving model.layers.5.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  28%|██▊       | 143/516 [00:00<00:00, 4361.76it/s]     
+Saving model.layers.5.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  28%|██▊       | 144/516 [00:00<00:00, 4385.72it/s]
+Saving model.layers.5.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  28%|██▊       | 145/516 [00:00<00:00, 4401.41it/s]
+Saving model.layers.5.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  28%|██▊       | 146/516 [00:00<00:00, 4425.59it/s]     
+Saving model.layers.5.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  28%|██▊       | 147/516 [00:00<00:00, 4452.65it/s]
+Saving model.layers.5.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  29%|██▊       | 148/516 [00:00<00:00, 4467.39it/s]    
+Saving model.layers.5.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  29%|██▉       | 149/516 [00:00<00:00, 4488.63it/s]     
+Saving model.layers.5.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  29%|██▉       | 150/516 [00:00<00:00, 4507.06it/s]
+Saving model.layers.5.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  29%|██▉       | 151/516 [00:00<00:00, 4522.98it/s] 
+Saving model.layers.5.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  29%|██▉       | 152/516 [00:00<00:00, 4544.24it/s]    
+Saving model.layers.5.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  30%|██▉       | 153/516 [00:00<00:00, 4568.24it/s]
+Saving model.layers.6.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  30%|██▉       | 154/516 [00:00<00:00, 4588.82it/s]  
+Saving model.layers.6.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  30%|███       | 155/516 [00:00<00:00, 4613.64it/s]     
+Saving model.layers.6.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  30%|███       | 156/516 [00:00<00:00, 4640.11it/s]
+Saving model.layers.6.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  30%|███       | 157/516 [00:00<00:00, 4663.61it/s]    
+Saving model.layers.6.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  31%|███       | 158/516 [00:00<00:00, 4689.82it/s]     
+Saving model.layers.6.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  31%|███       | 159/516 [00:00<00:00, 4716.30it/s]
+Saving model.layers.6.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  31%|███       | 160/516 [00:00<00:00, 4740.06it/s]
+Saving model.layers.6.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  31%|███       | 161/516 [00:00<00:00, 4765.45it/s]     
+Saving model.layers.6.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  31%|███▏      | 162/516 [00:00<00:00, 4791.63it/s]
+Saving model.layers.6.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  32%|███▏      | 163/516 [00:00<00:00, 4796.65it/s]    
+Saving model.layers.6.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  32%|███▏      | 164/516 [00:00<00:00, 4821.11it/s]     
+Saving model.layers.6.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  32%|███▏      | 165/516 [00:00<00:00, 4846.97it/s]
+Saving model.layers.6.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  32%|███▏      | 166/516 [00:00<00:00, 4868.91it/s] 
+Saving model.layers.6.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  32%|███▏      | 167/516 [00:00<00:00, 4893.79it/s]    
+Saving model.layers.6.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  33%|███▎      | 168/516 [00:00<00:00, 4919.63it/s]
+Saving model.layers.7.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  33%|███▎      | 169/516 [00:00<00:00, 4941.70it/s]  
+Saving model.layers.7.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  33%|███▎      | 170/516 [00:00<00:00, 4966.99it/s]     
+Saving model.layers.7.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  33%|███▎      | 171/516 [00:00<00:00, 4992.84it/s]
+Saving model.layers.7.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  33%|███▎      | 172/516 [00:00<00:00, 5016.48it/s]    
+Saving model.layers.7.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  34%|███▎      | 173/516 [00:00<00:00, 5041.83it/s]     
+Saving model.layers.7.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  34%|███▎      | 174/516 [00:00<00:00, 5067.87it/s]
+Saving model.layers.7.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  34%|███▍      | 175/516 [00:00<00:00, 5092.08it/s]
+Saving model.layers.7.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  34%|███▍      | 176/516 [00:00<00:00, 5116.56it/s]     
+Saving model.layers.7.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  34%|███▍      | 177/516 [00:00<00:00, 5142.04it/s]
+Saving model.layers.7.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  34%|███▍      | 178/516 [00:00<00:00, 5163.61it/s]    
+Saving model.layers.7.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  35%|███▍      | 179/516 [00:00<00:00, 5187.81it/s]     
+Saving model.layers.7.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  35%|███▍      | 180/516 [00:00<00:00, 5213.30it/s]
+Saving model.layers.7.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  35%|███▌      | 181/516 [00:00<00:00, 5234.85it/s] 
+Saving model.layers.7.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  35%|███▌      | 182/516 [00:00<00:00, 5259.24it/s]    
+Saving model.layers.7.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  35%|███▌      | 183/516 [00:00<00:00, 5284.14it/s]
+Saving model.layers.8.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  36%|███▌      | 184/516 [00:00<00:00, 5304.72it/s]  
+Saving model.layers.8.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  36%|███▌      | 185/516 [00:00<00:00, 5329.26it/s]     
+Saving model.layers.8.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  36%|███▌      | 186/516 [00:00<00:00, 5354.36it/s]
+Saving model.layers.8.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  36%|███▌      | 187/516 [00:00<00:00, 5377.31it/s]    
+Saving model.layers.8.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  36%|███▋      | 188/516 [00:00<00:00, 5402.14it/s]     
+Saving model.layers.8.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  37%|███▋      | 189/516 [00:00<00:00, 5427.31it/s]
+Saving model.layers.8.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  37%|███▋      | 190/516 [00:00<00:00, 5450.99it/s]
+Saving model.layers.8.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  37%|███▋      | 191/516 [00:00<00:00, 5474.99it/s]     
+Saving model.layers.8.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  37%|███▋      | 192/516 [00:00<00:00, 5499.86it/s]
+Saving model.layers.8.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  37%|███▋      | 193/516 [00:00<00:00, 5520.78it/s]    
+Saving model.layers.8.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  38%|███▊      | 194/516 [00:00<00:00, 5543.98it/s]     
+Saving model.layers.8.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  38%|███▊      | 195/516 [00:00<00:00, 5568.42it/s]
+Saving model.layers.8.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  38%|███▊      | 196/516 [00:00<00:00, 5589.48it/s] 
+Saving model.layers.8.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  38%|███▊      | 197/516 [00:00<00:00, 5613.19it/s]    
+Saving model.layers.8.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  38%|███▊      | 198/516 [00:00<00:00, 5638.00it/s]
+Saving model.layers.9.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  39%|███▊      | 199/516 [00:00<00:00, 5658.72it/s]  
+Saving model.layers.9.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  39%|███▉      | 200/516 [00:00<00:00, 5682.15it/s]     
+Saving model.layers.9.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  39%|███▉      | 201/516 [00:00<00:00, 5706.81it/s]
+Saving model.layers.9.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  39%|███▉      | 202/516 [00:00<00:00, 5729.23it/s]    
+Saving model.layers.9.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  39%|███▉      | 203/516 [00:00<00:00, 5753.31it/s]     
+Saving model.layers.9.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  40%|███▉      | 204/516 [00:00<00:00, 5778.06it/s]
+Saving model.layers.9.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  40%|███▉      | 205/516 [00:00<00:00, 5801.13it/s]
+Saving model.layers.9.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  40%|███▉      | 206/516 [00:00<00:00, 5824.64it/s]     
+Saving model.layers.9.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  40%|████      | 207/516 [00:00<00:00, 5848.93it/s]
+Saving model.layers.9.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  40%|████      | 208/516 [00:00<00:00, 5869.08it/s]    
+Saving model.layers.9.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  41%|████      | 209/516 [00:00<00:00, 5892.34it/s]     
+Saving model.layers.9.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  41%|████      | 210/516 [00:00<00:00, 5916.52it/s]
+Saving model.layers.9.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  41%|████      | 211/516 [00:00<00:00, 5936.80it/s] 
+Saving model.layers.9.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  41%|████      | 212/516 [00:00<00:00, 5959.93it/s]    
+Saving model.layers.9.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  41%|████▏     | 213/516 [00:00<00:00, 5982.63it/s]
+Saving model.layers.10.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  41%|████▏     | 214/516 [00:00<00:00, 5997.47it/s] 
+Saving model.layers.10.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  42%|████▏     | 215/516 [00:00<00:00, 6005.27it/s]     
+Saving model.layers.10.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  42%|████▏     | 216/516 [00:00<00:00, 6024.94it/s]
+Saving model.layers.10.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  42%|████▏     | 217/516 [00:00<00:00, 6024.42it/s]    
+Saving model.layers.10.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  42%|████▏     | 218/516 [00:00<00:00, 6035.29it/s]     
+Saving model.layers.10.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  42%|████▏     | 219/516 [00:00<00:00, 6053.42it/s]
+Saving model.layers.10.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  43%|████▎     | 220/516 [00:00<00:00, 6072.66it/s]
+Saving model.layers.10.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  43%|████▎     | 221/516 [00:00<00:00, 6094.73it/s]     
+Saving model.layers.10.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  43%|████▎     | 222/516 [00:00<00:00, 6104.65it/s]
+Saving model.layers.10.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  43%|████▎     | 223/516 [00:00<00:00, 6119.87it/s]    
+Saving model.layers.10.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  43%|████▎     | 224/516 [00:00<00:00, 6137.31it/s]     
+Saving model.layers.10.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  44%|████▎     | 225/516 [00:00<00:00, 6140.36it/s]
+Saving model.layers.10.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  44%|████▍     | 226/516 [00:00<00:00, 6149.33it/s] 
+Saving model.layers.10.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  44%|████▍     | 227/516 [00:00<00:00, 6170.85it/s]    
+Saving model.layers.10.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  44%|████▍     | 228/516 [00:00<00:00, 6189.61it/s]
+Saving model.layers.11.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  44%|████▍     | 229/516 [00:00<00:00, 6208.32it/s]  
+Saving model.layers.11.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  45%|████▍     | 230/516 [00:00<00:00, 6220.60it/s]     
+Saving model.layers.11.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  45%|████▍     | 231/516 [00:00<00:00, 6211.19it/s]
+Saving model.layers.11.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  45%|████▍     | 232/516 [00:00<00:00, 6231.21it/s]    
+Saving model.layers.11.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  45%|████▌     | 233/516 [00:00<00:00, 6253.71it/s]     
+Saving model.layers.11.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  45%|████▌     | 234/516 [00:00<00:00, 6276.65it/s]
+Saving model.layers.11.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  46%|████▌     | 235/516 [00:00<00:00, 6298.08it/s]
+Saving model.layers.11.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  46%|████▌     | 236/516 [00:00<00:00, 6319.79it/s]     
+Saving model.layers.11.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  46%|████▌     | 237/516 [00:00<00:00, 6342.48it/s]
+Saving model.layers.11.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  46%|████▌     | 238/516 [00:00<00:00, 6360.76it/s]    
+Saving model.layers.11.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  46%|████▋     | 239/516 [00:00<00:00, 6382.36it/s]     
+Saving model.layers.11.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  47%|████▋     | 240/516 [00:00<00:00, 6404.94it/s]
+Saving model.layers.11.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  47%|████▋     | 241/516 [00:00<00:00, 6422.72it/s] 
+Saving model.layers.11.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  47%|████▋     | 242/516 [00:00<00:00, 6444.25it/s]    
+Saving model.layers.11.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  47%|████▋     | 243/516 [00:00<00:00, 6466.90it/s]
+Saving model.layers.12.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  47%|████▋     | 244/516 [00:00<00:00, 6485.24it/s]  
+Saving model.layers.12.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  47%|████▋     | 245/516 [00:00<00:00, 6507.33it/s]     
+Saving model.layers.12.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  48%|████▊     | 246/516 [00:00<00:00, 6529.71it/s]
+Saving model.layers.12.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  48%|████▊     | 247/516 [00:00<00:00, 6549.50it/s]    
+Saving model.layers.12.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  48%|████▊     | 248/516 [00:00<00:00, 6571.28it/s]     
+Saving model.layers.12.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  48%|████▊     | 249/516 [00:00<00:00, 6593.78it/s]
+Saving model.layers.12.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  48%|████▊     | 250/516 [00:00<00:00, 6614.12it/s]
+Saving model.layers.12.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  49%|████▊     | 251/516 [00:00<00:00, 6635.30it/s]     
+Saving model.layers.12.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  49%|████▉     | 252/516 [00:00<00:00, 6657.71it/s]
+Saving model.layers.12.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  49%|████▉     | 253/516 [00:00<00:00, 6675.80it/s]    
+Saving model.layers.12.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  49%|████▉     | 254/516 [00:00<00:00, 6697.09it/s]     
+Saving model.layers.12.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  49%|████▉     | 255/516 [00:00<00:00, 6719.36it/s]
+Saving model.layers.12.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  50%|████▉     | 256/516 [00:00<00:00, 6737.41it/s] 
+Saving model.layers.12.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  50%|████▉     | 257/516 [00:00<00:00, 6758.52it/s]    
+Saving model.layers.12.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  50%|█████     | 258/516 [00:00<00:00, 6780.39it/s]
+Saving model.layers.13.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  50%|█████     | 259/516 [00:00<00:00, 6798.28it/s]  
+Saving model.layers.13.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  50%|█████     | 260/516 [00:00<00:00, 6819.84it/s]     
+Saving model.layers.13.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  51%|█████     | 261/516 [00:00<00:00, 6841.23it/s]
+Saving model.layers.13.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  51%|█████     | 262/516 [00:00<00:00, 6859.17it/s]    
+Saving model.layers.13.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  51%|█████     | 263/516 [00:00<00:00, 6879.60it/s]     
+Saving model.layers.13.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  51%|█████     | 264/516 [00:00<00:00, 6898.35it/s]
+Saving model.layers.13.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  51%|█████▏    | 265/516 [00:00<00:00, 6916.90it/s]
+Saving model.layers.13.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  52%|█████▏    | 266/516 [00:00<00:00, 6936.14it/s]     
+Saving model.layers.13.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  52%|█████▏    | 267/516 [00:00<00:00, 6957.11it/s]
+Saving model.layers.13.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  52%|█████▏    | 268/516 [00:00<00:00, 6973.55it/s]    
+Saving model.layers.13.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  52%|█████▏    | 269/516 [00:00<00:00, 6992.67it/s]     
+Saving model.layers.13.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  52%|█████▏    | 270/516 [00:00<00:00, 7014.45it/s]
+Saving model.layers.13.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  53%|█████▎    | 271/516 [00:00<00:00, 7031.63it/s] 
+Saving model.layers.13.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  53%|█████▎    | 272/516 [00:00<00:00, 7052.48it/s]    
+Saving model.layers.13.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  53%|█████▎    | 273/516 [00:00<00:00, 7074.21it/s]
+Saving model.layers.14.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  53%|█████▎    | 274/516 [00:00<00:00, 7070.98it/s]  
+Saving model.layers.14.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  53%|█████▎    | 275/516 [00:00<00:00, 7091.46it/s]     
+Saving model.layers.14.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  53%|█████▎    | 276/516 [00:00<00:00, 7113.05it/s]
+Saving model.layers.14.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  54%|█████▎    | 277/516 [00:00<00:00, 7131.29it/s]    
+Saving model.layers.14.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  54%|█████▍    | 278/516 [00:00<00:00, 7152.42it/s]     
+Saving model.layers.14.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  54%|█████▍    | 279/516 [00:00<00:00, 7174.06it/s]
+Saving model.layers.14.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  54%|█████▍    | 280/516 [00:00<00:00, 7193.69it/s]
+Saving model.layers.14.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  54%|█████▍    | 281/516 [00:00<00:00, 7214.03it/s]     
+Saving model.layers.14.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  55%|█████▍    | 282/516 [00:00<00:00, 7235.23it/s]
+Saving model.layers.14.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  55%|█████▍    | 283/516 [00:00<00:00, 7251.39it/s]    
+Saving model.layers.14.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  55%|█████▌    | 284/516 [00:00<00:00, 7271.42it/s]     
+Saving model.layers.14.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  55%|█████▌    | 285/516 [00:00<00:00, 7292.75it/s]
+Saving model.layers.14.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  55%|█████▌    | 286/516 [00:00<00:00, 7309.20it/s] 
+Saving model.layers.14.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  56%|█████▌    | 287/516 [00:00<00:00, 7328.95it/s]    
+Saving model.layers.14.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  56%|█████▌    | 288/516 [00:00<00:00, 7349.97it/s]
+Saving model.layers.15.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  56%|█████▌    | 289/516 [00:00<00:00, 7365.90it/s]  
+Saving model.layers.15.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  56%|█████▌    | 290/516 [00:00<00:00, 7385.91it/s]     
+Saving model.layers.15.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  56%|█████▋    | 291/516 [00:00<00:00, 7407.19it/s]
+Saving model.layers.15.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  57%|█████▋    | 292/516 [00:00<00:00, 7424.72it/s]    
+Saving model.layers.15.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  57%|█████▋    | 293/516 [00:00<00:00, 7444.86it/s]     
+Saving model.layers.15.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  57%|█████▋    | 294/516 [00:00<00:00, 7465.70it/s]
+Saving model.layers.15.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  57%|█████▋    | 295/516 [00:00<00:00, 7484.84it/s]
+Saving model.layers.15.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  57%|█████▋    | 296/516 [00:00<00:00, 7504.50it/s]     
+Saving model.layers.15.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  58%|█████▊    | 297/516 [00:00<00:00, 7525.26it/s]
+Saving model.layers.15.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  58%|█████▊    | 298/516 [00:00<00:00, 7532.48it/s]    
+Saving model.layers.15.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  58%|█████▊    | 299/516 [00:00<00:00, 7547.66it/s]     
+Saving model.layers.15.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  58%|█████▊    | 300/516 [00:00<00:00, 7563.94it/s]
+Saving model.layers.15.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  58%|█████▊    | 301/516 [00:00<00:00, 7561.29it/s] 
+Saving model.layers.15.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  59%|█████▊    | 302/516 [00:00<00:00, 7578.60it/s]    
+Saving model.layers.15.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  59%|█████▊    | 303/516 [00:00<00:00, 7599.10it/s]
+Saving model.layers.16.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  59%|█████▉    | 304/516 [00:00<00:00, 7563.18it/s]  
+Saving model.layers.16.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  59%|█████▉    | 305/516 [00:00<00:00, 7581.80it/s]     
+Saving model.layers.16.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  59%|█████▉    | 306/516 [00:00<00:00, 7602.29it/s]
+Saving model.layers.16.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  59%|█████▉    | 307/516 [00:00<00:00, 7614.28it/s]    
+Saving model.layers.16.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  60%|█████▉    | 308/516 [00:00<00:00, 7633.58it/s]     
+Saving model.layers.16.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  60%|█████▉    | 309/516 [00:00<00:00, 7629.82it/s]
+Saving model.layers.16.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  60%|██████    | 310/516 [00:00<00:00, 7641.65it/s]
+Saving model.layers.16.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  60%|██████    | 311/516 [00:00<00:00, 7657.07it/s]     
+Saving model.layers.16.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  60%|██████    | 312/516 [00:00<00:00, 7675.66it/s]
+Saving model.layers.16.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  61%|██████    | 313/516 [00:00<00:00, 7687.05it/s]    
+Saving model.layers.16.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  61%|██████    | 314/516 [00:00<00:00, 7703.67it/s]     
+Saving model.layers.16.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  61%|██████    | 315/516 [00:00<00:00, 7723.64it/s]
+Saving model.layers.16.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  61%|██████    | 316/516 [00:00<00:00, 7737.30it/s] 
+Saving model.layers.16.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  61%|██████▏   | 317/516 [00:00<00:00, 7756.31it/s]    
+Saving model.layers.16.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  62%|██████▏   | 318/516 [00:00<00:00, 7776.20it/s]
+Saving model.layers.17.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  62%|██████▏   | 319/516 [00:00<00:00, 7791.52it/s]  
+Saving model.layers.17.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  62%|██████▏   | 320/516 [00:00<00:00, 7810.39it/s]     
+Saving model.layers.17.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  62%|██████▏   | 321/516 [00:00<00:00, 7830.43it/s]
+Saving model.layers.17.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  62%|██████▏   | 322/516 [00:00<00:00, 7847.34it/s]    
+Saving model.layers.17.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  63%|██████▎   | 323/516 [00:00<00:00, 7866.77it/s]     
+Saving model.layers.17.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  63%|██████▎   | 324/516 [00:00<00:00, 7886.68it/s]
+Saving model.layers.17.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  63%|██████▎   | 325/516 [00:00<00:00, 7904.88it/s]
+Saving model.layers.17.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  63%|██████▎   | 326/516 [00:00<00:00, 7922.63it/s]     
+Saving model.layers.17.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  63%|██████▎   | 327/516 [00:00<00:00, 7939.62it/s]
+Saving model.layers.17.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  64%|██████▎   | 328/516 [00:00<00:00, 7951.88it/s]    
+Saving model.layers.17.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  64%|██████▍   | 329/516 [00:00<00:00, 7943.80it/s]     
+Saving model.layers.17.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  64%|██████▍   | 330/516 [00:00<00:00, 7961.39it/s]
+Saving model.layers.17.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  64%|██████▍   | 331/516 [00:00<00:00, 7974.79it/s] 
+Saving model.layers.17.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  64%|██████▍   | 332/516 [00:00<00:00, 7992.86it/s]    
+Saving model.layers.17.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  65%|██████▍   | 333/516 [00:00<00:00, 8012.16it/s]
+Saving model.layers.18.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  65%|██████▍   | 334/516 [00:00<00:00, 8026.18it/s]  
+Saving model.layers.18.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  65%|██████▍   | 335/516 [00:00<00:00, 8044.77it/s]     
+Saving model.layers.18.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  65%|██████▌   | 336/516 [00:00<00:00, 8064.17it/s]
+Saving model.layers.18.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  65%|██████▌   | 337/516 [00:00<00:00, 8080.77it/s]    
+Saving model.layers.18.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  66%|██████▌   | 338/516 [00:00<00:00, 8099.52it/s]     
+Saving model.layers.18.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  66%|██████▌   | 339/516 [00:00<00:00, 8119.21it/s]
+Saving model.layers.18.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  66%|██████▌   | 340/516 [00:00<00:00, 8136.10it/s]
+Saving model.layers.18.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  66%|██████▌   | 341/516 [00:00<00:00, 8152.08it/s]     
+Saving model.layers.18.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  66%|██████▋   | 342/516 [00:00<00:00, 8170.86it/s]
+Saving model.layers.18.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  66%|██████▋   | 343/516 [00:00<00:00, 8185.01it/s]    
+Saving model.layers.18.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  67%|██████▋   | 344/516 [00:00<00:00, 8202.80it/s]     
+Saving model.layers.18.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  67%|██████▋   | 345/516 [00:00<00:00, 8222.12it/s]
+Saving model.layers.18.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  67%|██████▋   | 346/516 [00:00<00:00, 8235.93it/s] 
+Saving model.layers.18.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  67%|██████▋   | 347/516 [00:00<00:00, 8253.69it/s]    
+Saving model.layers.18.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  67%|██████▋   | 348/516 [00:00<00:00, 8272.51it/s]
+Saving model.layers.19.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  68%|██████▊   | 349/516 [00:00<00:00, 8285.85it/s]  
+Saving model.layers.19.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  68%|██████▊   | 350/516 [00:00<00:00, 8302.12it/s]     
+Saving model.layers.19.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  68%|██████▊   | 351/516 [00:00<00:00, 8319.54it/s]
+Saving model.layers.19.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  68%|██████▊   | 352/516 [00:00<00:00, 8329.17it/s]    
+Saving model.layers.19.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  68%|██████▊   | 353/516 [00:00<00:00, 8343.18it/s]     
+Saving model.layers.19.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  69%|██████▊   | 354/516 [00:00<00:00, 8348.70it/s]
+Saving model.layers.19.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  69%|██████▉   | 355/516 [00:00<00:00, 8057.02it/s]
+Saving model.layers.19.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  69%|██████▉   | 356/516 [00:00<00:00, 8051.05it/s]     
+Saving model.layers.19.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  69%|██████▉   | 357/516 [00:00<00:00, 8043.61it/s]
+Saving model.layers.19.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  69%|██████▉   | 358/516 [00:00<00:00, 8033.00it/s]    
+Saving model.layers.19.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  70%|██████▉   | 359/516 [00:00<00:00, 8043.56it/s]     
+Saving model.layers.19.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  70%|██████▉   | 360/516 [00:00<00:00, 8061.83it/s]
+Saving model.layers.19.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  70%|██████▉   | 361/516 [00:00<00:00, 8075.13it/s] 
+Saving model.layers.19.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  70%|███████   | 362/516 [00:00<00:00, 8091.89it/s]    
+Saving model.layers.19.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  70%|███████   | 363/516 [00:00<00:00, 8107.20it/s]
+Saving model.layers.20.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  71%|███████   | 364/516 [00:00<00:00, 8119.76it/s]  
+Saving model.layers.20.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  71%|███████   | 365/516 [00:00<00:00, 8136.62it/s]     
+Saving model.layers.20.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  71%|███████   | 366/516 [00:00<00:00, 8153.84it/s]
+Saving model.layers.20.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  71%|███████   | 367/516 [00:00<00:00, 8164.28it/s]    
+Saving model.layers.20.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  71%|███████▏  | 368/516 [00:00<00:00, 8181.06it/s]     
+Saving model.layers.20.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  72%|███████▏  | 369/516 [00:00<00:00, 8199.25it/s]
+Saving model.layers.20.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  72%|███████▏  | 370/516 [00:00<00:00, 8215.51it/s]
+Saving model.layers.20.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  72%|███████▏  | 371/516 [00:00<00:00, 8232.17it/s]     
+Saving model.layers.20.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  72%|███████▏  | 372/516 [00:00<00:00, 8250.00it/s]
+Saving model.layers.20.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  72%|███████▏  | 373/516 [00:00<00:00, 8263.18it/s]    
+Saving model.layers.20.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  72%|███████▏  | 374/516 [00:00<00:00, 8279.82it/s]     
+Saving model.layers.20.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  73%|███████▎  | 375/516 [00:00<00:00, 8297.75it/s]
+Saving model.layers.20.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  73%|███████▎  | 376/516 [00:00<00:00, 8310.89it/s] 
+Saving model.layers.20.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  73%|███████▎  | 377/516 [00:00<00:00, 8327.47it/s]    
+Saving model.layers.20.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  73%|███████▎  | 378/516 [00:00<00:00, 8345.12it/s]
+Saving model.layers.21.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  73%|███████▎  | 379/516 [00:00<00:00, 8357.60it/s]  
+Saving model.layers.21.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  74%|███████▎  | 380/516 [00:00<00:00, 8374.64it/s]     
+Saving model.layers.21.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  74%|███████▍  | 381/516 [00:00<00:00, 8392.31it/s]
+Saving model.layers.21.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  74%|███████▍  | 382/516 [00:00<00:00, 8406.70it/s]    
+Saving model.layers.21.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  74%|███████▍  | 383/516 [00:00<00:00, 8423.14it/s]     
+Saving model.layers.21.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  74%|███████▍  | 384/516 [00:00<00:00, 8439.95it/s]
+Saving model.layers.21.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  75%|███████▍  | 385/516 [00:00<00:00, 8433.95it/s]
+Saving model.layers.21.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  75%|███████▍  | 386/516 [00:00<00:00, 8448.27it/s]     
+Saving model.layers.21.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  75%|███████▌  | 387/516 [00:00<00:00, 8465.30it/s]
+Saving model.layers.21.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  75%|███████▌  | 388/516 [00:00<00:00, 8470.52it/s]    
+Saving model.layers.21.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  75%|███████▌  | 389/516 [00:00<00:00, 8485.50it/s]     
+Saving model.layers.21.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  76%|███████▌  | 390/516 [00:00<00:00, 8502.50it/s]
+Saving model.layers.21.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  76%|███████▌  | 391/516 [00:00<00:00, 8514.30it/s] 
+Saving model.layers.21.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  76%|███████▌  | 392/516 [00:00<00:00, 8528.99it/s]    
+Saving model.layers.21.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  76%|███████▌  | 393/516 [00:00<00:00, 8546.09it/s]
+Saving model.layers.22.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  76%|███████▋  | 394/516 [00:00<00:00, 8558.70it/s]  
+Saving model.layers.22.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  77%|███████▋  | 395/516 [00:00<00:00, 8575.04it/s]     
+Saving model.layers.22.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  77%|███████▋  | 396/516 [00:00<00:00, 8592.44it/s]
+Saving model.layers.22.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  77%|███████▋  | 397/516 [00:00<00:00, 8606.88it/s]    
+Saving model.layers.22.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  77%|███████▋  | 398/516 [00:00<00:00, 8623.30it/s]     
+Saving model.layers.22.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  77%|███████▋  | 399/516 [00:00<00:00, 8640.64it/s]
+Saving model.layers.22.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  78%|███████▊  | 400/516 [00:00<00:00, 8654.43it/s]
+Saving model.layers.22.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  78%|███████▊  | 401/516 [00:00<00:00, 8668.95it/s]     
+Saving model.layers.22.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  78%|███████▊  | 402/516 [00:00<00:00, 8686.27it/s]
+Saving model.layers.22.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  78%|███████▊  | 403/516 [00:00<00:00, 8698.70it/s]    
+Saving model.layers.22.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  78%|███████▊  | 404/516 [00:00<00:00, 8714.76it/s]     
+Saving model.layers.22.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  78%|███████▊  | 405/516 [00:00<00:00, 8731.84it/s]
+Saving model.layers.22.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  79%|███████▊  | 406/516 [00:00<00:00, 8744.55it/s] 
+Saving model.layers.22.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  79%|███████▉  | 407/516 [00:00<00:00, 8759.66it/s]    
+Saving model.layers.22.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  79%|███████▉  | 408/516 [00:00<00:00, 8776.81it/s]
+Saving model.layers.23.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  79%|███████▉  | 409/516 [00:00<00:00, 8788.72it/s]  
+Saving model.layers.23.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  79%|███████▉  | 410/516 [00:00<00:00, 8805.29it/s]     
+Saving model.layers.23.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  80%|███████▉  | 411/516 [00:00<00:00, 8822.43it/s]
+Saving model.layers.23.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  80%|███████▉  | 412/516 [00:00<00:00, 8833.45it/s]    
+Saving model.layers.23.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  80%|████████  | 413/516 [00:00<00:00, 8849.19it/s]     
+Saving model.layers.23.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  80%|████████  | 414/516 [00:00<00:00, 8866.05it/s]
+Saving model.layers.23.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  80%|████████  | 415/516 [00:00<00:00, 8880.43it/s]
+Saving model.layers.23.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  81%|████████  | 416/516 [00:00<00:00, 8894.80it/s]     
+Saving model.layers.23.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  81%|████████  | 417/516 [00:00<00:00, 8911.41it/s]
+Saving model.layers.23.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  81%|████████  | 418/516 [00:00<00:00, 8923.64it/s]    
+Saving model.layers.23.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  81%|████████  | 419/516 [00:00<00:00, 8939.62it/s]     
+Saving model.layers.23.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  81%|████████▏ | 420/516 [00:00<00:00, 8956.58it/s]
+Saving model.layers.23.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  82%|████████▏ | 421/516 [00:00<00:00, 8964.33it/s] 
+Saving model.layers.23.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  82%|████████▏ | 422/516 [00:00<00:00, 8978.55it/s]    
+Saving model.layers.23.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  82%|████████▏ | 423/516 [00:00<00:00, 8995.40it/s]
+Saving model.layers.24.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  82%|████████▏ | 424/516 [00:00<00:00, 9002.70it/s]  
+Saving model.layers.24.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  82%|████████▏ | 425/516 [00:00<00:00, 9018.05it/s]     
+Saving model.layers.24.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  83%|████████▎ | 426/516 [00:00<00:00, 9034.65it/s]
+Saving model.layers.24.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  83%|████████▎ | 427/516 [00:00<00:00, 9046.98it/s]    
+Saving model.layers.24.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  83%|████████▎ | 428/516 [00:00<00:00, 9063.04it/s]     
+Saving model.layers.24.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  83%|████████▎ | 429/516 [00:00<00:00, 9079.77it/s]
+Saving model.layers.24.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  83%|████████▎ | 430/516 [00:00<00:00, 9094.19it/s]
+Saving model.layers.24.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  84%|████████▎ | 431/516 [00:00<00:00, 9108.45it/s]     
+Saving model.layers.24.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  84%|████████▎ | 432/516 [00:00<00:00, 9125.12it/s]
+Saving model.layers.24.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  84%|████████▍ | 433/516 [00:00<00:00, 9131.99it/s]    
+Saving model.layers.24.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  84%|████████▍ | 434/516 [00:00<00:00, 9147.42it/s]     
+Saving model.layers.24.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  84%|████████▍ | 435/516 [00:00<00:00, 9164.08it/s]
+Saving model.layers.24.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  84%|████████▍ | 436/516 [00:00<00:00, 9151.41it/s] 
+Saving model.layers.24.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  85%|████████▍ | 437/516 [00:00<00:00, 9166.85it/s]    
+Saving model.layers.24.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  85%|████████▍ | 438/516 [00:00<00:00, 9183.37it/s]
+Saving model.layers.25.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  85%|████████▌ | 439/516 [00:00<00:00, 9159.60it/s]  
+Saving model.layers.25.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  85%|████████▌ | 440/516 [00:00<00:00, 9171.48it/s]     
+Saving model.layers.25.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  85%|████████▌ | 441/516 [00:00<00:00, 9179.09it/s]
+Saving model.layers.25.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  86%|████████▌ | 442/516 [00:00<00:00, 9187.32it/s]    
+Saving model.layers.25.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  86%|████████▌ | 443/516 [00:00<00:00, 9195.67it/s]     
+Saving model.layers.25.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  86%|████████▌ | 444/516 [00:00<00:00, 9210.32it/s]
+Saving model.layers.25.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  86%|████████▌ | 445/516 [00:00<00:00, 9219.53it/s]
+Saving model.layers.25.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  86%|████████▋ | 446/516 [00:00<00:00, 9228.62it/s]     
+Saving model.layers.25.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  87%|████████▋ | 447/516 [00:00<00:00, 9241.29it/s]
+Saving model.layers.25.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  87%|████████▋ | 448/516 [00:00<00:00, 9248.60it/s]    
+Saving model.layers.25.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  87%|████████▋ | 449/516 [00:00<00:00, 9251.63it/s]     
+Saving model.layers.25.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  87%|████████▋ | 450/516 [00:00<00:00, 9260.81it/s]
+Saving model.layers.25.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  87%|████████▋ | 451/516 [00:00<00:00, 9263.48it/s] 
+Saving model.layers.25.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  88%|████████▊ | 452/516 [00:00<00:00, 9277.12it/s]    
+Saving model.layers.25.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  88%|████████▊ | 453/516 [00:00<00:00, 9288.14it/s]
+Saving model.layers.26.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  88%|████████▊ | 454/516 [00:00<00:00, 9295.88it/s]  
+Saving model.layers.26.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  88%|████████▊ | 455/516 [00:00<00:00, 9307.04it/s]     
+Saving model.layers.26.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  88%|████████▊ | 456/516 [00:00<00:00, 9315.27it/s]
+Saving model.layers.26.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  89%|████████▊ | 457/516 [00:00<00:00, 9321.40it/s]    
+Saving model.layers.26.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  89%|████████▉ | 458/516 [00:00<00:00, 9332.45it/s]     
+Saving model.layers.26.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  89%|████████▉ | 459/516 [00:00<00:00, 9346.92it/s]
+Saving model.layers.26.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  89%|████████▉ | 460/516 [00:00<00:00, 9353.62it/s]
+Saving model.layers.26.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  89%|████████▉ | 461/516 [00:00<00:00, 9367.46it/s]     
+Saving model.layers.26.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  90%|████████▉ | 462/516 [00:00<00:00, 9383.18it/s]
+Saving model.layers.26.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  90%|████████▉ | 463/516 [00:00<00:00, 9388.99it/s]    
+Saving model.layers.26.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  90%|████████▉ | 464/516 [00:00<00:00, 9401.68it/s]     
+Saving model.layers.26.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  90%|█████████ | 465/516 [00:00<00:00, 9417.71it/s]
+Saving model.layers.26.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  90%|█████████ | 466/516 [00:00<00:00, 9424.45it/s] 
+Saving model.layers.26.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  91%|█████████ | 467/516 [00:00<00:00, 9438.94it/s]    
+Saving model.layers.26.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  91%|█████████ | 468/516 [00:00<00:00, 9454.55it/s]
+Saving model.layers.27.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  91%|█████████ | 469/516 [00:00<00:00, 9460.81it/s]  
+Saving model.layers.27.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  91%|█████████ | 470/516 [00:00<00:00, 9475.78it/s]     
+Saving model.layers.27.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  91%|█████████▏| 471/516 [00:00<00:00, 9491.75it/s]
+Saving model.layers.27.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  91%|█████████▏| 472/516 [00:00<00:00, 9504.64it/s]    
+Saving model.layers.27.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  92%|█████████▏| 473/516 [00:00<00:00, 9520.34it/s]     
+Saving model.layers.27.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  92%|█████████▏| 474/516 [00:00<00:00, 9536.08it/s]
+Saving model.layers.27.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  92%|█████████▏| 475/516 [00:00<00:00, 9548.32it/s]
+Saving model.layers.27.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  92%|█████████▏| 476/516 [00:00<00:00, 9563.06it/s]     
+Saving model.layers.27.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  92%|█████████▏| 477/516 [00:00<00:00, 9578.92it/s]
+Saving model.layers.27.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  93%|█████████▎| 478/516 [00:00<00:00, 9590.10it/s]    
+Saving model.layers.27.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  93%|█████████▎| 479/516 [00:00<00:00, 9603.27it/s]     
+Saving model.layers.27.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  93%|█████████▎| 480/516 [00:00<00:00, 9618.86it/s]
+Saving model.layers.27.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  93%|█████████▎| 481/516 [00:00<00:00, 9626.76it/s] 
+Saving model.layers.27.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  93%|█████████▎| 482/516 [00:00<00:00, 9641.34it/s]    
+Saving model.layers.27.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  94%|█████████▎| 483/516 [00:00<00:00, 9656.92it/s]
+Saving model.layers.28.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  94%|█████████▍| 484/516 [00:00<00:00, 9666.64it/s]  
+Saving model.layers.28.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  94%|█████████▍| 485/516 [00:00<00:00, 9681.64it/s]     
+Saving model.layers.28.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  94%|█████████▍| 486/516 [00:00<00:00, 9697.54it/s]
+Saving model.layers.28.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  94%|█████████▍| 487/516 [00:00<00:00, 9707.24it/s]    
+Saving model.layers.28.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  95%|█████████▍| 488/516 [00:00<00:00, 9722.27it/s]     
+Saving model.layers.28.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  95%|█████████▍| 489/516 [00:00<00:00, 9737.94it/s]
+Saving model.layers.28.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  95%|█████████▍| 490/516 [00:00<00:00, 9751.83it/s]
+Saving model.layers.28.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  95%|█████████▌| 491/516 [00:00<00:00, 9765.71it/s]     
+Saving model.layers.28.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  95%|█████████▌| 492/516 [00:00<00:00, 9781.10it/s]
+Saving model.layers.28.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  96%|█████████▌| 493/516 [00:00<00:00, 9778.04it/s]    
+Saving model.layers.28.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  96%|█████████▌| 494/516 [00:00<00:00, 9783.16it/s]     
+Saving model.layers.28.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  96%|█████████▌| 495/516 [00:00<00:00, 9787.07it/s]
+Saving model.layers.28.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  96%|█████████▌| 496/516 [00:00<00:00, 9769.17it/s] 
+Saving model.layers.28.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  96%|█████████▋| 497/516 [00:00<00:00, 9782.48it/s]    
+Saving model.layers.28.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  97%|█████████▋| 498/516 [00:00<00:00, 9792.56it/s]
+Saving model.layers.29.attn.qkv_proj.MatMul.weight_scale (f32, [960,18]):  97%|█████████▋| 499/516 [00:00<00:00, 9792.03it/s]  
+Saving model.layers.29.attn.qkv_proj.MatMul.weight_zp (u8, [960,9]):  97%|█████████▋| 500/516 [00:00<00:00, 9797.62it/s]     
+Saving model.layers.29.attn.qkv_proj.MatMul.weight_Q4G32 (u8, [960,18,16]):  97%|█████████▋| 501/516 [00:00<00:00, 9805.63it/s]
+Saving model.layers.29.attn.o_proj.MatMul.weight_scale (f32, [576,18]):  97%|█████████▋| 502/516 [00:00<00:00, 9808.36it/s]    
+Saving model.layers.29.attn.o_proj.MatMul.weight_zp (u8, [576,9]):  97%|█████████▋| 503/516 [00:00<00:00, 9819.25it/s]     
+Saving model.layers.29.attn.o_proj.MatMul.weight_Q4G32 (u8, [576,18,16]):  98%|█████████▊| 504/516 [00:00<00:00, 9812.15it/s]
+Saving model.layers.29.mlp.gate_proj.MatMul.weight_scale (f32, [1536,18]):  98%|█████████▊| 505/516 [00:00<00:00, 9821.86it/s]
+Saving model.layers.29.mlp.gate_proj.MatMul.weight_zp (u8, [1536,9]):  98%|█████████▊| 506/516 [00:00<00:00, 9812.33it/s]     
+Saving model.layers.29.mlp.gate_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  98%|█████████▊| 507/516 [00:00<00:00, 9810.76it/s]
+Saving model.layers.29.mlp.up_proj.MatMul.weight_scale (f32, [1536,18]):  98%|█████████▊| 508/516 [00:00<00:00, 9810.74it/s]    
+Saving model.layers.29.mlp.up_proj.MatMul.weight_zp (u8, [1536,9]):  99%|█████████▊| 509/516 [00:00<00:00, 9823.04it/s]     
+Saving model.layers.29.mlp.up_proj.MatMul.weight_Q4G32 (u8, [1536,18,16]):  99%|█████████▉| 510/516 [00:00<00:00, 9792.24it/s]
+Saving model.layers.29.mlp.down_proj.MatMul.weight_scale (f32, [576,48]):  99%|█████████▉| 511/516 [00:00<00:00, 9798.30it/s] 
+Saving model.layers.29.mlp.down_proj.MatMul.weight_zp (u8, [576,24]):  99%|█████████▉| 512/516 [00:00<00:00, 9810.70it/s]    
+Saving model.layers.29.mlp.down_proj.MatMul.weight_Q4G32 (u8, [576,48,16]):  99%|█████████▉| 513/516 [00:00<00:00, 9825.33it/s]
+Saving lm_head.MatMul.weight_scale (f32, [49152,18]): 100%|█████████▉| 514/516 [00:00<00:00, 9830.16it/s]                      
+Saving lm_head.MatMul.weight_zp (u8, [49152,18]): 100%|█████████▉| 515/516 [00:00<00:00, 9753.58it/s]    
+Saving lm_head.MatMul.weight_Q8G32 (u8, [49152,18,32]): 100%|██████████| 516/516 [00:00<00:00, 9748.75it/s]
+Saving lm_head.MatMul.weight_Q8G32 (u8, [49152,18,32]): 100%|██████████| 516/516 [00:00<00:00, 7130.14it/s]
+Saving GenAI config in /tmp/x
+Saving processing files in /tmp/x for GenAI

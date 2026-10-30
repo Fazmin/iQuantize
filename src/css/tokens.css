@@ -1,0 +1,152 @@
+/* Design tokens. Dark is the default; light is applied via [data-theme="light"]
+   (resolved from the system preference when the user picks "system"). */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs: 13px;
+  --fs-md: 14px;
+  --fs-lg: 16px;
+  --fs-xl: 20px;
+  --fs-2xl: 26px;
+
+  --r-sm: 4px;
+  --r: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+
+  --titlebar-h: 40px;
+  --workarea-head-h: 44px;
+  --sidebar-w: 240px;
+  --inspector-w: 360px;
+  --row-h: 30px;
+
+  /* Stacking order: floating UI (menus, info popovers, tooltips) must sit above modals,
+     because modals contain controls that open them. */
+  --z-titlebar: 20;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-menu: 600;
+  --z-pop: 700;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 100ms;
+  --t: 160ms;
+
+  /* Bit-width scale for the tensor map and histograms (readable in both themes). */
+  --bits-1: #e5484d;
+  --bits-2: #ec5e41;
+  --bits-3: #f76b15;
+  --bits-4: #f5b000;
+  --bits-5: #46a758;
+  --bits-6: #12a594;
+  --bits-8: #0090ff;
+  --bits-16: #8e4ec6;
+  --bits-32: #7c7f8a;
+
+  --series-1: #6e79e0;
+  --series-2: #12a594;
+  --series-3: #f76b15;
+  --series-4: #d6409f;
+  --series-5: #0090ff;
+}
+
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  /* Neutral greys sampled from the Linear-style reference: outlines are faint and
+     internal dividers fainter still, so panels read as surfaces rather than boxes. */
+  --bg: #0f0f11;
+  --bg-sidebar: #09090a;
+  --bg-titlebar: #09090a;
+  --panel: #141416;
+  --panel-2: #18181b;
+  --panel-3: #1e1e21;
+  --hover: rgba(255, 255, 255, 0.045);
+  --active: rgba(255, 255, 255, 0.075);
+  --divider: #19191c;
+  --border: #1e1f22;
+  --border-2: #28292d;
+  --border-focus: #5e6ad2;
+  --text: #e9eaed;
+  --text-2: #b8bbc2;
+  --text-3: #80848e;
+  --text-4: #5b5f68;
+  --accent: #5e6ad2;
+  --accent-hover: #6c77dd;
+  --accent-soft: rgba(94, 106, 210, 0.16);
+  --accent-text: #a3abff;
+  --on-accent: #ffffff;
+  --success: #4cb782;
+  --success-soft: rgba(76, 183, 130, 0.14);
+  --warning: #f2c94c;
+  --warning-soft: rgba(242, 201, 76, 0.13);
+  --danger: #eb5757;
+  --danger-soft: rgba(235, 87, 87, 0.14);
+  --info: #4ea7fc;
+  --info-soft: rgba(78, 167, 252, 0.13);
+  --shadow-pop: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 8px 28px rgba(0, 0, 0, 0.45);
+  --shadow-panel: none;
+  --shadow-modal: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 24px 60px rgba(0, 0, 0, 0.6);
+  --cell-empty: #2a2c33;
+  --code-bg: rgba(255, 255, 255, 0.06);
+  --scrollbar: rgba(255, 255, 255, 0.12);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fcfcfd;
+  --bg-sidebar: #f3f3f5;
+  --bg-titlebar: #f3f3f5;
+  --panel: #ffffff;
+  --panel-2: #f7f7f9;
+  --panel-3: #efeff2;
+  --hover: rgba(0, 0, 0, 0.04);
+  --active: rgba(0, 0, 0, 0.065);
+  --divider: #efeff2;
+  --border: #e7e7eb;
+  --border-2: #dcdce1;
+  --border-focus: #5e6ad2;
+  --text: #1b1c20;
+  --text-2: #464953;
+  --text-3: #767a85;
+  --text-4: #a2a5ad;
+  --accent: #5e6ad2;
+  --accent-hover: #5059c4;
+  --accent-soft: rgba(94, 106, 210, 0.1);
+  --accent-text: #4a55c2;
+  --on-accent: #ffffff;
+  --success: #2e9e68;
+  --success-soft: rgba(46, 158, 104, 0.1);
+  --warning: #b8860b;
+  --warning-soft: rgba(242, 180, 30, 0.14);
+  --danger: #d23f3f;
+  --danger-soft: rgba(210, 63, 63, 0.09);
+  --info: #1e7fd8;
+  --info-soft: rgba(30, 127, 216, 0.09);
+  --shadow-pop: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(20, 20, 40, 0.12);
+  --shadow-panel: 0 1px 3px rgba(20, 20, 40, 0.05);
+  --shadow-modal: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 24px 60px rgba(20, 20, 40, 0.2);
+  --cell-empty: #e4e4e9;
+  --code-bg: rgba(0, 0, 0, 0.05);
+  --scrollbar: rgba(0, 0, 0, 0.16);
+}

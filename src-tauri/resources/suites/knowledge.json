@@ -1,0 +1,79 @@
+{
+  "id": "knowledge",
+  "name": "Knowledge",
+  "description": "Short factual questions, including less common facts that low-bit quantization tends to forget first.",
+  "prompts": [
+    {
+      "category": "science",
+      "system": null,
+      "prompt": "What is the chemical symbol for tungsten? Answer with just the answer, no explanation.",
+      "reference": "W"
+    },
+    {
+      "category": "science",
+      "system": null,
+      "prompt": "Which element has atomic number 26? Answer with just the answer, no explanation.",
+      "reference": "Iron"
+    },
+    {
+      "category": "science",
+      "system": null,
+      "prompt": "What is the SI unit of electrical capacitance? Answer with just the answer, no explanation.",
+      "reference": "Farad"
+    },
+    {
+      "category": "science",
+      "system": null,
+      "prompt": "Which mineral has a hardness of 10 on the Mohs scale? Answer with just the answer, no explanation.",
+      "reference": "Diamond"
+    },
+    {
+      "category": "astronomy",
+      "system": null,
+      "prompt": "Titan is the largest moon of which planet? Answer with just the answer, no explanation.",
+      "reference": "Saturn"
+    },
+    {
+      "category": "geography",
+      "system": null,
+      "prompt": "What is the capital city of Bhutan? Answer with just the answer, no explanation.",
+      "reference": "Thimphu"
+    },
+    {
+      "category": "geography",
+      "system": null,
+      "prompt": "What is the capital city of Mongolia? Answer with just the answer, no explanation.",
+      "reference": "Ulaanbaatar"
+    },
+    {
+      "category": "economics",
+      "system": null,
+      "prompt": "What is the official currency of Hungary? Answer with just the answer, no explanation.",
+      "reference": "Forint"
+    },
+    {
+      "category": "history",
+      "system": null,
+      "prompt": "In what year did the Berlin Wall fall? Answer with just the answer, no explanation.",
+      "reference": "1989"
+    },
+    {
+      "category": "literature",
+      "system": null,
+      "prompt": "Who wrote the novel One Hundred Years of Solitude? Answer with just the answer, no explanation.",
+      "reference": "Gabriel García Márquez"
+    },
+    {
+      "category": "art",
+      "system": null,
+      "prompt": "Which painter created The Garden of Earthly Delights? Answer with just the answer, no explanation.",
+      "reference": "Hieronymus Bosch"
+    },
+    {
+      "category": "computing",
+      "system": null,
+      "prompt": "Which programming language was created by Guido van Rossum? Answer with just the answer, no explanation.",
+      "reference": "Python"
+    }
+  ]
+}

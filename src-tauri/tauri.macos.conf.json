@@ -1,0 +1,21 @@
+{
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "iQuantize",
+        "width": 1320,
+        "height": 860,
+        "minWidth": 980,
+        "minHeight": 640,
+        "center": true,
+        "visible": false,
+        "decorations": true,
+        "resizable": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "trafficLightPosition": { "x": 16, "y": 20 }
+      }
+    ]
+  }
+}

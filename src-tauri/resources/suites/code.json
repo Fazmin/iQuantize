@@ -1,0 +1,79 @@
+{
+  "id": "code",
+  "name": "Code",
+  "description": "Predict exact program output and write small functions; one wrong token changes the answer.",
+  "prompts": [
+    {
+      "category": "python-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```python\nx = [3, 1, 4, 1, 5, 9, 2, 6]\nprint(sorted(set(x))[-3:])\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "[5, 6, 9]"
+    },
+    {
+      "category": "python-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```python\ndef f(n):\n    return n if n < 2 else f(n - 1) + f(n - 2)\n\nprint(f(10))\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "55"
+    },
+    {
+      "category": "python-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```python\ns = \"quantization\"\nprint(s[::-1][:5])\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "noita"
+    },
+    {
+      "category": "python-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```python\ntotal = 0\nfor i in range(1, 20):\n    if i % 3 == 0 or i % 5 == 0:\n        total += i\nprint(total)\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "78"
+    },
+    {
+      "category": "python-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```python\ncounts = {}\nfor w in \"the cat and the hat and the bat\".split():\n    counts[w] = counts.get(w, 0) + 1\nprint(max(counts, key=counts.get), counts[\"and\"])\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "the 2"
+    },
+    {
+      "category": "python-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```python\nprint(-7 // 2, -7 % 2)\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "-4 1"
+    },
+    {
+      "category": "python-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```python\nnums = [5, 3, 8]\nnums.append(nums.pop(0))\nprint(nums)\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "[3, 8, 5]"
+    },
+    {
+      "category": "javascript-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```javascript\nconst a = [1, 2, 3, 4];\nconsole.log(a.map(x => x * x).filter(x => x % 2 === 0).reduce((s, x) => s + x, 0));\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "20"
+    },
+    {
+      "category": "javascript-output",
+      "system": "You are a precise programming assistant.",
+      "prompt": "```javascript\nconsole.log([10, 9, 1, 2].sort().join(\",\"));\n```\n\nWhat exactly does this print? Reply with only the printed output, no explanation.",
+      "reference": "1,10,2,9"
+    },
+    {
+      "category": "sql",
+      "system": "You are a precise programming assistant.",
+      "prompt": "Table orders(id, customer, amount) contains the rows (1, 'ana', 30), (2, 'bo', 20), (3, 'ana', 50), (4, 'cy', 45).\n\nWhat does this query return?\n\nSELECT customer, SUM(amount) FROM orders GROUP BY customer ORDER BY 2 DESC LIMIT 1;\n\nAnswer in the form name,total with no spaces.",
+      "reference": "ana,80"
+    },
+    {
+      "category": "write-function",
+      "system": "You are a precise programming assistant.",
+      "prompt": "Write a Python function `is_palindrome(s)` that returns True if `s` reads the same forwards and backwards, ignoring case and any non-alphanumeric characters. Reply with only the code.",
+      "reference": null
+    },
+    {
+      "category": "fix-bug",
+      "system": "You are a precise programming assistant.",
+      "prompt": "This Python function should return the average of a list but crashes on an empty list. Fix it so it returns 0.0 for an empty list. Reply with only the corrected code.\n\n```python\ndef average(xs):\n    return sum(xs) / len(xs)\n```",
+      "reference": null
+    }
+  ]
+}

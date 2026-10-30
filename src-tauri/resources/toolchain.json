@@ -1,0 +1,237 @@
+{
+  "uv": {
+    "version": "0.13.6",
+    "repo": "astral-sh/uv",
+    "assets": {
+      "macos-aarch64": "uv-aarch64-apple-darwin.tar.gz",
+      "macos-x86_64": "uv-x86_64-apple-darwin.tar.gz",
+      "linux-x86_64": "uv-x86_64-unknown-linux-gnu.tar.gz",
+      "linux-aarch64": "uv-aarch64-unknown-linux-gnu.tar.gz",
+      "windows-x86_64": "uv-x86_64-pc-windows-msvc.zip",
+      "windows-aarch64": "uv-aarch64-pc-windows-msvc.zip"
+    }
+  },
+  "python": {
+    "version": "3.12"
+  },
+  "llama_cpp": {
+    "tag": "b11935",
+    "repo": "ggml-org/llama.cpp",
+    "source_keep": [
+      "convert_hf_to_gguf.py",
+      "conversion/",
+      "gguf-py/",
+      "requirements/",
+      "LICENSE"
+    ],
+    "variants": {
+      "macos-aarch64": [
+        {
+          "id": "metal",
+          "accel": "metal",
+          "label": "Metal (Apple GPU)",
+          "assets": [
+            "llama-{tag}-bin-macos-arm64.tar.gz"
+          ]
+        }
+      ],
+      "macos-x86_64": [
+        {
+          "id": "cpu",
+          "accel": "cpu",
+          "label": "CPU (Intel Mac)",
+          "assets": [
+            "llama-{tag}-bin-macos-x64.tar.gz"
+          ]
+        }
+      ],
+      "linux-x86_64": [
+        {
+          "id": "cuda13",
+          "accel": "cuda",
+          "min_cuda": "13.0",
+          "label": "NVIDIA CUDA 13",
+          "assets": [
+            "llama-{tag}-bin-ubuntu-cuda-13.4-x64.tar.gz",
+            "cudart-llama-{tag}-bin-ubuntu-cuda-13.4-x64.tar.gz"
+          ]
+        },
+        {
+          "id": "cuda12",
+          "accel": "cuda",
+          "min_cuda": "12.0",
+          "label": "NVIDIA CUDA 12",
+          "assets": [
+            "llama-{tag}-bin-ubuntu-cuda-12.8-x64.tar.gz",
+            "cudart-llama-{tag}-bin-ubuntu-cuda-12.8-x64.tar.gz"
+          ]
+        },
+        {
+          "id": "rocm",
+          "accel": "rocm",
+          "label": "AMD ROCm",
+          "assets": [
+            "llama-{tag}-bin-ubuntu-rocm-10.0-x64.tar.gz"
+          ]
+        },
+        {
+          "id": "vulkan",
+          "accel": "vulkan",
+          "label": "Vulkan (any GPU)",
+          "assets": [
+            "llama-{tag}-bin-ubuntu-vulkan-x64.tar.gz"
+          ]
+        },
+        {
+          "id": "cpu",
+          "accel": "cpu",
+          "label": "CPU only",
+          "assets": [
+            "llama-{tag}-bin-ubuntu-x64.tar.gz"
+          ]
+        }
+      ],
+      "linux-aarch64": [
+        {
+          "id": "cuda13",
+          "accel": "cuda",
+          "min_cuda": "13.0",
+          "label": "NVIDIA CUDA 13",
+          "assets": [
+            "llama-{tag}-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+            "cudart-llama-{tag}-bin-ubuntu-cuda-13.4-arm64.tar.gz"
+          ]
+        },
+        {
+          "id": "vulkan",
+          "accel": "vulkan",
+          "label": "Vulkan (any GPU)",
+          "assets": [
+            "llama-{tag}-bin-ubuntu-vulkan-arm64.tar.gz"
+          ]
+        },
+        {
+          "id": "cpu",
+          "accel": "cpu",
+          "label": "CPU only",
+          "assets": [
+            "llama-{tag}-bin-ubuntu-arm64.tar.gz"
+          ]
+        }
+      ],
+      "windows-x86_64": [
+        {
+          "id": "cuda13",
+          "accel": "cuda",
+          "min_cuda": "13.0",
+          "label": "NVIDIA CUDA 13",
+          "assets": [
+            "llama-{tag}-bin-win-cuda-13.4-x64.zip",
+            "cudart-llama-bin-win-cuda-13.4-x64.zip"
+          ]
+        },
+        {
+          "id": "cuda12",
+          "accel": "cuda",
+          "min_cuda": "12.0",
+          "label": "NVIDIA CUDA 12",
+          "assets": [
+            "llama-{tag}-bin-win-cuda-12.4-x64.zip",
+            "cudart-llama-bin-win-cuda-12.4-x64.zip"
+          ]
+        },
+        {
+          "id": "vulkan",
+          "accel": "vulkan",
+          "label": "Vulkan (any GPU)",
+          "assets": [
+            "llama-{tag}-bin-win-vulkan-x64.zip"
+          ]
+        },
+        {
+          "id": "cpu",
+          "accel": "cpu",
+          "label": "CPU only",
+          "assets": [
+            "llama-{tag}-bin-win-cpu-x64.zip"
+          ]
+        }
+      ],
+      "windows-aarch64": [
+        {
+          "id": "vulkan",
+          "accel": "vulkan",
+          "label": "Vulkan (any GPU)",
+          "assets": [
+            "llama-{tag}-bin-win-vulkan-arm64.zip"
+          ]
+        },
+        {
+          "id": "cpu",
+          "accel": "cpu",
+          "label": "CPU only",
+          "assets": [
+            "llama-{tag}-bin-win-cpu-arm64.zip"
+          ]
+        }
+      ]
+    }
+  },
+  "envs": {
+    "core": {
+      "label": "Hub & data tools",
+      "packages": [
+        "huggingface_hub[hf_xet]>=1.0",
+        "datasets>=4.0",
+        "numpy",
+        "zstandard"
+      ]
+    },
+    "gguf": {
+      "label": "GGUF converter",
+      "requirements_from_source": "requirements/requirements-convert_hf_to_gguf.txt",
+      "packages": [
+        "jinja2",
+        "tiktoken"
+      ],
+      "local_packages": [
+        "gguf-py"
+      ]
+    },
+    "mlx": {
+      "label": "MLX (Apple Silicon)",
+      "packages": [
+        "mlx-lm==0.32.2",
+        "datasets>=4.0"
+      ],
+      "platforms": [
+        "macos-aarch64"
+      ]
+    },
+    "onnx": {
+      "label": "ONNX Runtime GenAI",
+      "packages": [
+        "onnxruntime-genai==0.18.0",
+        "onnx>=1.17",
+        "onnx-ir",
+        "torch",
+        "transformers>=5.0",
+        "sentencepiece",
+        "protobuf",
+        "jinja2",
+        "psutil"
+      ],
+      "cuda_packages": [
+        "onnxruntime-genai-cuda==0.18.0",
+        "onnx>=1.17",
+        "onnx-ir",
+        "torch",
+        "transformers>=5.0",
+        "sentencepiece",
+        "protobuf",
+        "jinja2",
+        "psutil"
+      ]
+    }
+  }
+}

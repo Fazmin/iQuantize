@@ -1,0 +1,74 @@
+{
+  "id": "needle",
+  "name": "Needle in a haystack",
+  "description": "Retrieve specific planted facts from a long passage; exposes long-context damage from quantization.",
+  "haystack": "Kestrel Point Field Station: Notes for Incoming Staff\n\nKestrel Point sits at the end of a gravel spit on the northern coast, about forty minutes by road from the nearest village of Harrowby. The station was founded as a weather post and has grown, in fits and starts, into a small research campus that studies seabirds, tides and the slow erosion of the cliffs. These notes collect what previous residents wished they had known on their first day. Read them once now and again after your first week; most of it will make more sense the second time.\n\nArrival and the road\n\nThe last six kilometres of road are unpaved and flood at spring tides. Check the tide table pinned in the entrance hall before you drive out, and never attempt the causeway section when water is across it, even if it looks shallow. The station's own vehicles are a white pickup and an older green van; keys hang in the boot room on hooks labelled with each vehicle's registration. Fill the tank whenever it drops below half. The fuel pump in Harrowby closes at six in the evening and does not open on Sundays.\n\nBuildings\n\nThere are five buildings. The main house holds the kitchen, the common room, the library and four bedrooms. The east lab, a converted boat shed, contains the wet benches, the sample freezers and the microscope room. The workshop sits behind the east lab and is where you will find tools, spare cable and more broken chairs than anyone can explain. The old lighthouse, which stopped guiding ships decades ago, now carries the station's radio mast and the rooftop weather instruments. It was rebuilt in 1931 after a winter storm cracked the original tower, and the stone stairs inside are steep, so use the handrail. Finally, the north archive is a small concrete building that stores paper records, old logbooks and the long-term specimen collection.\n\nThe north archive is kept locked because humidity and careless visitors are the two biggest threats to the collection. The keypad passcode for the north archive door is TALLOW-4819. Please do not write it on anything that leaves the station, and close the door fully behind you; the latch sticks in damp weather.\n\nDaily routine\n\nBreakfast is informal and early. Weather readings are taken at 07:00, 13:00 and 19:00 every day, regardless of who is on site, and logged both on paper and in the station database. Whoever is on weather duty also checks the rain gauge and empties it after recording. A rota on the kitchen door lists who is responsible for each slot. Swaps are fine as long as you change the rota yourself.\n\nDinner is the only meal people usually share. Cooking rotates through all residents, including visiting scientists, and the unwritten rule is that you cook something you would happily eat yourself. The station's longest-serving cook, a retired geologist named Ottilie Marsh, left behind a binder of recipes that has become something of a local legend. Her fish stew is the most requested dish, and the secret, she insisted, is a spoonful of smoked paprika added at the very end. Most people use too much on their first attempt.\n\nPower and water\n\nElectricity comes from a bank of solar panels on the workshop roof, a small wind turbine and a diesel backup generator. In summer the panels cover almost everything. In winter, especially during long grey spells, the generator runs for a few hours each evening. It is started from the control panel in the workshop; the instructions are laminated and taped beside the switch. Do not run the generator overnight unless the battery level falls below twenty percent, because the noise disturbs the nesting colony on the cliffs.\n\nWater comes from a borehole and is filtered in the main house. It is safe to drink, though it tastes faintly of iron. The hot water tank is small, so keep showers short when the station is full.\n\nThe seabird colony\n\nThe main research focus is the colony of guillemots and kittiwakes on the eastern cliffs. Counting takes place from two hides; the lower hide is reached by a fenced path and the upper hide by a ladder that should only be used in dry weather and never alone. During the breeding season, from roughly April to August, there is a strict rule against walking along the cliff edge beyond the white marker posts. Disturbance is the single biggest risk we pose to the birds, and repeat offenders have been asked to leave.\n\nThe colony has been counted every year since 1987. In the most recent full survey, observers recorded 2,214 occupied guillemot sites and 612 kittiwake nests. Both figures are lower than they were a decade ago, which is one of the reasons the station's funding was renewed.\n\nBees and the garden\n\nA former director kept bees, and the habit has continued. There are now 27 hives in the walled garden behind the main house, cared for by whoever volunteers in spring. If you are allergic to stings, tell the station manager on arrival so that you are not placed on garden duty. Honey from the hives is shared among residents and sold at the Harrowby summer fair, with the proceeds going to the station's small equipment fund.\n\nCommunication\n\nMobile signal is weak and unreliable. There is satellite internet in the main house, which is fine for email but struggles with video calls when several people are online. The radio in the lighthouse is used to contact the coastguard and the supply boat. Radio checks happen every Monday at 10:00; if you are the only person on site, you are responsible for making the call.\n\nThe supply boat\n\nMost heavy goods arrive by sea rather than by road. The supply boat, a sturdy blue vessel called the Marram, comes every second Thursday when the weather allows. It departs Harrowby harbour at 06:40 and usually reaches the station's jetty a little after eight. Orders must be placed with the station manager by the Monday before. The skipper will not unload in a swell above about one and a half metres, so expect delays in autumn.\n\nSafety\n\nEvery resident carries a handheld radio when working outside. Before heading to the hides, the shore or the far end of the spit, write your name, destination and expected return time on the whiteboard in the boot room, and wipe it off when you return. If someone is more than an hour overdue, the person on site raises the alarm by radio. The first-aid kit is in the kitchen, and a second, larger kit is in the east lab.\n\nThe station has a defibrillator mounted beside the main entrance. Training is offered every spring, and everyone who stays longer than a month is expected to attend.\n\nThe library\n\nThe library in the main house is small but well used. Field guides, tide almanacs and bound copies of past station reports fill most of the shelves, and there is a long-running tradition of leaving one novel behind when you depart. Borrowed books should be signed out in the notebook on the windowsill. The armchair by the stove is first come, first served, and arguments about it are older than anyone currently on staff. If you need a quiet place to write, the library is usually empty in the afternoons, when most residents are out on the cliffs or in the east lab.\n\nLeaving\n\nWhen you leave, strip your bed, empty your shelf in the fridge, return any borrowed books to the library and hand your keys to the station manager. Add a line to the visitors' book in the common room. People enjoy reading it on stormy evenings, and many of the best tips in these notes started there.",
+  "prompts": [
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What is the keypad passcode for the north archive door? Answer with just the passcode.",
+      "reference": "TALLOW-4819"
+    },
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. In what year was the old lighthouse rebuilt? Answer with just the year.",
+      "reference": "1931"
+    },
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What ingredient did the longest-serving cook say was the secret of her fish stew? Answer with just the ingredient.",
+      "reference": "smoked paprika"
+    },
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What was the name of the station's longest-serving cook? Answer with just the name.",
+      "reference": "Ottilie Marsh"
+    },
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. How many beehives are in the walled garden? Answer with just the number.",
+      "reference": "27"
+    },
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What is the name of the supply boat? Answer with just the name.",
+      "reference": "Marram"
+    },
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. At what time does the supply boat depart Harrowby harbour? Answer in HH:MM format only.",
+      "reference": "06:40"
+    },
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. How many kittiwake nests were recorded in the most recent full survey? Answer with just the number.",
+      "reference": "612"
+    },
+    {
+      "category": "retrieval",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. At what time are the weekly radio checks held? Answer in HH:MM format only.",
+      "reference": "10:00"
+    },
+    {
+      "category": "conversion",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. The generator may only run overnight if the battery level falls below what percentage? Answer with just the number.",
+      "reference": "20"
+    },
+    {
+      "category": "absent-fact",
+      "system": null,
+      "prompt": "{{haystack}}\n\nUsing only the notes above, answer the question. What is the station manager's name? If the notes do not say, answer exactly: not stated",
+      "reference": "not stated"
+    }
+  ]
+}

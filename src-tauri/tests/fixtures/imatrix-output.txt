@@ -1,0 +1,11 @@
+0.00.120.359 I cmn          init: llama threadpool init, n_threads = 10
+0.00.120.439 I 
+0.00.121.126 I system_info: n_threads = 10 (n_threads_batch = 10) / 14 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | LLAMAFILE = 1 | ACCELERATE = 1 | REPACK = 1 | 
+0.00.121.128 I compute_imatrix: tokenizing the input ..
+0.00.193.898 I compute_imatrix: tokenization took 72.766 ms
+0.00.193.924 I compute_imatrix: computing over 6 chunks, n_ctx=512, batch_size=2048, n_seq=4
+0.00.629.372 I compute_imatrix: 0.44 seconds per pass - ETA 0.00 minutes
+[1]10.3904,[2]17.0047,[3]18.1748,[4]17.5633,[5]17.4865,[6]17.8633,
+Final estimate: PPL = 17.8633 +/- 1.37283
+
+

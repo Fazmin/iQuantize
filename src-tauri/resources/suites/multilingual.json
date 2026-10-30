@@ -1,0 +1,79 @@
+{
+  "id": "multilingual",
+  "name": "Multilingual",
+  "description": "Short questions and translations in several languages and scripts; low-bit models often degrade here first.",
+  "prompts": [
+    {
+      "category": "spanish",
+      "system": null,
+      "prompt": "¿Cuál es la capital de Australia? Responde solo con el nombre de la ciudad.",
+      "reference": "Canberra"
+    },
+    {
+      "category": "french",
+      "system": null,
+      "prompt": "Combien font sept fois huit ? Réponds uniquement avec le nombre.",
+      "reference": "56"
+    },
+    {
+      "category": "german",
+      "system": null,
+      "prompt": "Welcher Wochentag folgt auf Donnerstag? Antworte nur mit einem Wort.",
+      "reference": "Freitag"
+    },
+    {
+      "category": "german",
+      "system": null,
+      "prompt": "Wie lautet der Plural von \"Buch\"? Antworte nur mit dem Wort.",
+      "reference": "Bücher"
+    },
+    {
+      "category": "portuguese",
+      "system": null,
+      "prompt": "Qual é o maior planeta do sistema solar? Responda apenas com o nome.",
+      "reference": "Júpiter"
+    },
+    {
+      "category": "italian",
+      "system": null,
+      "prompt": "Traduci in inglese la parola \"gatto\". Rispondi solo con la traduzione.",
+      "reference": "cat"
+    },
+    {
+      "category": "japanese",
+      "system": null,
+      "prompt": "日本の首都はどこですか？都市名だけで答えてください。",
+      "reference": "東京"
+    },
+    {
+      "category": "chinese",
+      "system": null,
+      "prompt": "一年有几个月？只回答阿拉伯数字。",
+      "reference": "12"
+    },
+    {
+      "category": "korean",
+      "system": null,
+      "prompt": "한국의 수도는 어디입니까? 도시 이름만 답하세요.",
+      "reference": "서울"
+    },
+    {
+      "category": "vietnamese",
+      "system": null,
+      "prompt": "Thủ đô của Việt Nam là gì? Chỉ trả lời tên thành phố.",
+      "reference": "Hà Nội"
+    },
+    {
+      "category": "swahili",
+      "system": null,
+      "prompt": "Tafsiri kwa Kiingereza neno \"maji\". Jibu kwa neno moja tu.",
+      "reference": "water"
+    },
+    {
+      "category": "translation",
+      "system": null,
+      "prompt": "Translate into Spanish. Reply with only the translation: \"The library opens at nine in the morning.\"",
+      "reference": null
+    }
+  ]
+}

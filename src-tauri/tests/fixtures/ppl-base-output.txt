@@ -1,0 +1,11 @@
+0.00.102.334 I cmn          init: llama threadpool init, n_threads = 10
+0.00.190.214 I 
+0.00.190.252 I system_info: n_threads = 10 (n_threads_batch = 10) / 14 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | LLAMAFILE = 1 | ACCELERATE = 1 | REPACK = 1 | 
+0.00.190.361 I perplexity: saving all logits to /tmp/iquantize/fx/kld.bin
+0.00.190.367 I perplexity: tokenizing the input ..
+0.00.260.419 I perplexity: tokenization took 70.047 ms
+0.00.260.426 I perplexity: calculating perplexity over 4 chunks, n_ctx=512, batch_size=2048, n_seq=4
+0.00.387.480 I perplexity: 0.12 seconds per pass - ETA 0.00 minutes
+[1]10.3904,[2]17.0047,[3]18.1748,[4]17.5633,
+0.00.421.150 I Final estimate: PPL = 17.5633 +/- 1.69460
+

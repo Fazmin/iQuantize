@@ -1,0 +1,79 @@
+{
+  "id": "reasoning",
+  "name": "Reasoning",
+  "description": "Multi-step arithmetic, logic and date puzzles with short, exactly checkable answers.",
+  "prompts": [
+    {
+      "category": "math",
+      "system": null,
+      "prompt": "A bakery sells muffins for $3 each and cookies for $2 each. Maya buys 7 muffins and some cookies and spends $41 in total. How many cookies did she buy? Answer with just the number.",
+      "reference": "10"
+    },
+    {
+      "category": "math",
+      "system": null,
+      "prompt": "A 240-litre tank is 3/8 full. A pump adds 18 litres per minute while a leak removes 6 litres per minute. How many minutes until the tank is completely full? Answer with just the number.",
+      "reference": "12.5"
+    },
+    {
+      "category": "math",
+      "system": null,
+      "prompt": "A jacket costs $80. It is discounted by 25%, and then a further 10% is taken off the discounted price. What is the final price in dollars? Answer with just the number.",
+      "reference": "54"
+    },
+    {
+      "category": "math",
+      "system": null,
+      "prompt": "Compute (17 * 23) - (144 / 12) + 5^3. Answer with just the number.",
+      "reference": "504"
+    },
+    {
+      "category": "math",
+      "system": null,
+      "prompt": "Lena has twice as many stickers as Omar. After Lena gives Omar 9 stickers, they have the same number. How many stickers did Lena have at first? Answer with just the number.",
+      "reference": "36"
+    },
+    {
+      "category": "logic",
+      "system": null,
+      "prompt": "Ana is older than Ben. Ben is older than Cy. Dee is younger than Cy. Who is the second youngest? Answer with just the name.",
+      "reference": "Cy"
+    },
+    {
+      "category": "logic",
+      "system": null,
+      "prompt": "A drawer holds 4 red, 3 blue and 5 green socks. In the dark, what is the minimum number of socks you must take out to be certain of having two socks of the same colour? Answer with just the number.",
+      "reference": "4"
+    },
+    {
+      "category": "dates",
+      "system": null,
+      "prompt": "Today is a Wednesday. What day of the week will it be 100 days from today? Answer with just the day name.",
+      "reference": "Friday"
+    },
+    {
+      "category": "time",
+      "system": null,
+      "prompt": "A train leaves at 09:45 and the journey takes 2 hours and 50 minutes. At what time does it arrive? Answer in 24-hour HH:MM format only.",
+      "reference": "12:35"
+    },
+    {
+      "category": "pattern",
+      "system": null,
+      "prompt": "What is the next number in the sequence 2, 6, 12, 20, 30, ...? Answer with just the number.",
+      "reference": "42"
+    },
+    {
+      "category": "units",
+      "system": null,
+      "prompt": "A recipe needs 750 grams of flour per loaf. How many kilograms of flour are needed for 6 loaves? Answer with just the number.",
+      "reference": "4.5"
+    },
+    {
+      "category": "counting",
+      "system": null,
+      "prompt": "How many times does the letter s appear in the phrase \"mississippi assessment\"? Answer with just the number.",
+      "reference": "8"
+    }
+  ]
+}

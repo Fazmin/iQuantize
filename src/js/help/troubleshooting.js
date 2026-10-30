@@ -1,0 +1,147 @@
+// Troubleshooting, FAQ and shortcuts.
+
+export default [
+  {
+    id: 'help.problems',
+    title: 'Fix common problems',
+    summary: 'Symptoms, causes and fixes for the problems people hit most, grouped by area.',
+    body: [
+      { p: 'Most errors in iQuantize come with a hint underneath. Start there, then check the job’s log. If you are still stuck, find your symptom below.' },
+      { h: 'Setup' },
+      {
+        defs: [
+          ['A yellow dot next to Environment', 'A required component is missing. Open Environment and click **Install everything**.'],
+          ['An install fails with a checksum mismatch', 'The download was corrupted or interrupted. Click **Install** again.'],
+          ['“llama-quantize did not run correctly”', 'The llama.cpp build does not suit your GPU or drivers. Pick **CPU only** (always works) or another build on the llama.cpp row and reinstall. See [Repair tools](help:setup.repair).'],
+          ['A row says **Needs repair**', 'Files went missing, for example after cleaning the app folder. Click **Repair**.'],
+          ['Options are missing in the wizard', 'Click **Re-probe tools** in Environment so the app re-reads what your tools support.'],
+        ],
+      },
+      { h: 'Downloads' },
+      {
+        defs: [
+          ['“This model is gated”', 'Accept the licence on the model’s Hugging Face page, add a token in Settings → Accounts, then download again. See [Add a model](help:models.add-hf).'],
+          ['“Not enough free space”', 'You need the download size plus 1 GB. Free space, or move the workspace in Settings.'],
+          ['A download stopped or failed', 'Open **Add from Hugging Face**, choose the same model and click **Download** again. It resumes where it stopped.'],
+          ['“… failed its checksum”', 'A file was corrupted in transit. Download again; the bad part is discarded.'],
+          ['A model still says Downloading after a restart', 'The app was closed during the download. Download it again to resume and clear the status.'],
+          ['“This repository has no model weights to download”', 'You picked a repository without safetensors weights, often a GGUF-only or adapter repository. Find the original model.'],
+          ['A model does not appear in search', 'Search matches repository names, lists only text-generation models, shows at most the top 100, and hides quantized repositories unless **Include quantized** is on. Use more specific words, check the Size filter, or paste the `owner/name` id instead.'],
+        ],
+      },
+      { h: 'Quantizing' },
+      {
+        defs: [
+          ['MLX is greyed out', 'MLX needs a Mac with Apple Silicon (M1 or newer).'],
+          ['“llama.cpp cannot convert this architecture yet”', 'Try MLX or ONNX, or check for a newer llama.cpp build.'],
+          ['“Converting needs about X free”', 'Converting needs about the original’s size again in free space, more for F32. Free space or move the workspace.'],
+          ['A job sits at **Queued**', 'Another heavy job is running. It starts when that one finishes, or raise **Heavy jobs at once** in Settings.'],
+          ['The machine slows to a crawl or the job fails while quantizing', 'You are out of memory. Run one heavy job at a time, close other apps, or choose a smaller model.'],
+          ['Files are larger than the type suggests', 'Normal for small models: some tensors fall back to a simpler format. The wizard warns about this.'],
+          ['ONNX K-quant is very slow', 'K-quant on CPU takes minutes even for small models. Use RTN for quick tests.'],
+        ],
+      },
+      { h: 'Testing' },
+      {
+        defs: [
+          ['“The inference server did not start in time”', 'Large models can take minutes to load. Try again, close other apps, or turn on **Run one model at a time**.'],
+          ['Answers look the same but numbers differ', 'Normal: quantization changes probabilities before it changes text. KLD is more sensitive than reading answers.'],
+          ['“KL divergence needs the same runtime”', 'Measure quantized outputs against the original of the same format.'],
+          ['The size-vs-quality chart is empty', 'Measure quality for some quantized outputs first.'],
+          ['A quality measurement fails on the first run', 'It downloads the WikiText-2 test text from Hugging Face. Check your connection.'],
+        ],
+      },
+      { h: 'Docs and publishing' },
+      {
+        defs: [
+          ['“No OpenAI API key is configured”', 'Add one in Settings → Accounts, or edit the card by hand. AI is optional.'],
+          ['The number guard flags a number', 'Check it against your results. If it is right but rounded differently, you can keep it.'],
+          ['Read-only token', 'Create a token with write access and replace it in Settings. See [Get a token](help:publish.token).'],
+          ['403 Forbidden while uploading', 'Your token cannot write to that owner. Fine-grained tokens need write permission for that user or organization.'],
+          ['409 conflict while uploading', 'A dataset or Space may already use that name, or another upload is running. Pick a different name or wait.'],
+          ['“Uploaded, but these files don’t match on the Hub”', 'Publish again; the upload resumes and verification runs again.'],
+        ],
+      },
+      { h: 'Still stuck?' },
+      {
+        list: [
+          'Open the failed job and click **Copy** on its log. The log contains every command and its output.',
+          'Run **Re-probe tools** and check **System check** in Environment.',
+          'Try the same steps with `HuggingFaceTB/SmolLM2-135M-Instruct`. If the tiny model works, the problem is specific to your model or its size.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'help.faq',
+    title: 'Frequently asked questions',
+    summary: 'Short answers about formats, quality, hardware, privacy and how iQuantize works.',
+    body: [
+      { h3: 'Which quantization should I start with?' },
+      { p: 'Let the Goal step recommend one. If you just want a default: **Q4_K_M** for GGUF, **4-bit, group size 64** for MLX, and **INT4 with K-quant** for ONNX. Go higher (Q5_K_M, Q6_K, 6-bit) for small models or code and maths.' },
+      { h3: 'How much quality do I lose?' },
+      { p: 'It depends on the model and the bit width. At 4–5 bits most models are close to the original; below 4 bits the loss grows fast, especially for small models. Turn on automatic evaluation and look at KL divergence; see [Measure quality](help:test.quality).' },
+      { h3: 'Can I quantize a model that is already quantized?' },
+      { p: 'Technically sometimes, but the errors stack up. Always start from the original full-precision repository. iQuantize warns you when a model is already quantized.' },
+      { h3: 'How big a model can I quantize?' },
+      { p: 'Quantizing mostly needs disk space and some memory. A 7–8B model needs roughly 30–40 GB free disk. Running and testing the result needs enough memory for the output plus its KV cache; the Goal step and the model page’s memory table show this.' },
+      { h3: 'Do I need a GPU?' },
+      { p: 'No. Quantizing GGUF and ONNX works on CPU. A GPU (or Apple Silicon) makes testing and evaluation much faster. MLX needs Apple Silicon.' },
+      { h3: 'Does anything leave my computer?' },
+      { p: 'Only what you ask for: downloads from Hugging Face, tool installs, AI writing if you use it, and publishing. Chatting and measuring are local. See [Where your data lives](help:setup.privacy).' },
+      { h3: 'Is AI required for model cards?' },
+      { p: 'No. The generated card is complete without it. AI only helps with wording, and the number guard checks its output.' },
+      { h3: 'Why are there “original” entries in Test & Compare that I did not create?' },
+      { p: 'Each quantization keeps a full-precision reference in the same format, so quality is measured fairly in the same runtime. They are marked **original**.' },
+      { h3: 'Can I use the outputs in other apps?' },
+      { p: 'Yes. They are standard files: load a `.gguf` in LM Studio, Ollama or llama.cpp; an MLX folder with mlx-lm; an ONNX folder with ONNX Runtime GenAI. Use **Reveal** to find them.' },
+      { h3: 'Where do I learn what an option means?' },
+      { p: 'Hover it, or click its ⓘ to pin the full explanation. **Learn** lists every explanation in one searchable glossary.' },
+    ],
+  },
+  {
+    id: 'help.shortcuts',
+    title: 'Keyboard shortcuts',
+    summary: 'Every shortcut in iQuantize. Press ? anywhere to see this list in the app.',
+    body: [
+      { p: 'Shortcuts work anywhere except while you are typing in a field or a dialog is open. Press [[?]] at any time to see them in a dialog.' },
+      { h: 'Everywhere' },
+      {
+        keys: [
+          [['⌘', 'K'], 'Open the command palette (Ctrl K on Windows and Linux)'],
+          [['C'], 'Start a new quantization'],
+          [['I'], 'Show or hide the info panel'],
+          [['['], 'Collapse or expand the sidebar'],
+          [['?'], 'Show the shortcuts list'],
+          [['Esc'], 'Close a dialog, menu or pinned explanation'],
+        ],
+      },
+      { h: 'Go to a page' },
+      { p: 'Press [[G]], let go, then press the page’s letter within about a second.' },
+      {
+        keys: [
+          [['G', 'H'], 'Home'],
+          [['G', 'J'], 'Jobs'],
+          [['G', 'M'], 'Models'],
+          [['G', 'Q'], 'Quantize'],
+          [['G', 'T'], 'Test & Compare'],
+          [['G', 'D'], 'Docs'],
+          [['G', 'P'], 'Publish'],
+          [['G', 'E'], 'Environment'],
+          [['G', 'S'], 'Settings'],
+          [['G', 'U'], 'User guide'],
+          [['G', 'L'], 'Learn'],
+        ],
+      },
+      { h: 'In the command palette' },
+      {
+        keys: [
+          [['↑', '↓'], 'Move through results'],
+          [['↵'], 'Run the highlighted result'],
+          [['Esc'], 'Close the palette'],
+        ],
+      },
+      { tip: 'The palette searches pages, actions, this guide and the glossary at the same time. Typing a term such as `imatrix` is often the fastest way to an explanation.' },
+    ],
+  },
+];

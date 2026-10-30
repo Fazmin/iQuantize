@@ -1,0 +1,67 @@
+{
+  "id": "summarization",
+  "name": "Summarization",
+  "description": "Summaries under strict length or format limits, plus extraction questions with exact answers.",
+  "prompts": [
+    {
+      "category": "extraction",
+      "system": null,
+      "prompt": "From: Priya\nSubject: Review meeting\n\nHi all, the design review we planned for Tuesday has to move because the lab is being rewired that day. Let's meet on Thursday, 12 March 2026, at 14:00 in the small conference room instead. Please bring the latest test results and your questions about the new sensor housing. Thanks!\n\nWhat is the new meeting date? Answer in YYYY-MM-DD format only.",
+      "reference": "2026-03-12"
+    },
+    {
+      "category": "extraction",
+      "system": null,
+      "prompt": "Quarterly sales report. The Aurora lamp sold 1,240 units, up slightly from last quarter. The Brisa fan sold 980 units, held back by a late shipment from the supplier. The Cinder heater was the surprise of the quarter with 1,615 units after an early cold snap, while the Delta kettle sold 1,100 units, in line with forecasts.\n\nWhich product sold the most units this quarter? Answer with just the product name.",
+      "reference": "Cinder heater"
+    },
+    {
+      "category": "extraction",
+      "system": null,
+      "prompt": "The community repair workshop ran two sessions on Saturday. The morning session had 42 participants and focused on bicycles and small furniture. The afternoon session had 35 participants and focused on electronics. Twelve people stayed for both sessions. Volunteers fixed 58 items in total, and the most common repair was replacing worn bicycle brake pads.\n\nHow many different people attended the workshop in total? Answer with just the number.",
+      "reference": "65"
+    },
+    {
+      "category": "extraction",
+      "system": null,
+      "prompt": "Team sync notes. Jonas reported that the benchmark scripts now run nightly but still fail on the ARM runner. Mei will investigate the ARM failure before Friday. The group agreed the documentation is out of date; Sam will rewrite the installation guide. Everyone liked the new dashboard, but the colours are hard to read in dark mode, so Ana will adjust the palette. The next sync is in two weeks.\n\nWho will rewrite the installation guide? Answer with just the name.",
+      "reference": "Sam"
+    },
+    {
+      "category": "one-sentence",
+      "system": null,
+      "prompt": "Over the past three years, the city of Larkford has replaced 120 of its 180 diesel buses with battery-electric models. The transit authority reports that fuel and maintenance costs on the converted routes fell by roughly a third, and residents near the main depot have noticed quieter mornings. The change has not been free of problems: the first winter showed that cold weather reduces battery range, forcing planners to shorten some routes and add fast chargers at two terminals. The remaining diesel buses are scheduled to be retired by the end of next year, provided the regional grid upgrade finishes on time.\n\nSummarize the text above in exactly one sentence.",
+      "reference": null
+    },
+    {
+      "category": "bullets",
+      "system": null,
+      "prompt": "Over the past three years, the city of Larkford has replaced 120 of its 180 diesel buses with battery-electric models. The transit authority reports that fuel and maintenance costs on the converted routes fell by roughly a third, and residents near the main depot have noticed quieter mornings. The change has not been free of problems: the first winter showed that cold weather reduces battery range, forcing planners to shorten some routes and add fast chargers at two terminals. The remaining diesel buses are scheduled to be retired by the end of next year, provided the regional grid upgrade finishes on time.\n\nSummarize the text above in exactly 3 bullet points, each starting with \"- \".",
+      "reference": null
+    },
+    {
+      "category": "action-items",
+      "system": null,
+      "prompt": "Team sync notes. Jonas reported that the benchmark scripts now run nightly but still fail on the ARM runner. Mei will investigate the ARM failure before Friday. The group agreed the documentation is out of date; Sam will rewrite the installation guide. Everyone liked the new dashboard, but the colours are hard to read in dark mode, so Ana will adjust the palette. The next sync is in two weeks.\n\nList the three action items as a numbered list in the form \"1. Name: task\". Output only the list.",
+      "reference": null
+    },
+    {
+      "category": "simplify",
+      "system": null,
+      "prompt": "Mountain glaciers act as natural water towers. During winter they store snow, and during the warm months they release meltwater that feeds rivers just when rain is scarce. As average temperatures rise, many glaciers are shrinking. At first, faster melting can actually increase river flow, which may hide the problem. Over time, however, as the ice volume falls, summer meltwater declines. Communities that rely on glacier-fed rivers for drinking water, farming and hydropower may then face shortages in late summer, even if total yearly rainfall does not change.\n\nExplain the text above to a ten-year-old in two sentences.",
+      "reference": null
+    },
+    {
+      "category": "title",
+      "system": null,
+      "prompt": "Mountain glaciers act as natural water towers. During winter they store snow, and during the warm months they release meltwater that feeds rivers just when rain is scarce. As average temperatures rise, many glaciers are shrinking. At first, faster melting can actually increase river flow, which may hide the problem. Over time, however, as the ice volume falls, summer meltwater declines. Communities that rely on glacier-fed rivers for drinking water, farming and hydropower may then face shortages in late summer, even if total yearly rainfall does not change.\n\nWrite a title for the text above of at most six words. Output only the title.",
+      "reference": null
+    },
+    {
+      "category": "tldr",
+      "system": null,
+      "prompt": "Quarterly sales report. The Aurora lamp sold 1,240 units, up slightly from last quarter. The Brisa fan sold 980 units, held back by a late shipment from the supplier. The Cinder heater was the surprise of the quarter with 1,615 units after an early cold snap, while the Delta kettle sold 1,100 units, in line with forecasts.\n\nWrite a TL;DR of the report in fewer than 20 words.",
+      "reference": null
+    }
+  ]
+}

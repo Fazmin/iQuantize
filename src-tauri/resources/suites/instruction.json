@@ -1,0 +1,79 @@
+{
+  "id": "instruction",
+  "name": "Instruction following",
+  "description": "Precise formatting and constraint-following tasks where any deviation is easy to detect.",
+  "prompts": [
+    {
+      "category": "exact-output",
+      "system": null,
+      "prompt": "Reply with exactly the word OK in uppercase and nothing else.",
+      "reference": "OK"
+    },
+    {
+      "category": "transform",
+      "system": null,
+      "prompt": "Write the word model backwards in uppercase letters. Output only the result.",
+      "reference": "LEDOM"
+    },
+    {
+      "category": "sorting",
+      "system": null,
+      "prompt": "Sort these words alphabetically and output them separated by commas with no spaces: pear, apple, mango, kiwi",
+      "reference": "apple,kiwi,mango,pear"
+    },
+    {
+      "category": "sequence",
+      "system": null,
+      "prompt": "Output the whole numbers from 10 down to 1 on a single line, separated by single spaces, with nothing else.",
+      "reference": "10 9 8 7 6 5 4 3 2 1"
+    },
+    {
+      "category": "transform",
+      "system": null,
+      "prompt": "Repeat the following text exactly, but replace every vowel (a, e, i, o, u) with an asterisk: Small models run fast",
+      "reference": "Sm*ll m*d*ls r*n f*st"
+    },
+    {
+      "category": "yes-no",
+      "system": null,
+      "prompt": "Answer only yes or no, in lowercase: is 91 a prime number?",
+      "reference": "no"
+    },
+    {
+      "category": "json",
+      "system": null,
+      "prompt": "Convert the sentence into a JSON object with exactly two keys, name (string) and age (number). Output only the JSON on one line.\n\nSentence: Maria is 34 years old.",
+      "reference": "{\"name\": \"Maria\", \"age\": 34}"
+    },
+    {
+      "category": "system-prompt",
+      "system": "Always answer in capital letters only.",
+      "prompt": "What is the capital of Italy? Answer with one word.",
+      "reference": "ROME"
+    },
+    {
+      "category": "format",
+      "system": null,
+      "prompt": "Write the first four letters of the English alphabet in reverse order, separated by hyphens. Output only the result.",
+      "reference": "D-C-B-A"
+    },
+    {
+      "category": "bullets",
+      "system": null,
+      "prompt": "Give exactly 3 bullet points, each starting with \"- \" and each at most 8 words, on why people quantize language models. No introduction or conclusion.",
+      "reference": null
+    },
+    {
+      "category": "length",
+      "system": null,
+      "prompt": "Describe the ocean in a single sentence of exactly seven words. Output only the sentence.",
+      "reference": null
+    },
+    {
+      "category": "negative-constraint",
+      "system": null,
+      "prompt": "Write two sentences about autumn without using the letter e anywhere.",
+      "reference": null
+    }
+  ]
+}
