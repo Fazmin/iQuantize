@@ -49,6 +49,22 @@ The app installs its own Python, llama.cpp and packages into the app-data folder
 - `node tests/ui/harness.mjs <outDir> /route …` takes headless Chrome screenshots of the UI with a mocked bridge, using real captured responses from `tests/ui/fixtures`.
 - `node tests/ui/demo.mjs docs/media/iquantize-demo.mp4` re-records the demo video above, and `node tests/ui/demo.mjs --hero docs/media/iquantize-hero.png` re-renders the screenshot at the top. It drives the same mocked UI with a cursor and captions, replays a real Q4_K_M run and arena turn from `tests/ui/demo`, and needs ffmpeg. Run it while the machine is awake, because a sleeping Mac throttles the capture.
 
+### Releases
+
+From the project root, on a Mac:
+
+```bash
+cargo run release            # bump the patch version (0.2.20 → 0.2.21), then build
+cargo run release minor      # 0.2.20 → 0.3.0
+cargo run release major      # 0.2.20 → 1.0.0
+cargo run release 0.2.21     # set an exact version; giving the current one rebuilds it without bumping
+```
+
+Each release updates the version everywhere it appears (`src-tauri/Cargo.toml` and `Cargo.lock`, `tauri.conf.json`, `CITATION.cff` and the citations below). It then builds an Apple Silicon `.dmg` and a Windows installer into `releases/v<version>/`, with a `SHA256SUMS.txt`. `--no-build` only changes the version, and `--only mac` or `--only windows` builds one platform. The tool is `xtask/main.rs`.
+
+- **macOS** is signed with the first Developer ID Application certificate in your keychain (or `APPLE_SIGNING_IDENTITY`). It is notarized when `APPLE_ID`, `APPLE_PASSWORD` and `APPLE_TEAM_ID` are set.
+- **Windows** is cross-compiled with cargo-xwin and packaged with NSIS, and the installer is unsigned. It needs `rustup target add x86_64-pc-windows-msvc`, `cargo install --locked cargo-xwin` and `brew install llvm lld nsis`.
+
 ## Layout
 
 ```
@@ -65,6 +81,7 @@ src-tauri/
   drivers/*.py           Python drivers (embedded in the binary) speaking a JSON-lines protocol
   migrations/            SQLite schema
   resources/             pinned toolchain manifest, prompt suites
+xtask/main.rs            release tool behind `cargo run release` (the root Cargo.toml exists only for it)
 ```
 
 ## Platform notes
@@ -88,7 +105,7 @@ If you use iQuantize in research, or publish models made with it, please cite it
   author  = {Nizam, Fazmin},
   title   = {{iQuantize: A Desktop Workspace for Quantizing Large Language Models to GGUF, MLX and ONNX}},
   year    = {2026},
-  version = {0.1.0},
+  version = {0.2.20},
   url     = {https://github.com/Fazmin/iQuantize},
   license = {MIT}
 }
@@ -96,7 +113,7 @@ If you use iQuantize in research, or publish models made with it, please cite it
 
 **APA**
 
-> Nizam, F. (2026). *iQuantize: A desktop workspace for quantizing large language models to GGUF, MLX and ONNX* (Version 0.1.0) [Computer software]. https://github.com/Fazmin/iQuantize
+> Nizam, F. (2026). *iQuantize: A desktop workspace for quantizing large language models to GGUF, MLX and ONNX* (Version 0.2.20) [Computer software]. https://github.com/Fazmin/iQuantize
 
 When you publish a model made with iQuantize, its model card and `quantization_report.json` already record the exact tool versions, recipe and measurements, so others can reproduce it.
 

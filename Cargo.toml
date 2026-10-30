@@ -1,0 +1,18 @@
+# Release tooling only: `cargo run release` from the project root (see xtask/main.rs).
+# The app itself is the separate crate in src-tauri/.
+[package]
+name = "xtask"
+version = "0.0.0"
+edition = "2021"
+publish = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+
+[[bin]]
+name = "xtask"
+path = "xtask/main.rs"
+
+[workspace]
+exclude = ["src-tauri"]
