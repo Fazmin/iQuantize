@@ -43,7 +43,7 @@
     "targets": "all",
     "category": "DeveloperTool",
     "publisher": "Fazmin Nizam",
-    "copyright": "Copyright (c) 2026 Fazmin Nizam. MIT License.",
+    "copyright": "Copyright (c) 2026 iQuantize contributors. MIT or Apache-2.0 License.",
     "shortDescription": "LLM quantization workspace",
     "longDescription": "Quantize LLMs to GGUF, MLX and ONNX step by step, compare against the original, document and publish to Hugging Face.",
     "icon": [

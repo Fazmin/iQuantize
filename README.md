@@ -1,7 +1,7 @@
 # iQuantize
 
 [![CI](https://github.com/Fazmin/iQuantize/actions/workflows/ci.yml/badge.svg)](https://github.com/Fazmin/iQuantize/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 A desktop workspace for quantizing LLMs to **GGUF**, **MLX** and **ONNX**, step by step. You can see exactly what changes, compare the result against the original, and publish it to Hugging Face with a model card that states how it was made.
 
@@ -101,25 +101,34 @@ If you use iQuantize in research, or publish models made with it, please cite it
 **BibTeX**
 
 ```bibtex
-@software{nizam_iquantize_2026,
-  author  = {Nizam, Fazmin},
+@software{iquantize_2026,
+  author  = {{iQuantize contributors}},
   title   = {{iQuantize: A Desktop Workspace for Quantizing Large Language Models to GGUF, MLX and ONNX}},
   year    = {2026},
   version = {0.2.22},
   url     = {https://github.com/Fazmin/iQuantize},
-  license = {MIT}
+  license = {MIT OR Apache-2.0}
 }
 ```
 
+The double braces around the author keep BibTeX from reading "iQuantize contributors" as a person's first and last name.
+
 **APA**
 
-> Nizam, F. (2026). *iQuantize: A desktop workspace for quantizing large language models to GGUF, MLX and ONNX* (Version 0.2.22) [Computer software]. https://github.com/Fazmin/iQuantize
+> iQuantize contributors. (2026). *iQuantize: A desktop workspace for quantizing large language models to GGUF, MLX and ONNX* (Version 0.2.22) [Computer software]. https://github.com/Fazmin/iQuantize
 
 When you publish a model made with iQuantize, its model card and `quantization_report.json` already record the exact tool versions, recipe and measurements, so others can reproduce it.
 
 ## License
 
-iQuantize is released under the [MIT License](LICENSE).
+iQuantize is licensed under either of
+
+- the [Apache License, Version 2.0](LICENSE-APACHE), or
+- the [MIT License](LICENSE-MIT),
+
+at your option. Copyright belongs to the iQuantize contributors listed in [CONTRIBUTORS.md](CONTRIBUTORS.md).
+
+Unless you explicitly state otherwise, any contribution you intentionally submit for inclusion in iQuantize, as defined in the Apache-2.0 license, is dual-licensed as above, without any additional terms or conditions.
 
 It bundles the [Inter](https://github.com/rsms/inter) font ([SIL Open Font License 1.1](src/assets/fonts/Inter-LICENSE.txt)) and [Lucide](https://lucide.dev) icons ([ISC License](src/assets/Lucide-LICENSE.txt)). The tools the app downloads at runtime (llama.cpp, uv, Python, MLX, ONNX Runtime GenAI and the Hugging Face libraries) are not bundled and keep their own licences.
 

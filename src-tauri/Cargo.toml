@@ -2,8 +2,8 @@
 name = "iquantize"
 version = "0.2.22"
 description = "A full LLM quantization workspace: GGUF, MLX and ONNX"
-authors = ["Fazmin Nizam"]
-license = "MIT"
+authors = ["iQuantize contributors"]
+license = "MIT OR Apache-2.0"
 repository = "https://github.com/Fazmin/iQuantize"
 edition = "2021"
 rust-version = "1.80"
