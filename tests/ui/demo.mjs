@@ -1,5 +1,6 @@
-// Dev-only demo recorder: drives the UI (mocked bridge, real captured data) through a 45 s
-// scripted tour with a visible cursor and captions, and encodes it to an MP4.
+// Dev-only demo recorder: drives the UI (mocked bridge, real captured data) through a 40 s
+// scripted tour in light mode with a visible cursor and captions, and encodes it to an MP4.
+// It is a screen capture of the app: no title or end card.
 //
 //   node tests/ui/demo.mjs [out.mp4]
 //   node tests/ui/demo.mjs --hero [out.png]   light-mode still of the live view, framed as a window
@@ -20,7 +21,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '../../src');
 const hero = process.argv[2] === '--hero';
 const outFile = path.resolve(process.argv[hero ? 3 : 2] || path.join(here, 'out', hero ? 'iquantize-hero.png' : 'iquantize-demo.mp4'));
-const LENGTH = 45; // seconds
+const LENGTH = 40; // seconds
 const VIEW = { width: 1600, height: 900 };
 const SCALE = 1.2; // 1600×900 CSS px → 1920×1080 video
 
@@ -232,12 +233,11 @@ function demoInit(data) {
     },
   };
 
-  // Overlay: macOS window controls, a cursor that follows the real mouse, captions and title cards.
+  // Overlay: macOS window controls, a cursor that follows the real mouse, captions.
   const css = `
     #demo-lights{position:fixed;top:14px;left:14px;display:flex;gap:8px;z-index:2147483640;pointer-events:none}
     #demo-lights i{display:block;width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 .5px rgba(0,0,0,.25)}
-    #demo-cursor{position:fixed;left:0;top:0;z-index:2147483647;pointer-events:none;transform:translate(-200px,-200px);filter:drop-shadow(0 2px 3px rgba(0,0,0,.5));transition:opacity .3s ease}
-    #demo-cursor.off{opacity:0}
+    #demo-cursor{position:fixed;left:0;top:0;z-index:2147483647;pointer-events:none;transform:translate(-200px,-200px);filter:drop-shadow(0 2px 3px rgba(0,0,0,.5));}
     .demo-ripple{position:fixed;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:2px solid rgba(163,171,255,.9);background:rgba(94,106,210,.25);z-index:2147483646;pointer-events:none;animation:demo-ripple .45s ease-out forwards}
     @keyframes demo-ripple{from{transform:scale(.3);opacity:1}to{transform:scale(1.25);opacity:0}}
     #demo-caption{position:fixed;left:50%;bottom:30px;z-index:2147483645;pointer-events:none;display:flex;align-items:center;gap:14px;padding:11px 22px 11px 12px;border-radius:999px;
@@ -248,30 +248,17 @@ function demoInit(data) {
     #demo-caption.right{left:auto;right:28px;transform:translate(0,10px)}
     #demo-caption.right.on{transform:translate(0,0)}
     #demo-caption b{font:650 12px/1 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#d2d6ff;background:linear-gradient(180deg,#6c77dd,#4b53c8);padding:8px 11px;border-radius:999px}
-    #demo-card{position:fixed;inset:0;z-index:2147483644;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;pointer-events:none;opacity:0;transition:opacity .5s ease;
-      background:radial-gradient(900px 520px at 50% 38%,rgba(94,106,210,.34),transparent 65%),radial-gradient(700px 400px at 50% 110%,rgba(75,83,200,.25),transparent 70%),#0b0b0e;font-family:Inter,sans-serif}
-    #demo-card.on{opacity:1}
-    #demo-card img{width:104px;height:104px;filter:drop-shadow(0 20px 44px rgba(94,106,210,.55))}
-    #demo-card h1{margin:4px 0 0;font-size:72px;font-weight:700;letter-spacing:-.035em;color:#fff}
-    #demo-card p{margin:0;font-size:24px;line-height:1.45;color:#b8bbc2;text-align:center}
-    #demo-card .chips{display:flex;gap:10px;margin-top:8px}
-    #demo-card .chips span{padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#e9eaed;font-size:15px;font-weight:600;letter-spacing:.02em}
-    #demo-card .url{margin-top:6px;font-size:17px;color:#a3abff;letter-spacing:.01em}
-    #demo-fade{position:fixed;inset:0;z-index:2147483646;background:#0b0b0e;pointer-events:none;opacity:0;transition:opacity .16s ease}
+    #demo-fade{position:fixed;inset:0;z-index:2147483646;background:#fcfcfd;pointer-events:none;opacity:0;transition:opacity .16s ease}
     #demo-fade.on{opacity:1}
     #demo-tick{position:fixed;right:0;bottom:0;width:2px;height:2px;z-index:2147483642;pointer-events:none;animation:demo-tick 1s linear infinite}
     @keyframes demo-tick{from{opacity:.01}to{opacity:.02}}`;
-  const CARDS = {
-    title: `<img src="assets/logo.svg" alt=""><h1>iQuantize</h1><p>Quantize LLMs on your desktop, and see exactly what changes.</p><div class="chips"><span>GGUF</span><span>MLX</span><span>ONNX</span></div>`,
-    end: `<img src="assets/logo.svg" alt=""><h1>iQuantize</h1><p>Plan, quantize, compare and publish, in one app.</p><div class="url">Open source · MIT or Apache-2.0 · github.com/Fazmin/iQuantize</div>`,
-  };
   document.addEventListener('DOMContentLoaded', () => {
     const style = document.createElement('style');
     style.textContent = css;
     document.head.appendChild(style);
     const wrap = document.createElement('div');
     wrap.innerHTML = `<div id="demo-lights"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
-      <div id="demo-fade"></div><div id="demo-card"></div><div id="demo-caption"></div><div id="demo-tick"></div>
+      <div id="demo-fade"></div><div id="demo-caption"></div><div id="demo-tick"></div>
       <svg id="demo-cursor" width="26" height="26" viewBox="0 0 24 24"><path d="M5 2.8v17.4l4.5-4.3 3 6.6 3-1.3-3-6.5h6.2z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
     document.body.append(...wrap.children);
     const cursor = document.getElementById('demo-cursor');
@@ -304,14 +291,6 @@ function demoInit(data) {
       } else show();
     },
     hideCaption: () => document.getElementById('demo-caption').classList.remove('on'),
-    card(name, instant) {
-      const el = document.getElementById('demo-card');
-      if (instant) el.style.transition = 'none';
-      if (name) el.innerHTML = CARDS[name];
-      el.classList.toggle('on', !!name);
-      document.getElementById('demo-cursor').classList.toggle('off', !!name);
-      if (instant) requestAnimationFrame(() => (el.style.transition = ''));
-    },
     fade: (on) => document.getElementById('demo-fade').classList.toggle('on', on),
   };
 }
@@ -325,7 +304,7 @@ const { chromium } = require(findPlaywright());
 // Screencast frames ignore the emulated scale factor; forcing it renders them at 1080p for real.
 const browser = await chromium.launch({ channel: 'chrome', args: hero ? [] : [`--force-device-scale-factor=${SCALE}`] });
 const HERO = { width: 1440, height: 900, pad: 48 };
-const ctx = await browser.newContext(hero ? { viewport: HERO, deviceScaleFactor: 2, colorScheme: 'light' } : { viewport: VIEW, deviceScaleFactor: SCALE, colorScheme: 'dark' });
+const ctx = await browser.newContext(hero ? { viewport: HERO, deviceScaleFactor: 2, colorScheme: 'light' } : { viewport: VIEW, deviceScaleFactor: SCALE, colorScheme: 'light' });
 const data = {
   tensors: JSON.parse(fs.readFileSync(path.join(here, 'demo/q4_k_m_tensors.json'), 'utf8')),
   arena: JSON.parse(fs.readFileSync(path.join(here, 'demo/arena_turn.json'), 'utf8')),
@@ -402,7 +381,6 @@ if (hero) {
 await page.goto(`${base}#/`);
 await page.waitForSelector('.workarea .view-head, .workarea h1', { state: 'visible' });
 await page.evaluate(() => document.fonts.ready);
-await ui('card', 'title', true);
 await page.mouse.move(mx, my);
 await sleep(600);
 
@@ -428,11 +406,8 @@ const at = async (sec, scene) => {
 };
 
 async function tour() {
-  // 0–2.4 s: title card over Home.
-  await at(2.4);
-  await ui('card', null);
-
-  // 2.4–8.2 s: New quantization → Goal: recommendations with reasons.
+  // 0–6.2 s: New quantization → Goal: recommendations with reasons.
+  await at(0.4);
   const content = page.locator('.workarea');
   await moveToEl(content.getByRole('button', { name: 'New quantization' }), 800);
   await click();
@@ -444,28 +419,28 @@ async function tour() {
   await page.getByText('Recommendations').first().waitFor();
   await sleep(500);
   await moveToEl(page.locator('.wizard-body').getByText('Near-lossless; a safe choice', { exact: false }), 1000, { fx: 0.3 });
-  await at(8.2, 'options');
+  await at(6.2, 'options');
 
-  // 8.2–12.6 s: Options: every choice explained and sized for this model.
+  // 6.2–10.6 s: Options: every choice explained and sized for this model.
   await moveToEl(page.locator('.stepper .step').filter({ hasText: 'Options' }), 650);
   await click();
   await page.getByText('Quantization types').first().waitFor();
   await ui('caption', 'Explain', 'Every option is explained, with sizes estimated for your model.');
   await sleep(300);
   await moveToEl(page.locator('.wizard-body').getByText('Q4_K_M', { exact: true }), 800);
-  await at(12.6, 'live');
+  await at(10.6, 'live');
 
-  // 12.6–20.8 s: live quantization: the X-ray fills, the size meter shrinks, the log streams.
+  // 10.6–18.8 s: live quantization: the X-ray fills, the size meter shrinks, the log streams.
   await cut('/jobs/demo-live', '.workarea canvas');
   await ui('caption', 'Quantize', 'Watch every tensor get quantized, live.');
   await page.evaluate(() => window.__demoLive(5600));
   await moveTo(VIEW.width * 0.8, VIEW.height * 0.3, 1000);
-  await at(18.4, 'tooltip');
+  await at(16.4, 'tooltip');
   const map = await box(page.locator('.workarea canvas'));
   await moveTo(map.x + map.width * 0.42, map.y + map.height * 0.3, 800);
-  await at(20.8, 'arena');
+  await at(18.8, 'arena');
 
-  // 20.8–27.8 s: arena: the quantized model and the original answer side by side.
+  // 18.8–25.8 s: arena: the quantized model and the original answer side by side.
   const turn = data.arena;
   await cut(`/test?a=${turn.a}&b=${turn.b}`, '.arena');
   await ui('caption', 'Compare', 'Chat with the quantized model and the original, side by side.', 'top');
@@ -480,24 +455,24 @@ async function tour() {
   await sleep(700);
   await moveToEl(same, 550);
   await click();
-  await at(27.8, 'quality');
+  await at(25.8, 'quality');
 
-  // 27.8–32 s: size vs. quality across every output.
+  // 25.8–30 s: size vs. quality across every output.
   await moveToEl(page.locator('.tabs button').filter({ hasText: 'Quality & speed' }), 600);
   await click();
   await page.getByText('Size vs. quality').first().waitFor();
   await ui('caption', 'Measure', 'Perplexity, KL divergence and speed, measured against the original.');
   const chart = await box(page.locator('.workarea svg').filter({ hasText: 'Q4_K_M' }));
   await moveTo(chart.x + chart.width * 0.55, chart.y + chart.height * 0.42, 900);
-  await at(32.0, 'docs');
+  await at(30.0, 'docs');
 
-  // 32–36 s: the model card, written from the measurements and checked against them.
+  // 30–34 s: the model card, written from the measurements and checked against them.
   await cut('/docs/b97ac634c9f34783b9a7782ad75f27ec', '.doc-preview table');
   await ui('caption', 'Document', 'A model card written from your measurements. Every number is checked.', 'right');
   await moveToEl(page.getByText('Every number traces back to your measurements.'), 1000, { fx: 0.3 });
-  await at(36.0, 'publish');
+  await at(34.0, 'publish');
 
-  // 36–41.4 s: publish: account, repository and a file plan checked before anything uploads.
+  // 34–39.4 s: publish: account, repository and a file plan checked before anything uploads.
   await cut('/publish', '.workarea .account-row');
   await ui('caption', 'Publish', 'Check everything first, then publish to Hugging Face.');
   await moveToEl(page.getByRole('button', { name: 'Check before publishing' }), 800);
@@ -506,11 +481,6 @@ async function tour() {
   await publish.waitFor({ state: 'visible' });
   await sleep(400);
   await moveToEl(publish, 800);
-  await at(41.4, 'end card');
-
-  // 41.4–45 s: end card.
-  await ui('hideCaption');
-  await ui('card', 'end');
   await at(LENGTH + 0.3, 'finish');
 }
 

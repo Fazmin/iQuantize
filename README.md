@@ -7,7 +7,7 @@ A desktop workspace for quantizing LLMs to **GGUF**, **MLX** and **ONNX**, step 
 
 ![The iQuantize live view in light mode, three-quarters of the way through quantizing SmolLM2-135M-Instruct to GGUF Q4_K_M: the Model X-ray of every tensor, the size meter at 106 MB down from 269 MB, the precision mix, system gauges and the llama-quantize log](docs/media/iquantize-hero.png)
 
-**[Watch the 45-second demo](docs/media/iquantize-demo.mp4)**: plan a quantization, watch it run, compare it with the original, measure it, write the model card and publish.
+**[Watch the 40-second demo](docs/media/iquantize-demo.mp4)**: plan a quantization, watch it run, compare it with the original, measure it, write the model card and publish.
 
 - **Rust + plain JavaScript.** Tauri v2. The UI has no framework, no build step and nothing loaded from a CDN. It talks to Rust only through `invoke` and the event bus, under a strict CSP (`'self'` plus Tauri IPC).
 - **SQLite for everything** (`rusqlite`). Secrets (Hugging Face token, OpenAI key) are encrypted with XChaCha20-Poly1305. The key lives in the OS keychain, with a 0600 key file as the fallback.
