@@ -105,7 +105,7 @@ If you use iQuantize in research, or publish models made with it, please cite it
   author  = {{iQuantize contributors}},
   title   = {{iQuantize: A Desktop Workspace for Quantizing Large Language Models to GGUF, MLX and ONNX}},
   year    = {2026},
-  version = {0.2.22},
+  version = {0.2.24},
   url     = {https://github.com/Fazmin/iQuantize},
   license = {MIT OR Apache-2.0}
 }
@@ -115,7 +115,7 @@ The double braces around the author keep BibTeX from reading "iQuantize contribu
 
 **APA**
 
-> iQuantize contributors. (2026). *iQuantize: A desktop workspace for quantizing large language models to GGUF, MLX and ONNX* (Version 0.2.22) [Computer software]. https://github.com/Fazmin/iQuantize
+> iQuantize contributors. (2026). *iQuantize: A desktop workspace for quantizing large language models to GGUF, MLX and ONNX* (Version 0.2.24) [Computer software]. https://github.com/Fazmin/iQuantize
 
 When you publish a model made with iQuantize, its model card and `quantization_report.json` already record the exact tool versions, recipe and measurements, so others can reproduce it.
 

@@ -12,8 +12,8 @@ abstract: >-
 authors:
   - name: iQuantize contributors
     website: "https://github.com/Fazmin/iQuantize/blob/main/CONTRIBUTORS.md"
-version: 0.2.22
-date-released: 2026-10-29
+version: 0.2.24
+date-released: 2026-11-05
 license:
   - MIT
   - Apache-2.0
